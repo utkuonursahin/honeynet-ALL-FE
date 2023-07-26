@@ -1,0 +1,22 @@
+<main class="h-full w-full flex flex-col items-center justify-center px-[20vw] py-[5vw]">
+  <form [formGroup]="userForm" class="bg-neutral-900 w-full flex flex-col gap-8 px-6 py-8 rounded-md">
+    <section class="grid grid-cols-2 gap-5">
+      <div class="text-neutral-100 flex flex-col gap-2 text-sm w-full ">
+        <label class="text-sky-400">Username: </label>
+        <input formControlName="username" class="bg-neutral-800 rounded h-10 px-2 ring-2 ring-sky-300">
+      </div>
+      <div class="text-neutral-100 flex flex-col gap-2 text-sm w-full ">
+        <label class="text-sky-400">E-Mail: </label>
+        <input formControlName="email" class="bg-neutral-800 rounded h-10 px-2 ring-2 ring-sky-300">
+      </div>
+      <div class="text-neutral-100 flex flex-col gap-2 text-sm w-full ">
+        <label class="text-sky-400">Password: </label>
+        <input formControlName="password" placeholder="Enter new password" class="bg-neutral-800 rounded h-10 px-2 ring-2 ring-sky-300">
+      </div>
+      <div class="text-neutral-100 flex flex-col gap-2 text-sm w-full ">
+        <label class="text-sky-400">Password Confirm: </label>
+        <input formControlName="passwordConfirmation" placeholder="Enter new password" class="bg-neutral-800 rounded h-10 px-2 ring-2 ring-sky-300">
+      </div>
+    </section>
+  </form>
+</main>

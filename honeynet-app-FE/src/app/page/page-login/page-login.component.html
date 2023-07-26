@@ -1,0 +1,23 @@
+<main class="h-screen relative grid grid-cols-[20vw,1fr] grid-rows-1">
+	<div class="z-20 flex h-full flex-col items-center justify-center gap-4 bg-gradient-to-r from-sky-200/20 to-sky-300/20 px-8 shadow-sm shadow-neutral-900">
+		<form [formGroup]="loginForm" (submit)="handleLogin()" class="flex w-full flex-col gap-2">
+			<div class="flex flex-col gap-1 text-sm">
+				<label for="username" class="text-sky-400">Username</label>
+				<input type="text" id="username" formControlName="username" placeholder="Your username" class="text-neutral-100 bg-transparent border-b-2 border-sky-600 rounded-sm
+				 h-10 p-4 outline-0 focus:border-0 focus:ring-sky-400 focus:ring-2 transition duration-100">
+			</div>
+			<div class="flex flex-col gap-1 text-sm font-Poppins">
+				<label for="password" class="text-sky-400">Password</label>
+				<input type="password" id="password" formControlName="password" placeholder="Your password" class="text-neutral-100 bg-transparent border-b-2 border-sky-600 rounded-sm
+				h-10 p-4  outline-0 focus:border-0 focus:ring-sky-400 focus:ring-2 transition duration-100">
+			</div>
+			<button type="submit" class=" mt-4 h-10 w-full rounded bg-sky-500 text-xl uppercase text-neutral-800
+			  hover:bg-sky-600 transition duration-200">
+				Login
+			</button>
+		</form>
+	</div>
+  <picture class="absolute inset-0 min-h-screen overflow-hidden opacity-20">
+    <div class="h-screen bg-contain bg-repeat-x bg-world-map w-[5076px] animate-slide"></div>
+  </picture>
+</main>

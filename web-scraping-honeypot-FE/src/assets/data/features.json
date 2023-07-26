@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Make your application",
+    "description": "Make your completely online application via the online form below.",
+    "iconPath": "assets/img/letter.svg"
+  },
+  {
+    "name": "Confirm the process and make payment",
+    "description": "Once we apply your application, you will receive an email to confirm the process and make payment.",
+    "iconPath": "assets/img/payments.svg"
+  },
+  {
+    "name": "Get your device and start using it",
+    "description": "Once we receive your payment, we will send your device to your address.",
+    "iconPath": "assets/img/package.svg"
+  },
+  {
+    "name": "Return your device",
+    "description": "After your rental period ends, we will come to your address to pick up the device.",
+    "iconPath": "assets/img/return.svg"
+  }
+]

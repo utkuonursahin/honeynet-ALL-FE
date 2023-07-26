@@ -1,0 +1,15 @@
+<tr data-id="{{suspicious.id}}" class="grid h-max-14 cursor-pointer grid-cols-5 gap-5 p-4 text-base hover:bg-sky-600 transition-all duration-300">
+  <td class="{{rowStyle}}">{{suspicious.origin}}</td>
+  <td class="{{rowStyle}}">{{suspicious.category}}</td>
+  <td class="{{rowStyle}}">{{suspicious.potName}}</td>
+  <td class="{{rowStyle}}">
+    <span *ngIf="suspicious.payload.username">{{suspicious.payload.username}} </span>
+    <span *ngIf="suspicious.payload.password">{{suspicious.payload.password}}</span>
+    <span *ngIf="suspicious.payload.path">{{suspicious.payload.path}}</span>
+    <span *ngIf="suspicious.payload.targetElementId">{{suspicious.payload.targetElementId}}</span>
+    <span *ngIf="suspicious.payload.subject">{{suspicious.payload.subject}}</span>
+  </td>
+  <td class="{{rowStyle}}">
+    {{suspicious.date | date: 'dd/MM/yyyy-HH:mm:ss'}}
+  </td>
+</tr>

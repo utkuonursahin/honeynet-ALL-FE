@@ -1,0 +1,42 @@
+<form class="text-sm cursor-pointer flex flex-col w-full absolute left-0 bg-neutral-800 z-10 rounded-sm shadow
+  shadow-neutral-900 transition-all duration-500 {{isCategoryFilterOpened ? 'opacity-100 top-full' : 'opacity-0 top-4 invisible'}}">
+  <label for="bf"
+    class="grid grid-cols-[25%,85%] justify-items-start px-8 py-4
+    transition-colors duration-200 hover:bg-sky-500 hover:text-neutral-800">
+    <div class="w-5 h-5 flex items-center justify-center bg-neutral-600 rounded-md">
+      <svg class="w-4 h-4 fill-sky-500 {{isBruteForceSelected ? 'opacity-100' : 'opacity-0'}} transition-all duration-200"><use href="assets/sprite.svg#icon-check"></use></svg>
+    </div>
+    Brute Force
+    <input id="bf" type="checkbox" class="hidden" data-category="BRUTE_FORCE" (change)="emitCategoryFilterChangeEvent($event)">
+  </label>
+
+  <label for="pt"
+    class="grid grid-cols-[25%,85%] justify-items-start px-8 py-4
+    transition-colors duration-200 hover:bg-sky-500 hover:text-neutral-800">
+    <div class="w-5 h-5 flex items-center justify-center bg-neutral-600 rounded-md">
+      <svg class="w-4 h-4 fill-sky-500 {{isPathTraversalSelected ? 'opacity-100' : 'opacity-0'}} transition-all duration-200"><use href="assets/sprite.svg#icon-check"></use></svg>
+    </div>
+    Path Traversal
+    <input id="pt" type="checkbox" class="hidden" data-category="PATH_TRAVERSAL" (change)="emitCategoryFilterChangeEvent($event)">
+  </label>
+
+  <label for="ws"
+    class="grid grid-cols-[25%,85%] justify-items-start px-8 py-4
+    transition-colors duration-200 hover:bg-sky-500 hover:text-neutral-800">
+    <div class="w-5 h-5 flex items-center justify-center bg-neutral-600 rounded-md">
+      <svg class="w-4 h-4 fill-sky-500 {{isWebScrapingSelected ? 'opacity-100' : 'opacity-0'}} transition-all duration-200"><use href="assets/sprite.svg#icon-check"></use></svg>
+    </div>
+    Web Scraping
+    <input id="ws" type="checkbox" class="hidden" data-category="WEB_SCRAPING" (change)="emitCategoryFilterChangeEvent($event)">
+  </label>
+
+  <label for="email"
+    class="grid grid-cols-[25%,85%] justify-items-start px-8 py-4
+    transition-colors duration-200 hover:bg-sky-500 hover:text-neutral-800">
+    <div class="w-5 h-5 flex items-center justify-center bg-neutral-600 rounded-md">
+      <svg class="w-4 h-4 fill-sky-500 {{isEmailSelected ? 'opacity-100' : 'opacity-0'}} transition-all duration-200"><use href="assets/sprite.svg#icon-check"></use></svg>
+    </div>
+    E-Mail
+    <input id="email" type="checkbox" class="hidden" data-category="EMAIL" (change)="emitCategoryFilterChangeEvent($event)">
+  </label>
+</form>

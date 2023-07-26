@@ -1,0 +1,10 @@
+<div (click)="onFirmSelect()" class="relative font-Rubik flex flex-col rounded-md {{selected && 'border-2 border-sky-300'}} bg-neutral-900 shadow shadow-neutral-800 h-[37.5vh]">
+  <picture class="z-10 flex items-center justify-center w-full h-[85%]">
+    <img priority=true ngSrc="http://localhost:8080/firm/image/{{firm.id}}" alt="firm logo" width="210" height="50" class="object-center object-cover">
+  </picture>
+  <svg *ngIf="selected" class="absolute right-5 top-5 z-20 w-6 h-6 fill-sky-400"><use href="assets/sprite.svg#icon-eye"></use></svg>
+  <svg *ngIf="!selected" class="absolute right-5 top-5 z-20 w-6 h-6 fill-sky-400"><use href="assets/sprite.svg#icon-eye-off"></use></svg>
+  <div class="bg-sky-600 w-full h-[15%] rounded-b z-20 flex flex-col items-center justify-center gap-4 px-6 text-center">
+    <h1 class="text-xl font-bold text-neutral-50">{{firm.firmName}}</h1>
+  </div>
+</div>

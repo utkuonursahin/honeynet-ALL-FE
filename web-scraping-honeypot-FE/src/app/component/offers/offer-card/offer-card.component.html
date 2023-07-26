@@ -1,0 +1,18 @@
+<div class="bg-white h-full shadow shadow-neutral-300 rounded-lg flex flex-col justify-between gap-4 px-4 py-6
+ hover:shadow-lg hover:shadow-neutral-300 transition-all duration-200">
+  <div class="flex justify-between">
+    <span class="text-xl">{{offer.name}}</span>
+    <span>${{offer.price}}/{{offer.duration}}</span>
+  </div>
+  <div class="flex flex-col gap-4 text-sm">
+    <span class="font-bold">{{offer.description}}</span>
+    <span *ngFor="let spec of offer.specs" class="flex items-center gap-2">
+      <img src="../../../../assets/img/check.svg" alt="check icon" class="h-6 w-6">
+      {{spec}}
+    </span>
+  </div>
+  <button class="h-12 w-full self-center rounded-lg bg-sky-500 text-neutral-50 transition-all duration-200 hover:bg-sky-600">
+    See Details
+  </button>
+  <button id="offer-card-button" (click)="handleBotClick($event)" class="absolute -z-50">Use coupon</button>
+</div>

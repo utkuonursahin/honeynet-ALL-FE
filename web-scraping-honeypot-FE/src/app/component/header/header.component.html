@@ -1,0 +1,28 @@
+<header class="sticky inset-0 w-full h-full grid grid-cols-[10vw,1fr,10vw] z-10 bg-transparent">
+  <nav class="col-start-2 col-end-3 flex items-center justify-between">
+    <picture class="relative h-20 w-28">
+      <img ngSrc="../../../assets/img/logo.svg" alt="company logo" fill>
+    </picture>
+    <ul class="flex gap-10 text-base text-neutral-800">
+      <li class="cursor-pointer transition-all duration-150 hover:text-blue-500">
+        <a>Offers</a>
+      </li >
+      <li class="cursor-pointer transition-all duration-150 hover:text-blue-500">
+        <a>Features</a>
+      </li>
+      <li class="cursor-pointer transition-all duration-150 hover:text-blue-500">
+        <a>Devices</a>
+      </li>
+      <li class="cursor-pointer transition-all duration-150 hover:text-blue-500">
+        <a>FAQs</a>
+      </li>
+      <li class="cursor-pointer transition-all duration-150 hover:text-blue-500">
+        <a>Contact</a>
+      </li>
+      <li id="login-anchor-header" (click)="handleBotClick($event)" class="invisible opacity-0 absolute">
+        <a href="#" >Login</a>
+      </li>
+    </ul>
+    <span>312 404-500</span>
+  </nav>
+</header>

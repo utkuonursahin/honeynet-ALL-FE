@@ -1,0 +1,11 @@
+<div (click)="handleClick()" class="hover:shadow-lg hover:shadow-neutral-300 w-full gap-4 cursor-pointer flex
+flex-col justify-center rounded-lg bg-white px-6 py-4 shadow shadow-neutral-300">
+  <p class="z-10 mt-4 text-base text-bold hover:text-blue-600 flex justify-between">
+    {{faq.question}}
+    <img src="assets/img/arrow-down-circle.svg" alt="arrow icon" class="w-6 h-6 transition-all duration-500 {{isClicked && '-rotate-180'}} ">
+  </p>
+  <p class="text-sm text-neutral-700 transition-all duration-500 overflow-hidden
+      {{isClicked ? 'max-h-20' : 'invisible max-h-0 opacity-0'}}">
+    {{faq.answer}}
+  </p>
+</div>

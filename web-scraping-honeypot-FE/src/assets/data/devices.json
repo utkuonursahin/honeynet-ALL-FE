@@ -1,0 +1,34 @@
+[
+  {
+    "name": "Macbook Pro",
+    "imagePath": "assets/img/devices/macbook-pro.jpg"
+  },
+  {
+    "name" : "Macbook Air",
+    "imagePath" : "assets/img/devices/macbook-air.jpg"
+  },
+  {
+    "name": "PS5",
+    "imagePath": "assets/img/devices/ps5.jpg"
+  },
+  {
+    "name": "PS4",
+    "imagePath": "assets/img/devices/ps4.jpg"
+  },
+  {
+    "name": "Xbox Series X",
+    "imagePath": "assets/img/devices/xbox-series-x.jpg"
+  },
+  {
+    "name": "Xbox One",
+    "imagePath": "assets/img/devices/xbox-ones.jpg"
+  },
+  {
+    "name": "Iphone 13 Pro",
+    "imagePath": "assets/img/devices/ip-13pro.jpg"
+  },
+  {
+    "name": "Ryzen 7 3700X",
+    "imagePath": "assets/img/devices/ryzen-7.jpg"
+  }
+]

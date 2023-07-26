@@ -1,0 +1,36 @@
+<aside class="flex h-full w-full flex-col items-center gap-8 bg-neutral-700 px-4 pt-[8vh] pb-2 border-r-2 border-sky-500">
+  <ul class="flex h-full w-full cursor-pointer flex-col text-lg text-neutral-200">
+    <li *ngIf="user.role === UserRole.SUPER_ADMIN" [routerLink]="['/firms']" class="flex px-4 h-12 items-center gap-4
+    rounded-sm  transition-colors duration-200 nav-item hover:bg-neutral-600 hover:text-neutral-100">
+      <svg class="h-6 w-6 fill-sky-500"><use href="assets/sprite.svg#icon-network"></use></svg>
+      <span>Firms</span>
+    </li>
+    <ng-container *ngIf="firm?.id ">
+      <li [routerLink]="['/dashboard']" class="flex px-4 h-12 items-center gap-4 border-y-2 border-neutral-600
+    rounded-sm  transition-colors duration-200 nav-item hover:bg-neutral-600 hover:text-neutral-100">
+        <svg class="h-6 w-6 fill-sky-500"><use href="assets/sprite.svg#icon-dashboard"></use></svg>
+        <span>Dashboard</span>
+      </li>
+      <li [routerLink]="['/pots']" class="flex px-4 h-12 items-center gap-4 border-b-2 border-neutral-600
+    rounded-sm  transition-colors duration-200 nav-item hover:bg-neutral-600 hover:text-neutral-100">
+        <svg class="h-6 w-6 fill-sky-500"><use href="assets/sprite.svg#icon-lab"></use></svg>
+        <span>Pots</span>
+      </li>
+      <li [routerLink]="['/attempts']" class="flex px-4 h-12 items-center gap-4 border-b-2 border-neutral-600
+    rounded-sm  transition-colors duration-200 nav-item hover:bg-neutral-600 hover:text-neutral-100">
+        <svg class="h-6 w-6 fill-sky-500"><use href="assets/sprite.svg#icon-alert-octagon"></use></svg>
+        <span>Attempts</span>
+      </li>
+      <li [routerLink]="['/email-receivers']" class="flex px-4 h-12 items-center gap-4
+    rounded-sm  transition-colors duration-200 nav-item hover:bg-neutral-600 hover:text-neutral-100">
+        <svg class="h-6 w-6 fill-sky-500"><use href="assets/sprite.svg#icon-mail"></use></svg>
+        <span>Receivers</span>
+      </li>
+    </ng-container>
+    <li (click)="handleLogout()" class="flex mt-auto px-4 h-12 items-center gap-4 hover:bg-neutral-600 hover:text-neutral-100
+     rounded-sm transition-colors duration-200 border-t-2 border-neutral-600">
+      <svg class="h-6 w-6 fill-sky-500"><use href="assets/sprite.svg#icon-log-out"></use></svg>
+      <span>Logout</span>
+    </li>
+  </ul>
+</aside>

@@ -1,0 +1,7 @@
+<section class="py-20 grid grid-cols-[30vw,1fr,1fr] gap-10 border-b-2 border-gray-200">
+  <div class="flex flex-col gap-4">
+    <h2 class="text-4xl font-bold text-neutral-800">Our Special Offers</h2>
+    <span class="text-2xl text-neutral-900">That you can not find anywhere except us!</span>
+  </div>
+  <app-offer-card *ngFor="let offer of offers" [offer]="offer"></app-offer-card>
+</section>

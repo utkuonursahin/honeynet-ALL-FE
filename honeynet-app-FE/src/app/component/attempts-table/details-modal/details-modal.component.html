@@ -1,0 +1,32 @@
+<div
+  class="fixed inset-x-1/2 inset-y-1/2 z-30 flex h-max w-1/3 -translate-x-1/2 -translate-y-1/2 flex-col
+  items-center gap-8 rounded bg-neutral-800 px-10 py-14">
+  <h2 class="text-2xl text-sky-400">Suspicious Activity Details</h2>
+  <ul class="flex w-full cursor-pointer flex-col gap-4">
+    <li class="flex justify-between rounded-sm bg-neutral-700 px-4 py-2 hover:bg-neutral-600">
+      <span class="text-neutral-50">Attempt Origin</span>
+      <span class="text-sky-400 text-center">{{suspicious.origin}}</span>
+    </li>
+    <li class="flex justify-between rounded-sm bg-neutral-700 px-4 py-2 hover:bg-neutral-600">
+      <span class="text-neutral-50">Attempt Type</span>
+      <span class="text-sky-400">{{suspicious.category}}</span>
+    </li>
+    <li class="flex justify-between rounded-sm bg-neutral-700 px-4 py-2 hover:bg-neutral-600">
+      <span class="text-neutral-50">Attempt Pot Name</span>
+      <span class="text-sky-400">{{suspicious.potName}}</span>
+    </li>
+    <li class="flex justify-between rounded-sm bg-neutral-700 px-4 py-2 hover:bg-neutral-600">
+      <span class="text-neutral-50">Attempt Payload</span>
+      <span class="text-sky-400" *ngIf="suspicious.payload.username">USERNAME: {{suspicious.payload.username}} </span>
+      <span class="text-sky-400" *ngIf="suspicious.payload.password">PASSWORD: {{suspicious.payload.password}}</span>
+      <span class="text-sky-400" *ngIf="suspicious.payload.path">PATH: {{suspicious.payload.path}}</span>
+      <span class="text-sky-400"
+            *ngIf="suspicious.payload.targetElementId">TARGET: {{suspicious.payload.targetElementId}}</span>
+      <span class="text-sky-400" *ngIf="suspicious.payload.subject">SUBJECT:{{suspicious.payload.subject}}</span>
+    </li>
+    <li class="flex justify-between rounded-sm bg-neutral-700 px-4 py-2 hover:bg-neutral-600">
+      <span class="text-neutral-50">Attempt Date</span>
+      <span class="text-sky-400">{{suspicious.date | date: 'dd/MM/yyyy-HH:mm:ss'}}</span>
+    </li>
+  </ul>
+</div>

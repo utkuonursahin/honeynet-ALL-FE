@@ -1,0 +1,17 @@
+<picture (click)="onSettingsClick(pot.potName)" class="absolute right-2.5 top-2.5 h-8 w-8 bg-neutral-700 cursor-pointer
+    rounded-full flex items-center justify-center transition-all duration-200 hover:rotate-180 hover:bg-neutral-600">
+  <svg class=" h-6 w-6 fill-sky-500"><use href="assets/sprite.svg#icon-settings"></use></svg>
+</picture>
+
+<div class="flex flex-col items-center justify-center gap-4 px-6 text-center">
+  <h1 class="z-10 text-xl font-bold text-neutral-50">{{pot.potName}}</h1>
+  <div class="z-10 flex items-center gap-2">
+    <h2 class="text-neutral-200">Categories:</h2>
+    <span *ngFor="let category of pot.category" class="text-sm text-sky-300">{{category}}</span>
+  </div>
+  <p class="z-10 text-sm text-neutral-300">{{pot.description}}</p>
+<!--  <button (click)="onVisitClick(pot.clientUrl)" class="outline-sky-300 outline h-12 w-36 cursor-pointer rounded bg-neutral-800-->
+<!--      text-sm text-sky-500 hover:bg-sky-300 hover:text-neutral-800 transition-all duration-100">-->
+<!--    Visit site!-->
+<!--  </button>-->
+</div>

@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Sarah Johnson",
+    "opinion": "Renting devices from TechRent has been an incredible experience. The seamless process and top-notch customer service exceeded my expectations. I highly recommend their services!",
+    "imagePath": "assets/img/profile-1.jpg"
+  },
+  {
+    "name": "Michael Ramirez",
+    "opinion": "I needed some high-end gadgets for a business event, and TechRent saved the day! Their extensive range of devices, competitive prices, and prompt delivery made them my go-to rental company. Five stars!",
+    "imagePath": "assets/img/profile-2.jpg"
+  },
+  {
+    "name": "Emily Thompson",
+    "opinion": "TechRent has revolutionized the way I approach technology needs. No more expensive purchases or outdated devices. With TechRent, I can easily rent the latest gadgets and stay ahead in this fast-paced digital world. Highly recommended!",
+    "imagePath": "assets/img/profile-3.jpg"
+  },
+  {
+    "name": "David Anderson",
+    "opinion": "I've tried several rental companies, but TechRent stands out. Their attention to detail, exceptional service, and well-maintained devices make them the best in the business. TechRent is my trusted partner for all my tech rental needs.",
+    "imagePath": "assets/img/profile-4.jpg"
+  }
+]
