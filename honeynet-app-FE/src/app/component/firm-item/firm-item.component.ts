@@ -1,22 +1,30 @@
 import {Component, Input} from '@angular/core';
 import {Firm} from "../../model/Firm";
+import {AuthService} from "../../service/auth.service";
+import {BehaviorSubject} from "rxjs";
+import {User} from "../../model/User";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-firm-item',
   templateUrl: './firm-item.component.html'
 })
 export class FirmItemComponent {
-  protected selected:boolean = false;
-  constructor() {
-    this.selected = localStorage.getItem('firm') != null && localStorage.getItem('firm') != undefined;
+  protected selected: boolean = false;
+  protected switchSubject: BehaviorSubject<boolean> = this.authService.switchSubject;
+
+  constructor(private authService: AuthService) {
+    this.selected = this.switchSubject.value;
   }
+
   @Input() firm!: Firm;
-  onFirmSelect(){
-    if(this.selected){
-      localStorage.removeItem('firm')
+
+  onFirmSelect() {
+    this.selected = !this.selected;
+    if (this.selected) {
+      this.authService.impersonate(this.firm.id).subscribe();
     } else {
-      localStorage.setItem('firm', JSON.stringify(this.firm));
+      this.authService.exitImpersonate()
     }
-    window.location.reload();
   }
 }

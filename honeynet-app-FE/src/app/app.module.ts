@@ -36,6 +36,7 @@ import { PageFirmsComponent } from './page/page-firms/page-firms.component';
 import { PageDashboardComponent } from './page/page-dashboard/page-dashboard.component';
 import { FirmItemComponent } from './component/firm-item/firm-item.component';
 import { WebThreatsSettingsComponent } from './component/pot-item/web-threats-pot/web-threats-settings/web-threats-settings.component';
+import { WebCrawlSettingsComponent } from './component/pot-item/web-crawl-pot/web-crawl-settings/web-crawl-settings.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -65,6 +66,7 @@ import { WebThreatsSettingsComponent } from './component/pot-item/web-threats-po
     PageDashboardComponent,
     FirmItemComponent,
     WebThreatsSettingsComponent,
+    WebCrawlSettingsComponent,
   ],
     imports: [
         BrowserModule,

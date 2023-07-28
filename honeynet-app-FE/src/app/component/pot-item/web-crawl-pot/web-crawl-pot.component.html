@@ -15,3 +15,5 @@
 <!--    Visit site!-->
 <!--  </button>-->
 </div>
+<app-web-crawl-settings *ngIf="showSettings" [pot]="pot" (settingsCloseEvent)="toggleSettings()"></app-web-crawl-settings>
+```

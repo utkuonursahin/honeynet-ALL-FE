@@ -1,4 +1,4 @@
-import ServerInfo from "../interface/ServerInfo";
+import ServerInfo from "./ServerInfo";
 
 export interface Pot{
 	id: string;

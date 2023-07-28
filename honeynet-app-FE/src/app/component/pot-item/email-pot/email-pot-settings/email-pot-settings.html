@@ -2,6 +2,7 @@
   class="fixed inset-1/2 z-30 flex h-max w-2/5 -translate-x-1/2 -translate-y-1/2 flex-col gap-6 bg-neutral-800 px-8 py-10 font-Poppins">
   <svg (click)="onModalCloseClick()" class="absolute top-5 right-5 h-8 w-8 cursor-pointer fill-sky-500"><use href="assets/sprite.svg#icon-clear"></use></svg>
   <h2 class="text-center text-2xl text-neutral-50">Phishing E-Mail Pot Settings</h2>
+  <button (click)="onSetupClick()" class="h-10 w-36 bg-sky-400 text-neutral-100">Setup</button>
   <section class="flex w-full flex-col gap-2">
     <h3 class="flex flex-col gap-1 text-lg text-sky-400">
       Start Listen New Mail
@@ -9,7 +10,7 @@
       Enter your e-mail's credentials to start listening. An automated process will start and control unread mails in your inbox for every ten minutes.
       </span>
     </h3>
-    <form [formGroup]="emailListenerForm" (submit)="onSetupModalFormSubmit()" class="flex flex-col gap-4">
+    <form [formGroup]="emailListenerForm" (submit)="onEmailListenerFormSubmit()" class="flex flex-col gap-4">
       <div class="flex items-end justify-between gap-2">
         <div class="flex w-full flex-col gap-1">
           <label class="text-neutral-100" for="email">E-Mail</label>

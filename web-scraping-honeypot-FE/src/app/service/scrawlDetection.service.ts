@@ -9,6 +9,6 @@ export class ScrawlDetectionService {
   constructor(private http: HttpClient) { }
 
   handleScrawlDetection({targetElementId}:ScrawlDetails){
-    this.http.post('http://localhost:8082/scrawl-attempt', {targetElementId}).subscribe();
+    this.http.post('/scrawl-attempt', {targetElementId}).subscribe();
   }
 }

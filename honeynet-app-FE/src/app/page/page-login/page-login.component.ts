@@ -25,8 +25,8 @@ export class PageLoginComponent implements OnDestroy{
 		this.subscription = this.authService.login(this.formData).subscribe({
       next : (res) => {
         if(res.statusCode === 200){
-          localStorage.setItem('firm',JSON.stringify(res.data.firm))
           localStorage.setItem('user',JSON.stringify(res.data))
+          this.authService.userSubject.next(res.data);
           this.toastrService.success('You\'ve successfully logged in!', 'Login',{
             toastClass:'w-[25vw] min-h-16 px-4 py-2 font-Rubik rounded bg-green-500 text-neutral-100',
           });

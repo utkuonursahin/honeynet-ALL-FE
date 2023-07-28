@@ -3,17 +3,15 @@ import {AuthService} from "../../service/auth.service";
 import {Router} from "@angular/router";
 import {Subscription} from "rxjs";
 import {ToastrService} from "ngx-toastr";
-import {User} from "../../model/User";
 import {UserRole} from "../../enum/UserRole";
-import {Firm} from "../../model/Firm";
 
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
 })
 export class SidebarComponent implements OnDestroy{
-  protected user: User = JSON.parse(localStorage.getItem('user') || '{}');
-  protected firm:Firm = JSON.parse(localStorage.getItem('firm') || '{}');
+  protected userObservable = this.authService.userObservable;
+  protected switchObservable = this.authService.switchObservable;
   private subscription: Subscription = new Subscription();
   constructor(private authService: AuthService, private toastrService: ToastrService ,private router: Router) {  }
 
@@ -27,6 +25,11 @@ export class SidebarComponent implements OnDestroy{
         this.router.navigate(['/']);
       }
     })
+  }
+
+  handleSwitchBack(){
+    localStorage.removeItem('switch');
+    this.authService.exitImpersonate();
   }
 
   ngOnDestroy(): void {
