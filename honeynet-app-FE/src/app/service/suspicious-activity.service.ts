@@ -17,11 +17,7 @@ export class SuspiciousActivityService {
 
   constructor(private http: HttpClient) {}
 
-
-  getSuspiciousActivities(filter: SuspiciousActivityFilter,pagination:PaginationSettings, firmId?:string){
-    if(firmId === undefined){
-      return this.http.post<GenericResponse<PaginatedSuspiciousActivities>>(`${this.serverUrl}/suspicious/client/filter?page=${pagination.currentPage}&size=${pagination.currentSize}`,filter,this.httpOptions);
-    }
-    return this.http.post<GenericResponse<PaginatedSuspiciousActivities>>(`${this.serverUrl}/suspicious/client/filter?firmId=${firmId}&page=${pagination.currentPage}&size=${pagination.currentSize}`,filter,this.httpOptions);
+  getSuspiciousActivities(filter: SuspiciousActivityFilter,pagination:PaginationSettings){
+    return this.http.post<GenericResponse<PaginatedSuspiciousActivities>>(`${this.serverUrl}/suspicious/client/filter?page=${pagination.currentPage}&size=${pagination.currentSize}`,filter,this.httpOptions);
   }
 }

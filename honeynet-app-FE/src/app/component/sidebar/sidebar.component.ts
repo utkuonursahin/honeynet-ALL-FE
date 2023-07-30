@@ -10,8 +10,8 @@ import {UserRole} from "../../enum/UserRole";
   templateUrl: './sidebar.component.html',
 })
 export class SidebarComponent implements OnDestroy{
-  protected userObservable = this.authService.userObservable;
-  protected switchObservable = this.authService.switchObservable;
+  protected userSubject = this.authService.userSubject
+  protected switchSubject = this.authService.switchSubject
   private subscription: Subscription = new Subscription();
   constructor(private authService: AuthService, private toastrService: ToastrService ,private router: Router) {  }
 

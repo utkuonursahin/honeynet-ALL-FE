@@ -9,7 +9,6 @@ import {User} from "../../../../model/User";
   templateUrl: './web-threats-settings.component.html'
 })
 export class WebThreatsSettingsComponent {
-  private firm: Firm = JSON.parse(localStorage.getItem("user") || '{}')?.firm;
   @Output() settingsCloseEvent: EventEmitter<boolean> = new EventEmitter<boolean>();
   @Input() pot!: Pot;
 
@@ -17,7 +16,7 @@ export class WebThreatsSettingsComponent {
 
   onSettingsCloseClick() {this.settingsCloseEvent.emit(true);}
   onSetupClick(){
-    this.potService.setupPot(this.pot.id,this.firm.id).subscribe();
+    this.potService.setupPot(this.pot.id).subscribe();
     this.settingsCloseEvent.emit(true);
   }
 }

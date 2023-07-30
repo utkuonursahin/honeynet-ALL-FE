@@ -13,9 +13,6 @@ export class AuthService {
   public userSubject: BehaviorSubject<User> = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('user') || '{}'));
   public switchSubject: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(JSON.parse(localStorage.getItem('switch') || '{}') === true);
 
-  public userObservable: Observable<User> = this.userSubject.asObservable();
-  public switchObservable: Observable<boolean> = this.switchSubject.asObservable();
-
 	constructor(private http: HttpClient, private router:Router) {}
 
   login(formData:FormData):Observable<GenericResponse<User>>{

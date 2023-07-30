@@ -8,7 +8,6 @@ import {PaginatedSuspiciousActivities} from "../../interface/PaginatedSuspicious
 import {PaginationSettings} from "../../interface/PaginationSettings";
 import {MatPaginator, PageEvent} from "@angular/material/paginator";
 import {User} from "../../model/User";
-import {UserRole} from "../../enum/UserRole";
 @Component({
   selector: 'app-attempts-table',
   templateUrl: './attempts-table.component.html',
@@ -28,29 +27,29 @@ export class AttemptsTableComponent implements OnDestroy{
       this.paginationSettings = settings;
     }
   }
+
   protected paginationSettings: PaginationSettings = {
     currentPage: 0, currentSize: 10,
     totalPage: 0, totalSize: 0
   }
+
   private filter: SuspiciousActivityFilter = {
     originFilter: '',
     categoryFilters: [],
     dateFilters: []
   }
 
-  private readonly user: User = JSON.parse(localStorage.getItem('user')!);
-  private readonly firm = JSON.parse(localStorage.getItem('firm') || '{}');
+  private readonly user: User = JSON.parse(localStorage.getItem('user') || '{}');
 
   constructor(private suspiciousActivityService:SuspiciousActivityService) {
     this.subscription = this.suspiciousActivityService.getSuspiciousActivities(
       this.filter,
-      this.paginationSettings,
-      this.firm.id).subscribe(this.subscribeSettings);
+      this.paginationSettings).subscribe(this.subscribeSettings);
   }
 
   toggleDetailsModal(){this.isDetailsModalOpened = !this.isDetailsModalOpened;}
 
-  handleModalToggle(event: MouseEvent){
+  handleDetailsModalToggle(event: MouseEvent){
     const row = (event.target as HTMLElement).closest('tr') || (event.target as HTMLElement).closest('.overlay');
     if(!row) return;
     this.toggleDetailsModal();
@@ -64,19 +63,15 @@ export class AttemptsTableComponent implements OnDestroy{
     this.paginationSettings.currentPage = 0;
     this.subscription = this.suspiciousActivityService.getSuspiciousActivities(
       this.filter,
-      this.paginationSettings,
-      this.firm.id).subscribe(this.subscribeSettings);
-
+      this.paginationSettings).subscribe(this.subscribeSettings);
   }
 
-  onPageChange(event:PageEvent){
+  onPageChangeEvent(event:PageEvent){
     this.paginationSettings.currentPage = event.pageIndex;
     this.paginationSettings.currentSize = event.pageSize;
     this.subscription = this.suspiciousActivityService.getSuspiciousActivities(
       this.filter,
-      this.paginationSettings,
-      this.firm.id).subscribe(this.subscribeSettings);
-
+      this.paginationSettings).subscribe(this.subscribeSettings);
   }
 
   @ViewChild('paginator') paginator!: MatPaginator;

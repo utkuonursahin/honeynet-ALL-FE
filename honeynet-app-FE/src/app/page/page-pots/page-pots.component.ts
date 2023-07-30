@@ -13,6 +13,6 @@ export class PagePotsComponent {
   protected pots$: Observable<GenericResponse<Pot[]>> = new Observable<GenericResponse<Pot[]>>();
   private user:User = JSON.parse(localStorage.getItem('user') || '{}');
   constructor(private potService: PotService) {
-    this.pots$ = this.potService.getAllPots(this.user.firm?.id);
+    this.pots$ = this.potService.getAllPots();
   }
 }

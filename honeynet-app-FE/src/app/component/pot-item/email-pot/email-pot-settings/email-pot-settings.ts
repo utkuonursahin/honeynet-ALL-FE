@@ -31,7 +31,6 @@ export class EmailPotSettings implements OnInit,OnDestroy {
   onEmailListenerFormSubmit() {
     this.subscription = this.emailListenerService.addEmailListener(
       this.pot.id,
-      this.firm.id,
       this.emailListenerForm.value.email,
       this.emailListenerForm.value.password)
     .subscribe({
@@ -41,7 +40,7 @@ export class EmailPotSettings implements OnInit,OnDestroy {
         });
         setTimeout(() => {
           this.modalCloseEvent.emit(true);
-        }, 1000)
+        }, 500)
         this.emailListenerForm.reset();
       },
       error: () => {
@@ -56,32 +55,9 @@ export class EmailPotSettings implements OnInit,OnDestroy {
     this.modalCloseEvent.emit(true);
   }
 
-  onMailListenerDeleteClick(emailListener: EmailListener) {
-    this.subscription = this.emailListenerService.deleteEmailListener(
-      this.pot.id,
-      this.firm.id,
-      emailListener.id).subscribe({
-      next: () => {
-        this.toastrService.success('Email listener deleted successfully', 'Success', {
-          toastClass: 'w-[25vw] min-h-16 px-4 py-2 font-Rubik rounded bg-green-500 text-neutral-100'
-        });
-        setTimeout(() => {
-          this.modalCloseEvent.emit(true);
-        }, 1000)
-        this.emailListenerForm.reset();
-      },
-      error: () => {
-        this.toastrService.error('Email listener could not deleted!', 'Failure', {
-          toastClass: 'w-[25vw] min-h-16 px-4 py-2 font-Rubik rounded bg-red-500 text-neutral-100'
-        });
-      }
-    });
-  }
-
   onMailListenerToggleStatus(emailListener: EmailListener) {
     this.subscription = this.emailListenerService.updateEmailListener(
       this.pot.id,
-      this.firm.id,
       emailListener).subscribe({
       next: () => {
         this.toastrService.success('Email listener status changed successfully', 'Success', {
@@ -89,7 +65,7 @@ export class EmailPotSettings implements OnInit,OnDestroy {
         });
         setTimeout(() => {
           this.modalCloseEvent.emit(true);
-        }, 1000)
+        }, 500)
         this.emailListenerForm.reset();
       },
       error: () => {
@@ -100,12 +76,33 @@ export class EmailPotSettings implements OnInit,OnDestroy {
     });
   }
 
+  onMailListenerDeleteClick(emailListener: EmailListener) {
+    this.subscription = this.emailListenerService.deleteEmailListener(
+      this.pot.id,
+      emailListener.id).subscribe({
+      next: () => {
+        this.toastrService.success('Email listener deleted successfully', 'Success', {
+          toastClass: 'w-[25vw] min-h-16 px-4 py-2 font-Rubik rounded bg-green-500 text-neutral-100'
+        });
+        setTimeout(() => {
+          this.modalCloseEvent.emit(true);
+        }, 500)
+        this.emailListenerForm.reset();
+      },
+      error: () => {
+        this.toastrService.error('Email listener could not deleted!', 'Failure', {
+          toastClass: 'w-[25vw] min-h-16 px-4 py-2 font-Rubik rounded bg-red-500 text-neutral-100'
+        });
+      }
+    });
+  }
+
   onSetupClick() {
-    this.potService.setupPot(this.pot.id, this.firm.id).subscribe();
+    this.potService.setupPot(this.pot.id).subscribe();
   }
 
   ngOnInit():void{
-    this.emailListeners = this.emailListenerService.getEmailListeners(this.pot.id,this.firm.id);
+    this.emailListeners = this.emailListenerService.getEmailListeners(this.pot.id);
   }
 
   ngOnDestroy(): void {

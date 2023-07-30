@@ -23,14 +23,14 @@ export class PageLoginComponent implements OnDestroy{
 		this.formData.append('username', this.loginForm.value.username ?? '');
 		this.formData.append('password', this.loginForm.value.password ?? '');
 		this.subscription = this.authService.login(this.formData).subscribe({
-      next : (res) => {
-        if(res.statusCode === 200){
-          localStorage.setItem('user',JSON.stringify(res.data))
-          this.authService.userSubject.next(res.data);
+      next : ({data:user,statusCode}) => {
+        if(statusCode === 200){
+          localStorage.setItem('user' ,JSON.stringify(user))
+          this.authService.userSubject.next(user);
           this.toastrService.success('You\'ve successfully logged in!', 'Login',{
             toastClass:'w-[25vw] min-h-16 px-4 py-2 font-Rubik rounded bg-green-500 text-neutral-100',
           });
-          if(res.data.role === 'SUPER_ADMIN') this.router.navigateByUrl('/firms');
+          if(user.role === 'SUPER_ADMIN') this.router.navigateByUrl('/firms');
           else this.router.navigateByUrl('/dashboard');
         }
       },
