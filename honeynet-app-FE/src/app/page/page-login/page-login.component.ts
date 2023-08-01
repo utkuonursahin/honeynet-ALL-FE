@@ -11,7 +11,7 @@ import {Subscription} from "rxjs";
 })
 export class PageLoginComponent implements OnDestroy{
 	protected loginForm: FormGroup = new FormGroup({
-		username: new FormControl(''),
+		email: new FormControl(''),
 		password: new FormControl(''),
 	});
 	protected formData = new FormData();
@@ -20,7 +20,7 @@ export class PageLoginComponent implements OnDestroy{
 	constructor(private authService: AuthService, private toastrService: ToastrService, private router:Router) {}
 
 	handleLogin(){
-		this.formData.append('username', this.loginForm.value.username ?? '');
+		this.formData.append('username', this.loginForm.value.email ?? '');
 		this.formData.append('password', this.loginForm.value.password ?? '');
 		this.subscription = this.authService.login(this.formData).subscribe({
       next : ({data:user,statusCode}) => {
@@ -36,7 +36,7 @@ export class PageLoginComponent implements OnDestroy{
       },
       error: () => {
         this.loginForm.reset();
-        this.toastrService.error('No username/password found with given inputs', 'Failure',{
+        this.toastrService.error('No email/password found with given inputs', 'Failure',{
           toastClass:'w-[25vw] min-h-16 px-4 py-2 font-Rubik rounded bg-red-500 text-neutral-100',
         });
       }

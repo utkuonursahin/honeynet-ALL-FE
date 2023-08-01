@@ -1,0 +1,81 @@
+<div class="flex flex-col gap-6">
+  <svg (click)="onEmailSettingsCloseClick()" class="absolute top-5 right-5 h-8 w-8 cursor-pointer fill-sky-500"><use href="assets/sprite.svg#icon-clear"></use></svg>
+  <h2 class="text-center text-2xl text-neutral-50">Phishing E-Mail Pot Settings</h2>
+  <mat-stepper class="bg-transparent">
+    <mat-step label="Setup">
+      <section class="flex w-full flex-col gap-4">
+        <h3 class="flex flex-col gap-1 text-lg text-sky-400">
+          Setup
+          <span class="text-sm text-neutral-400" >You can setup Phishing E-Mail Pot here. It will be unique for your firm and will
+        listen suspicious activities on them. You can stop its process and shutdown it whenever you want.</span>
+        </h3>
+        <button (click)="onSetupClick()" matStepperNext class="h-10 w-36 bg-sky-400 text-neutral-800 rounded">Setup</button>
+      </section>
+    </mat-step>
+    <mat-step label="Add Listener">
+      <section class="flex w-full flex-col gap-4">
+        <h3 class="flex flex-col gap-1 text-lg text-sky-400">
+          Start Listen New Mail
+          <span class="text-justify text-sm text-neutral-400">
+      Enter your e-mail's credentials to start listening. An automated process will start and control unread mails in your inbox for every ten minutes.
+      </span>
+        </h3>
+        <form [formGroup]="emailListenerForm" (submit)="onEmailListenerAdd()" class="flex flex-col gap-4">
+          <div class="flex items-end justify-between gap-2">
+            <div class="flex w-full flex-col gap-1">
+              <label class="text-neutral-100" for="email">E-Mail</label>
+              <input formControlName="email" type="email" id="email" name="email" placeholder="E-Mail"
+                     class="h-12 w-full rounded-md bg-neutral-700 px-4 py-2 text-neutral-50 shadow shadow-neutral-900 focus:outline-0 focus:ring-2 focus:ring-sky-500"/>
+            </div>
+            <div class="flex w-full flex-col gap-1">
+              <label class="text-neutral-100" for="password">Password</label>
+              <input formControlName="password" type="password" id="password" name="password" placeholder="Password"
+                     class="h-12 w-full rounded-md bg-neutral-700 px-4 py-2 text-neutral-50 shadow shadow-neutral-900 focus:outline-0 focus:ring-2 focus:ring-sky-500"/>
+            </div>
+            <button type="submit" matStepperNext
+                    class="flex h-12 w-32 items-center justify-center rounded-md bg-neutral-700 text-neutral-800 shadow shadow-neutral-900 transition-all duration-200 hover:bg-neutral-600">
+              <svg class="h-6 w-6 fill-sky-400">
+                <use href="assets/sprite.svg#icon-plus-circle"></use>
+              </svg>
+            </button>
+          </div>
+        </form>
+      </section>
+    </mat-step>
+    <mat-step label="Manage Listeners">
+      <section class="flex flex-col gap-4">
+        <h3 class="flex flex-col gap-1 text-lg text-sky-400">
+          Currently Listening Mails
+          <span class="text-justify text-sm text-neutral-400">
+      Currently listening mails are listed below. You can toggle listening status of each mail or delete them.
+    </span>
+        </h3>
+        <div class="flex flex-col gap-1">
+          <div class="flex h-12 justify-between gap-2 rounded-md"
+               *ngFor="let emailListener of (emailListeners | async)?.data ">
+            <p
+              class="flex h-10 w-full items-center justify-between rounded-md bg-neutral-700 px-4 shadow shadow-neutral-900 transition-all duration-200 hover:bg-neutral-600">
+              <span class="text-neutral-100">{{emailListener.email}}</span>
+              <span (click)="onMailListenerToggleStatus(emailListener)"
+                    *ngIf="emailListener.status === EmailListenerStatus.LISTEN"
+                    class="w-20 cursor-pointer rounded-md bg-green-500 px-4 text-center text-neutral-100 shadow shadow-neutral-800 transition-all duration-200 hover:bg-green-400">
+            {{emailListener.status}}
+          </span>
+              <span (click)="onMailListenerToggleStatus(emailListener)"
+                    *ngIf="emailListener.status === EmailListenerStatus.STOP"
+                    class="w-20 cursor-pointer rounded-md bg-red-600 px-4 text-center text-neutral-100 shadow shadow-neutral-800 transition-all duration-200 hover:bg-red-500">
+            {{emailListener.status}}
+          </span>
+            </p>
+            <button (click)="onMailListenerDeleteClick(emailListener)" class="cursor-pointer h-10 w-16 bg-neutral-700 flex justify-center
+        items-center rounded-md hover:bg-neutral-600 transition-all duration-200 shadow shadow-neutral-900">
+              <svg class="h-6 w-6 fill-red-500 transition-all duration-200 hover:fill-red-600">
+                <use href="assets/sprite.svg#icon-clear"></use>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </section>
+    </mat-step>
+  </mat-stepper>
+</div>

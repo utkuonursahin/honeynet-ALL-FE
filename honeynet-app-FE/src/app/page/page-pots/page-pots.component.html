@@ -1,8 +1,5 @@
 <main class="grid grid-cols-2 grid-rows-1 gap-12 px-[8.5vw] py-[3.5vw]">
     <app-pot-item *ngFor="let pot of (pots$ | async)?.data" [pot]="pot">
-      <app-web-threats-pot *ngIf="pot.potName === 'Web Threats Pot'" [pot]="pot"></app-web-threats-pot>
-      <app-web-crawl-pot *ngIf="pot.potName === 'Web Scraping Pot'" [pot]="pot"></app-web-crawl-pot>
-      <app-email-pot *ngIf="pot.potName === 'E-Mail Phishing Pot'" [pot]="pot"></app-email-pot>
     </app-pot-item>
     <div class="relative flex cursor-pointer items-center justify-center rounded-md bg-neutral-900/50 shadow shadow-neutral-800 transition-all duration-300 font-Rubik h-[37.5vh] hover:scale-105 [&>svg]:hover:fill-sky-500" >
       <svg class="h-16 w-16 fill-neutral-700">

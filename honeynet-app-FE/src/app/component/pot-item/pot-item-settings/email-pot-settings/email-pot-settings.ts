@@ -2,7 +2,6 @@ import {Component, EventEmitter, Input, OnDestroy, OnInit, Output} from '@angula
 import {FormControl, FormGroup} from "@angular/forms";
 import {Observable, Subscription} from "rxjs";
 import {Pot} from "../../../../model/Pot";
-import {EmailListenerService} from "../../../../service/email-listener.service";
 import {EmailListener} from "../../../../interface/EmailListener";
 import {GenericResponse} from "../../../../interface/GenericResponse";
 import {EmailListenerStatus} from "../../../../enum/EmailListenerStatus";
@@ -24,12 +23,12 @@ export class EmailPotSettings implements OnInit,OnDestroy {
   private subscription: Subscription = new Subscription();
 
   @Input() pot!: Pot;
-  @Output() modalCloseEvent: EventEmitter<boolean> = new EventEmitter<boolean>();
+  @Output() emailSettingsCloseEvent: EventEmitter<boolean> = new EventEmitter<boolean>();
 
-  constructor(private emailListenerService: EmailListenerService, private toastrService: ToastrService, private potService: PotService) {}
+  constructor(private toastrService: ToastrService, private potService: PotService) {}
 
-  onEmailListenerFormSubmit() {
-    this.subscription = this.emailListenerService.addEmailListener(
+  onEmailListenerAdd() {
+    this.subscription = this.potService.addEmailListener(
       this.pot.id,
       this.emailListenerForm.value.email,
       this.emailListenerForm.value.password)
@@ -39,7 +38,7 @@ export class EmailPotSettings implements OnInit,OnDestroy {
           toastClass: 'w-[25vw] min-h-16 px-4 py-2 font-Rubik rounded bg-green-500 text-neutral-100'
         });
         setTimeout(() => {
-          this.modalCloseEvent.emit(true);
+          this.emailSettingsCloseEvent.emit(true);
         }, 500)
         this.emailListenerForm.reset();
       },
@@ -51,12 +50,12 @@ export class EmailPotSettings implements OnInit,OnDestroy {
     });
   }
 
-  onModalCloseClick() {
-    this.modalCloseEvent.emit(true);
+  onEmailSettingsCloseClick() {
+    this.emailSettingsCloseEvent.emit(true);
   }
 
   onMailListenerToggleStatus(emailListener: EmailListener) {
-    this.subscription = this.emailListenerService.updateEmailListener(
+    this.subscription = this.potService.updateEmailListener(
       this.pot.id,
       emailListener).subscribe({
       next: () => {
@@ -64,7 +63,7 @@ export class EmailPotSettings implements OnInit,OnDestroy {
           toastClass: 'w-[25vw] min-h-16 px-4 py-2 font-Rubik rounded bg-green-500 text-neutral-100'
         });
         setTimeout(() => {
-          this.modalCloseEvent.emit(true);
+          this.emailSettingsCloseEvent.emit(true);
         }, 500)
         this.emailListenerForm.reset();
       },
@@ -77,7 +76,7 @@ export class EmailPotSettings implements OnInit,OnDestroy {
   }
 
   onMailListenerDeleteClick(emailListener: EmailListener) {
-    this.subscription = this.emailListenerService.deleteEmailListener(
+    this.subscription = this.potService.deleteEmailListener(
       this.pot.id,
       emailListener.id).subscribe({
       next: () => {
@@ -85,7 +84,7 @@ export class EmailPotSettings implements OnInit,OnDestroy {
           toastClass: 'w-[25vw] min-h-16 px-4 py-2 font-Rubik rounded bg-green-500 text-neutral-100'
         });
         setTimeout(() => {
-          this.modalCloseEvent.emit(true);
+          this.emailSettingsCloseEvent.emit(true);
         }, 500)
         this.emailListenerForm.reset();
       },
@@ -102,7 +101,7 @@ export class EmailPotSettings implements OnInit,OnDestroy {
   }
 
   ngOnInit():void{
-    this.emailListeners = this.emailListenerService.getEmailListeners(this.pot.id);
+    this.emailListeners = this.potService.getEmailListeners(this.pot.id);
   }
 
   ngOnDestroy(): void {

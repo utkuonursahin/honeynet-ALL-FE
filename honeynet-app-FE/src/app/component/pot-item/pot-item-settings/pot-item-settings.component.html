@@ -1,0 +1,12 @@
+<div class="fixed inset-1/2 z-30 h-max w-2/5 -translate-x-1/2 -translate-y-1/2 bg-neutral-800 px-8 py-10 font-Poppins">
+  <ng-container *ngIf="pot.potName === 'Web Threats Pot'">
+    <app-web-threats-settings [pot]="pot" (webThreatsSettingsCloseEvent)="emitSettingsCloseEvent($event)" ></app-web-threats-settings>
+  </ng-container>
+  <ng-container *ngIf="pot.potName === 'Web Scraping Pot'" >
+    <app-web-scraping-settings [pot]="pot" (webScrapingSettingsCloseEvent)="emitSettingsCloseEvent($event)" ></app-web-scraping-settings>
+  </ng-container>
+  <ng-container *ngIf="pot.potName === 'E-Mail Phishing Pot'" >
+    <app-email-pot-settings [pot]="pot" (emailSettingsCloseEvent)="emitSettingsCloseEvent($event)" ></app-email-pot-settings>
+  </ng-container>
+</div>
+<app-overlay (click)="emitSettingsCloseEvent(true)"/>

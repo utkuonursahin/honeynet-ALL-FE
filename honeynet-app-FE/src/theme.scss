@@ -14,8 +14,4 @@ $my-theme: mat.define-dark-theme((
   density:0
 ));
 
-@include mat.core-theme($my-theme);
-@include mat.paginator-theme($my-theme);
-@include mat.menu-theme($my-theme);
-@include mat.form-field-theme($my-theme);
-
+@include mat.all-component-themes($my-theme);

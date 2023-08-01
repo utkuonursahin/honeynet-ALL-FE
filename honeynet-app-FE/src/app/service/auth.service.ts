@@ -26,7 +26,7 @@ export class AuthService {
   }
   impersonate(firmId:string){
     return this.findUserToSwitch(firmId).pipe(map(res => {
-      this.http.post<GenericResponse<User>>(`${this.serverUrl}/login/impersonate?username=${res.data.username}`,{},{withCredentials:true}).subscribe({
+      this.http.post<GenericResponse<User>>(`${this.serverUrl}/login/impersonate?email=${res.data.email}`,{},{withCredentials:true}).subscribe({
         next: ({data:user}) => {
           localStorage.setItem('switch', 'true')
           localStorage.setItem('user', JSON.stringify(user));

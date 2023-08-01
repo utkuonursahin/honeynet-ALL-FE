@@ -13,7 +13,9 @@ export class SidebarComponent implements OnDestroy{
   protected userSubject = this.authService.userSubject
   protected switchSubject = this.authService.switchSubject
   private subscription: Subscription = new Subscription();
-  constructor(private authService: AuthService, private toastrService: ToastrService ,private router: Router) {  }
+  constructor(private authService: AuthService, private toastrService: ToastrService ,private router: Router) {
+    console.log(this.userSubject.value)
+  }
 
   handleLogout(){
     this.subscription = this.authService.logout().subscribe({
