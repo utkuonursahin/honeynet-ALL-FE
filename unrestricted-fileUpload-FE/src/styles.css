@@ -1,0 +1,14 @@
+/*body {*/
+/*    background-image: url("src\assets\image\deneme.png");*/
+/*    background-attachment: fixed;*/
+
+/*}*/
+body{
+    background-color: #D3D3D3;
+}
+
+html, body { height: 100%; }    
+.mat-toolbar.mat-primary {
+    background: black;
+    color: #fff;
+  }

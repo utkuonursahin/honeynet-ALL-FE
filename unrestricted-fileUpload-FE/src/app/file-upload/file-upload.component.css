@@ -1,0 +1,27 @@
+.container {
+    /*margin-top: -450px;*/
+    position: absolute;
+    top: 10%;
+    left: 35%;
+    /*margin-right: 355px;*/
+
+}
+
+.colorized{
+    background-color: #343A40;
+    color: white;
+}
+.form-check{
+    /*left: 72.5%;*/
+    left: -3.5%;
+}
+.submit-button{
+    /*margin-top: -2px;*/
+    /*margin-right: 50px;*/
+    right: 20%;
+}
+.upload-button{
+    background-color: #D3D3D3;
+    margin-right: 20px;
+    right: 20%;
+}
