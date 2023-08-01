@@ -10,7 +10,7 @@ export class AuthService {
   constructor(private http: HttpClient) { }
 
   login(username:String,password:String):Observable<AuthResponse> {
-    return this.http.post<AuthResponse>(`/auth/login`, {
+    return this.http.post<AuthResponse>(`http://localhost:8081/auth/login`, {
       username,
       password
     },{withCredentials:true});

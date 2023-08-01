@@ -10,6 +10,6 @@ export class UserService {
   constructor(private http:HttpClient) { }
   getAllUsers(){
     //withCredentials might be unnecessary here
-    return this.http.get<GenericResponse<User[]>>(`/user`,{withCredentials:true})
+    return this.http.get<GenericResponse<User[]>>(`http://localhost:8081/user`,{withCredentials:true})
   }
 }
