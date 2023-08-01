@@ -1,0 +1,21 @@
+.signin {
+    background-color: #0084B5;
+    text-decoration: none;
+    color:white;
+    font-size: 18px;
+    width: 120px;
+    height: 45px;
+    opacity: 90%;
+}
+.signin:hover{
+    /*background-color: #007FFF;*/
+    opacity: 100%;
+}
+.search-container{
+    position: absolute;
+    right: 10%;
+
+}
+.search-bar{
+    width: 350px;
+}

@@ -1,0 +1,104 @@
+<div class="container" style="width:630px">
+  <div class="form-group">
+    <input class="form-control colorized" type="form" value="Internship Application Form" aria-label="Disabled input example" disabled readonly style="text-align: center">
+  </div>
+  <div class="my-3">
+    <form >
+      <div class="form-row">
+        <div class="col">
+          <input type="text" class="form-control" placeholder="First name" required>
+        </div>
+        <div class="col">
+          <input type="text" class="form-control" placeholder="Last name" required>
+        </div>
+      </div>
+      <br>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label class="form-control colorized" for="inputEmail4" style="text-align: center;">Email</label>
+          <input type="email" class="form-control" id="inputEmail4" required>
+        </div>
+        <div class="form-group col-md-6">
+          <label class="form-control colorized" for="inputPassword4" style="text-align: center;">Password</label>
+          <input type="password" class="form-control" id="inputPassword4" required>
+        </div>
+      </div>
+      <div class="form-row">
+      <div class="form-group col-md-6">
+        <input class="form-control colorized" type="tel" value="Enter your phone number" aria-label="Disabled input example" disabled readonly style="text-align: center;">
+        <input placeholder="for example: 05000000000" type="tel" id="phone" name="phone" pattern="[0]{1}[0-9]{10}"  aria-describedby="phoneHelp" class="form-control" required>
+      </div>
+      <div class="form-group col-md-6" >
+        <input class="form-control colorized" value="Enter your University" aria-label="Disabled input example" disabled readonly style="text-align: center;">
+        <input type="text" id="university" name="university" aria-describedby="universityHelp" class="form-control" required>
+      </div>
+    </div>
+    <div class="form-group" >
+      <input class="form-control colorized" value="Address 1" aria-label="Disabled input example" disabled readonly style="text-align: center;">
+      <input type="text" id="address" name="address" aria-describedby="addressHelp" class="form-control" required>
+    </div>
+      <div class="form-group" >
+        <input class="form-control colorized" value="Address 2" aria-label="Disabled input example" disabled readonly style="text-align: center;">
+        <input type="text" id="address" name="address" aria-describedby="addressHelp" class="form-control" required>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          
+          <label style="text-align: center;" class="form-control colorized" for="inputCity">City</label>
+          <input type="text" class="form-control" id="inputCity" required>
+        </div>
+        <div class="form-group col-md-4">
+          <label style="text-align: center;" class="form-control colorized" for="inputState">State</label>
+          <input type="text" class="form-control" id="inputState" required>
+        </div>
+        <div class="form-group col-md-2">
+          <label style="text-align: center;" class="form-control colorized" for="inputZip">Zip</label>
+          <input type="text" class="form-control" id="inputZip" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="form-check">
+          <input class="form-check-input" style="margin-top: 10px;margin-left: 160px; width: 20px;height: 20px" type="checkbox" id="gridCheck" required>
+          <label  class="form-control col-md-3" for="gridCheck">
+            Check me out
+          </label>
+        </div>
+      </div>
+      
+      <button type="submit" class="btn btn-primary submit-button" style="background: #087AA4">Submit</button>
+      <br>  
+      <div class="upload-button">
+        <div class="form-group mt-3" >
+          <label  class="form-control col-md-6" style="background: #D3D3D3;" for="gridCheck">
+            Upload Your CV <span style="color: red">(Just PDF Files )</span>
+          </label>
+          <div class="card col-md-5" style="background: #D3D3D3;border:none">
+            <label class="btn btn-default">
+              <input type="file" (change)="selectFile($event)"  required/>
+            </label>
+          </div>
+        </div>
+      </div>
+         <button *ngIf="selectedFiles" class="btn btn-success" [disabled]="!selectedFiles" (click)="upload()">
+          Upload
+        </button>
+        <br>
+        <div *ngIf="currentFile" class="progress my-3">
+          <div
+            class="progress-bar progress-bar-info progress-bar-striped"
+            role="progressbar"
+            attr.aria-valuenow="{{ progress }}"
+            aria-valuemin="0"
+            aria-valuemax="100"
+            [ngStyle]="{ width: progress + '%' }"
+          >
+            {{ progress }}%
+          </div>
+        </div>
+        <br>
+<div *ngIf="currentFile" class="alert alert-light" role="alert">{{ message }}
+</div>
+<br>
+
+  </form>
+</div>
