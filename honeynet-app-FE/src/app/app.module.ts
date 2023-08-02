@@ -11,17 +11,17 @@ import {FooterComponent} from './component/footer/footer.component';
 import {PotItemComponent} from './component/pot-item/pot-item.component';
 import {NgOptimizedImage} from "@angular/common";
 import {CookieModule} from 'ngx-cookie';
-import {PageAttemptsComponent} from './page/page-attempts/page-attempts.component';
+import {PageSuspiciousComponent} from './page/page-suspicious/page-suspicious.component';
 import {SidebarComponent} from './component/sidebar/sidebar.component';
-import { TableHeaderComponent } from './component/page-attempts-table-parts/table-header/table-header.component';
-import {TableItemComponent} from "./component/page-attempts-table-parts/table-item/table-item.component";
+import { TableHeaderComponent } from './component/suspicious-table/table-header/table-header.component';
+import {TableItemComponent} from "./component/suspicious-table/table-item/table-item.component";
 import { HeaderComponent } from './component/header/header.component';
 import { OverlayComponent } from './component/overlay/overlay.component';
-import { DetailsModalComponent } from './component/page-attempts-table-parts/details-modal/details-modal.component';
+import { DetailsModalComponent } from './component/suspicious-table/details-modal/details-modal.component';
 import {EmailPotSettings} from "./component/pot-item/pot-item-settings/email-pot-settings/email-pot-settings";
-import { CategoryFilterComponent } from './component/page-attempts-table-parts/table-header/category-filter/category-filter.component';
-import { DateFilterComponent } from './component/page-attempts-table-parts/table-header/date-filter/date-filter.component';
-import { OriginFilterComponent } from './component/page-attempts-table-parts/table-header/origin-filter/origin-filter.component';
+import { CategoryFilterComponent } from './component/suspicious-table/table-header/category-filter/category-filter.component';
+import { DateFilterComponent } from './component/suspicious-table/table-header/date-filter/date-filter.component';
+import { OriginFilterComponent } from './component/suspicious-table/table-header/origin-filter/origin-filter.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { PageProfileComponent } from './page/page-profile/page-profile.component';
@@ -36,11 +36,13 @@ import { WebScrapingSettingsComponent } from './component/pot-item/pot-item-sett
 import { PotItemSettingsComponent } from './component/pot-item/pot-item-settings/pot-item-settings.component';
 import {MatButtonModule} from "@angular/material/button";
 import {MatStepperModule} from "@angular/material/stepper";
-import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import { PageServersComponent } from './page/page-servers/page-servers.component';
-import {MatTableModule} from "@angular/material/table";
 import {MatSelectModule} from "@angular/material/select";
+import { SuspiciousTableComponent } from './component/suspicious-table/suspicious-table.component';
+import { ServersTableComponent } from './component/servers-table/servers-table.component';
+import { StatusSelectComponent } from './component/servers-table/status-select/status-select.component';
+import {MatFormFieldModule} from "@angular/material/form-field";
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,7 +50,7 @@ import {MatSelectModule} from "@angular/material/select";
     PagePotsComponent,
     FooterComponent,
     PotItemComponent,
-    PageAttemptsComponent,
+    PageSuspiciousComponent,
     SidebarComponent,
     TableHeaderComponent,
     TableItemComponent,
@@ -69,6 +71,9 @@ import {MatSelectModule} from "@angular/material/select";
     WebScrapingSettingsComponent,
     PotItemSettingsComponent,
     PageServersComponent,
+    SuspiciousTableComponent,
+    ServersTableComponent,
+    StatusSelectComponent,
   ],
   imports: [
     BrowserModule,
@@ -93,7 +98,6 @@ import {MatSelectModule} from "@angular/material/select";
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
-    MatTableModule,
     MatSelectModule,
   ],
   providers: [],

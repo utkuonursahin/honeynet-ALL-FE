@@ -12,7 +12,10 @@ export const RouteGuard = () => {
       if(response.data){
         return true;
       }
-      else return router.parseUrl('/')
+      else {
+        localStorage.clear();
+        return router.parseUrl('/')
+      }
     })
   )
 }

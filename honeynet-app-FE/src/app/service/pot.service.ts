@@ -18,10 +18,6 @@ export class PotService {
     return this.http.get<GenericResponse<Pot[]>>(`${this.serverUrl}/pot`,{withCredentials: true});
   }
 
-  public setupPot(potId:string):Observable<GenericResponse<ServerInfo>>{
-    return this.http.post<GenericResponse<ServerInfo>>(`${this.serverUrl}/pot/setup?potId=${potId}`,{},{withCredentials: true});
-  }
-
   public getEmailListeners(potId:string):Observable<GenericResponse<EmailListener[]>>{
     return this.http.get<GenericResponse<EmailListener[]>>(`${this.serverUrl}/pot/phishing-email?potId=${potId}`,{withCredentials: true});
   }

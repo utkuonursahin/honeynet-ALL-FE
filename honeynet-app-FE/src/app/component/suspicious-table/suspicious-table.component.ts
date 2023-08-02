@@ -10,10 +10,10 @@ import {SuspiciousActivityService} from "../../service/suspicious-activity.servi
 import {MatPaginator, PageEvent} from "@angular/material/paginator";
 
 @Component({
-  selector: 'app-page-attempts',
-  templateUrl: './page-attempts.component.html',
+  selector: 'app-suspicious-table',
+  templateUrl: './suspicious-table.component.html'
 })
-export class PageAttemptsComponent{
+export class SuspiciousTableComponent {
   protected suspiciousRequestData: SuspiciousActivity[] = [];
   protected selectedSuspicious!: SuspiciousActivity;
 

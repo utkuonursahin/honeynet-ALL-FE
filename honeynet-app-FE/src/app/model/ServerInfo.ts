@@ -5,5 +5,6 @@ export default interface ServerInfo {
     hostName: string;
     host: string;
     port: string;
+    url: string;
     status: string;
 }

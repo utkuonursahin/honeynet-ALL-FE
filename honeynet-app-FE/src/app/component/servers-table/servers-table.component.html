@@ -1,0 +1,50 @@
+<table class="flex w-full flex-col h-[77.5vh]">
+  <thead class="w-full">
+  <tr class="grid grid-cols-6 items-center justify-items-start gap-5 rounded-t bg-neutral-700 px-3 py-4 text-sky-400">
+    <th class="px-2">Pot Name</th>
+    <th class="px-2">Host Name</th>
+    <th class="px-2">Host</th>
+    <th class="px-2">Port</th>
+    <th class="px-2">Url</th>
+    <th class="px-2">Status</th>
+  </tr>
+  </thead>
+  <tbody
+    class="overflow-x-hidden w-full h-full flex flex-col [&>*:nth-child(even)]:bg-neutral-700 [&>*:nth-child(odd)]:bg-neutral-800">
+  <tr
+    class="grid w-full cursor-pointer grid-cols-6 items-center justify-items-start gap-5 p-3 transition-all duration-300 h-max-10 [&]:hover:bg-sky-600"
+    *ngFor="let server of (servers$|async)?.data">
+    <td
+      class="max-w-min truncate px-2 text-neutral-100 transition-all duration-300 hover:rounded-md hover:bg-sky-900">
+      {{server.potRef}}
+    </td>
+    <td
+      class="max-w-min truncate px-2 text-neutral-100 transition-all duration-300 hover:rounded-md hover:bg-sky-900">
+      {{server.hostName}}
+    </td>
+    <td
+      class="max-w-min truncate px-2 text-neutral-100 transition-all duration-300 hover:rounded-md hover:bg-sky-900">
+      {{server.host}}
+    </td>
+    <td
+      class="max-w-min truncate px-2 text-neutral-100 transition-all duration-300 hover:rounded-md hover:bg-sky-900">
+      {{server.port}}
+    </td>
+    <td
+      class="block w-full overflow-x-hidden px-2 text-neutral-100 transition-all duration-300 hover:rounded-md hover:bg-sky-900">
+      <a class="block truncate underline decoration-neutral-200 decoration-2" target="_blank" href="{{server.url}}">{{server.url}}</a>
+    </td>
+    <td class="w-full">
+      <app-status-select (statusChangeEvent)="onStatusChange()" [server]="server" ></app-status-select>
+    </td>
+  </tr>
+  </tbody>
+  <!--NOT COMPLETED-->
+  <mat-paginator
+    class="mt-auto"
+    [pageSizeOptions]="[5, 10, 20]"
+    showFirstLastButtons
+    aria-label="Server information table pagination">
+  </mat-paginator>
+</table>
+

@@ -8,6 +8,7 @@ import {EmailListenerStatus} from "../../../../enum/EmailListenerStatus";
 import {ToastrService} from "ngx-toastr";
 import {PotService} from "../../../../service/pot.service";
 import {Firm} from "../../../../model/Firm";
+import {ServerService} from "../../../../service/server.service";
 
 @Component({
   selector: 'app-email-pot-settings',
@@ -25,7 +26,7 @@ export class EmailPotSettings implements OnInit,OnDestroy {
   @Input() pot!: Pot;
   @Output() emailSettingsCloseEvent: EventEmitter<boolean> = new EventEmitter<boolean>();
 
-  constructor(private toastrService: ToastrService, private potService: PotService) {}
+  constructor(private toastrService: ToastrService, private potService: PotService, private serverService:ServerService) {}
 
   onEmailListenerAdd() {
     this.subscription = this.potService.addEmailListener(
@@ -97,7 +98,7 @@ export class EmailPotSettings implements OnInit,OnDestroy {
   }
 
   onSetupClick() {
-    this.potService.setupPot(this.pot.id).subscribe();
+    this.serverService.setupServer(this.pot.id).subscribe();
   }
 
   ngOnInit():void{
