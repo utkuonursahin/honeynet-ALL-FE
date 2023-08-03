@@ -33,7 +33,8 @@ export class AuthService {
           this.userSubject.next(user);
           this.switchSubject.next(true);
           this.router.navigateByUrl('/dashboard')
-        }
+        },
+        error: () => localStorage.clear()
       });
     }))
   }
@@ -45,7 +46,8 @@ export class AuthService {
         this.userSubject.next(res.data);
         this.switchSubject.next(false)
         this.router.navigateByUrl('/firms')
-      }
+      },
+      error: () => localStorage.clear()
     });
   }
   logout():Observable<GenericResponse<User>>{

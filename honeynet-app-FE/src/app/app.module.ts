@@ -45,6 +45,7 @@ import { StatusSelectComponent } from './component/servers-table/status-select/s
 import {MatFormFieldModule} from "@angular/material/form-field";
 import { UnrestrictedFileUploadSettingsComponent } from './component/pot-item/pot-item-settings/unrestricted-file-upload-settings/unrestricted-file-upload-settings.component';
 import {MatListModule} from "@angular/material/list";
+import { SuspiciousCategoryGroupComponent } from './component/charts/suspicious-category-group/suspicious-category-group.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -77,6 +78,7 @@ import {MatListModule} from "@angular/material/list";
     ServersTableComponent,
     StatusSelectComponent,
     UnrestrictedFileUploadSettingsComponent,
+    SuspiciousCategoryGroupComponent,
   ],
     imports: [
         BrowserModule,

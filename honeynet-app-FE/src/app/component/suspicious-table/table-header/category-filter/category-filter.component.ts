@@ -10,7 +10,7 @@ export class CategoryFilterComponent {
   protected isPathTraversalSelected: boolean = false;
   protected isWebScrapingSelected: boolean = false;
   protected isEmailSelected: boolean = false;
-  protected isUnrestrictedFileUploadSelected: boolean = false;
+  protected isFileUploadSelected: boolean = false;
 
   @Input() isCategoryFilterOpened: boolean = false;
   @Output() categoryFilterChangeEvent: EventEmitter<PotCategory> = new EventEmitter<PotCategory>();
@@ -26,8 +26,8 @@ export class CategoryFilterComponent {
       this.isWebScrapingSelected = !this.isWebScrapingSelected;
     } else if(value === PotCategory.EMAIL){
       this.isEmailSelected = !this.isEmailSelected;
-    } else if(value === PotCategory.UNRESTRICTED_FILE_UPLOAD){
-      this.isUnrestrictedFileUploadSelected = !this.isUnrestrictedFileUploadSelected;
+    } else if(value === PotCategory.FILE_UPLOAD){
+      this.isFileUploadSelected = !this.isFileUploadSelected;
     }
     this.categoryFilterChangeEvent.emit(value);
   }

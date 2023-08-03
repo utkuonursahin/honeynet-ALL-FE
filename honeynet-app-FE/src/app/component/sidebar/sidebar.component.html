@@ -4,47 +4,46 @@
   </picture>
   <ul class="flex h-full w-full cursor-pointer flex-col text-neutral-200 text-sm">
     <li *ngIf="userSubject.value.role === UserRole.SUPER_ADMIN" [routerLink]="['/firms']" class="flex px-4 h-12 items-center gap-4
-    rounded-sm  transition-colors duration-200 nav-item hover:bg-neutral-700 hover:text-neutral-100">
+    rounded  transition-colors duration-200 nav-item hover:bg-neutral-700 hover:text-neutral-100">
       <svg class="h-6 w-6 fill-sky-500"><use href="assets/sprite.svg#icon-network"></use></svg>
       <span>Firms</span>
     </li>
     <ng-container *ngIf="userSubject.value.role === UserRole.ADMIN">
       <li [routerLink]="['/dashboard']" class="flex px-4 h-12 items-center gap-4
-    rounded-sm transition-colors duration-200 nav-item hover:bg-neutral-700 hover:text-neutral-100">
+    rounded transition-colors duration-200 nav-item hover:bg-neutral-700 hover:text-neutral-100">
         <svg class="h-6 w-6 fill-sky-500"><use href="assets/sprite.svg#icon-dashboard"></use></svg>
         <span>Dashboard</span>
       </li>
       <li [routerLink]="['/pots']" class="flex px-4 h-12 items-center gap-4
-    rounded-sm  transition-colors duration-200 nav-item hover:bg-neutral-700 hover:text-neutral-100">
+    rounded  transition-colors duration-200 nav-item hover:bg-neutral-700 hover:text-neutral-100">
         <svg class="h-6 w-6 fill-sky-500"><use href="assets/sprite.svg#icon-lab"></use></svg>
         <span>Pots</span>
       </li>
       <li [routerLink]="['/servers']" class="flex px-4 h-12 items-center gap-4
-    rounded-sm  transition-colors duration-200 nav-item hover:bg-neutral-700 hover:text-neutral-100">
+    rounded  transition-colors duration-200 nav-item hover:bg-neutral-700 hover:text-neutral-100">
         <svg class="h-6 w-6 fill-sky-500"><use href="assets/sprite.svg#icon-server"></use></svg>
         <span>Servers</span>
       </li>
       <li [routerLink]="['/suspicious-activities']" class="flex px-4 h-12 items-center gap-4
-    rounded-sm  transition-colors duration-200 nav-item hover:bg-neutral-700 hover:text-neutral-100">
+    rounded  transition-colors duration-200 nav-item hover:bg-neutral-700 hover:text-neutral-100">
         <svg class="h-6 w-6 fill-sky-500"><use href="assets/sprite.svg#icon-shield"></use></svg>
         <span>Suspicious</span>
       </li>
       <li [routerLink]="['/email-receivers']" class="flex px-4 h-12 items-center gap-4
-    rounded-sm  transition-colors duration-200 nav-item hover:bg-neutral-700 hover:text-neutral-100">
+    rounded  transition-colors duration-200 nav-item hover:bg-neutral-700 hover:text-neutral-100">
         <svg class="h-6 w-6 fill-sky-500"><use href="assets/sprite.svg#icon-mail"></use></svg>
         <span>Receivers</span>
       </li>
     </ng-container>
     <li *ngIf="switchSubject.value" (click)="handleSwitchBack()" class="mt-auto flex px-4 h-12 items-center gap-4 hover:bg-neutral-700 hover:text-neutral-100
-     rounded-sm transition-colors duration-200">
+     rounded transition-colors duration-200">
       <svg class="h-6 w-6 fill-sky-500"><use href="assets/sprite.svg#icon-log-out"></use></svg>
       <span>Switch Back</span>
     </li>
     <li *ngIf="!switchSubject.value" (click)="handleLogout()" class="mt-auto flex px-4 h-12 items-center gap-4 hover:bg-neutral-700 hover:text-neutral-100
-     rounded-sm transition-colors duration-200">
+     rounded transition-colors duration-200">
       <svg class="h-6 w-6 fill-sky-500"><use href="assets/sprite.svg#icon-log-out"></use></svg>
       <span>Logout</span>
     </li>
-    <span class="text-center text-xs text-sky-300 mt-2">Developed at BEAM Teknoloji A.Ş.</span>
   </ul>
 </aside>
