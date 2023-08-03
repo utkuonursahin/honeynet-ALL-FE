@@ -13,12 +13,16 @@ export class StatusSelectComponent{
   constructor(private serverService:ServerService) {}
 
   onValueChange(event:any,server:ServerInfo){
-    if(event === "INACTIVE"){
+    if(event === "SHUTDOWN"){
       this.serverService.shutdownServer(server).subscribe(() => {
         this.statusChangeEvent.emit(true);
       });
-    } else if(event === "ACTIVE"){
+    } else if(event === "RUN"){
       this.serverService.startServer(server).subscribe(() => {
+        this.statusChangeEvent.emit(true);
+      });
+    } else if(event === "TERMINATED"){
+      this.serverService.terminateServer(server).subscribe(() => {
         this.statusChangeEvent.emit(true);
       });
     }

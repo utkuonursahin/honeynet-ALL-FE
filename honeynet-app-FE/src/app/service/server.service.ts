@@ -26,4 +26,8 @@ export class ServerService {
   startServer(server:ServerInfo):Observable<GenericResponse<ServerInfo>>{
     return this.http.post<GenericResponse<ServerInfo>>(`${this.serverUrl}/server-info/start?id=${server.id}`,null,{withCredentials: true});
   }
+
+  terminateServer(server:ServerInfo):Observable<GenericResponse<string>>{
+    return this.http.delete<GenericResponse<string >>(`${this.serverUrl}/server-info/terminate?id=${server.id}`,{withCredentials: true});
+  }
 }

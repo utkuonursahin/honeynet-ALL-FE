@@ -1,5 +1,6 @@
 <mat-select class="w-full text-center pr-2 rounded text-neutral-100 bg-neutral-800 py-1" (valueChange)="onValueChange($event,server)" [(value)]="selectedStatus" placeholder="{{server.status}}">
-  <mat-option *ngIf="server.status !== 'INACTIVE'" value="INACTIVE" class="text-neutral-100">INACTIVE
+  <mat-option *ngIf="server.status !== 'SHUTDOWN'" value="SHUTDOWN" class="text-neutral-100">SHUTDOWN
   </mat-option>
-  <mat-option *ngIf="server.status !== 'ACTIVE'" value="ACTIVE" class="text-neutral-100">ACTIVE</mat-option>
+  <mat-option *ngIf="server.status !== 'RUN'" value="RUN" class="text-neutral-100">RUN</mat-option>
+  <mat-option *ngIf="server.status !== 'TERMINATED'" value="TERMINATED" class="text-neutral-100">TERMINATE</mat-option>
 </mat-select>
