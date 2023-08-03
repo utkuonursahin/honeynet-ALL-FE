@@ -1,11 +1,11 @@
-<section class="py-20 bg-gray-100  grid grid-cols-[10vw,30vw,2.5rem,1fr,10vw] border-b-2 border-gray-200">
+<section class="py-20 bg-gray-100  grid grid-cols-[10vw,30vw,2.5rem,1fr,10vw] border-b-2 border-gray-200 italic">
   <div class="col-start-2 flex flex-col gap-4">
-    <h2 class="text-4xl font-bold text-neutral-800">Contact Us</h2>
+    <h2 class="text-4xl  text-neutral-800 not-italic mb-10 bg-dark-red bg-opacity-20 flex justify-center ">Contact Us</h2>
     <p class="flex flex-col gap-4 text-2xl text-neutral-900">
       <span>
-        Get contact us and start your rental!
+        Get <span class="font-bold text-dark-red">contact</span> us and start your rental!
       </span>
-      <span>
+      <span class="opacity-75 font-light">
         Fill the form correctly and explain your rental demand like which device you want and for how many days etc..
       </span>
       <span>
@@ -24,6 +24,6 @@ flex flex-col gap-4">
     <input type="password" id="input-password-contact-form" placeholder="Your password" class="hidden" formControlName="password" (change)="handleBotChange($event)" />
     <textarea placeholder="Let us know about your rental request"  class="h-36 w-full border-2
      border-neutral-300 rounded-md p-6 focus:outline-blue-400 focus:outline-4 resize-none " formControlName="message"></textarea>
-    <button class="bg-blue-500 w-48 h-12 text-neutral-50 rounded-md">Send</button>
+    <button class="w-48 h-12 text-neutral-50 rounded-md bg-dark-red hover:bg-light-red">Send</button>
   </form>
 </section>
