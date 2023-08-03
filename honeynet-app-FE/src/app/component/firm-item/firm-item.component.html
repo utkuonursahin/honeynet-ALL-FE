@@ -1,10 +1,17 @@
-<div (click)="onFirmSelect()" class="relative font-Rubik flex flex-col rounded-md {{switchSubject.value && 'border-2 border-sky-300'}} bg-neutral-900 shadow shadow-neutral-800 h-[37.5vh]">
-  <picture class="z-10 flex items-center justify-center w-full h-[85%]">
-    <img priority=true ngSrc="http://localhost:8080/firm/image/{{firm.id}}" alt="firm logo" width="210" height="50" class="object-center object-cover">
+<div (click)="onFirmSelect()"
+     class="relative font-Rubik flex flex-col rounded-xl transition-all duration-300 shadow hover:ring-sky-400 hover:ring-2 shadow-neutral-900 {{switchSubject.value && 'ring-2 ring-sky-300'}} bg-neutral-900 h-[37.5vh]">
+  <picture class="z-10 flex w-full items-center justify-center h-[85%]">
+    <img priority=true ngSrc="http://localhost:8080/firm/image/{{firm.id}}" alt="firm logo" width="210" height="50"
+         class="object-cover object-center">
   </picture>
-  <svg *ngIf="switchSubject.value" class="absolute right-5 top-5 z-20 w-6 h-6 fill-sky-400"><use href="assets/sprite.svg#icon-eye"></use></svg>
-  <svg *ngIf="!switchSubject.value" class="absolute right-5 top-5 z-20 w-6 h-6 fill-sky-400"><use href="assets/sprite.svg#icon-eye-off"></use></svg>
-  <div class="bg-sky-600 w-full h-[15%] rounded-b z-20 flex flex-col items-center justify-center gap-4 px-6 text-center">
+  <svg *ngIf="switchSubject.value" class="absolute top-5 right-5 z-20 h-6 w-6 fill-sky-400">
+    <use href="assets/sprite.svg#icon-eye"></use>
+  </svg>
+  <svg *ngIf="!switchSubject.value" class="absolute top-5 right-5 z-20 h-6 w-6 fill-sky-400">
+    <use href="assets/sprite.svg#icon-eye-off"></use>
+  </svg>
+  <div
+    class="z-20 flex w-full flex-col items-center justify-center gap-4 rounded-b-xl bg-sky-700 px-6 text-center h-[15%]">
     <h1 class="text-xl font-bold text-neutral-50">{{firm.firmName}}</h1>
   </div>
 </div>

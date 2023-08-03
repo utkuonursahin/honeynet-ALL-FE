@@ -16,7 +16,7 @@ const routes: Routes = [
   {path:'firms',component:PageFirmsComponent,canActivate: [RouteGuard]},
   {path:'dashboard',component:PageDashboardComponent,canActivate: [RouteGuard]},
 	{path: 'pots', component: PagePotsComponent,canActivate: [RouteGuard]},
-  {path:'attempts',component:PageSuspiciousComponent,canActivate: [RouteGuard]},
+  {path:'suspicious-activities',component:PageSuspiciousComponent,canActivate: [RouteGuard]},
   {path: 'profile', component: PageProfileComponent,canActivate: [RouteGuard]},
   {path: 'email-receivers',component:PageEmailReceiversComponent,canActivate: [RouteGuard]},
   {path: 'servers',component:PageServersComponent,canActivate: [RouteGuard]},

@@ -1,6 +1,6 @@
-<table class="flex w-full flex-col h-[77.5vh]">
-  <thead class="w-full">
-  <tr class="grid grid-cols-6 items-center justify-items-start gap-5 rounded-t bg-neutral-700 px-3 py-4 text-sky-400">
+<table class="flex w-full flex-col h-full">
+  <thead class="w-full font-Poppins ">
+  <tr class="grid grid-cols-6 items-center justify-items-start gap-5 rounded-t bg-neutral-900/25 px-3 py-4 text-sky-400">
     <th class="px-2">Pot Name</th>
     <th class="px-2">Host Name</th>
     <th class="px-2">Host</th>
@@ -10,12 +10,12 @@
   </tr>
   </thead>
   <tbody
-    class="overflow-x-hidden w-full h-full flex flex-col [&>*:nth-child(even)]:bg-neutral-700 [&>*:nth-child(odd)]:bg-neutral-800">
+    class="rounded-b overflow-x-hidden w-full h-full flex flex-col [&>*:nth-child(even)]:bg-neutral-700 [&>*:nth-child(odd)]:bg-neutral-600">
   <tr
     class="grid w-full cursor-pointer grid-cols-6 items-center justify-items-start gap-5 p-3 transition-all duration-300 h-max-10 [&]:hover:bg-sky-600"
     *ngFor="let server of (servers$|async)?.data">
     <td
-      class="max-w-min truncate px-2 text-neutral-100 transition-all duration-300 hover:rounded-md hover:bg-sky-900">
+      class="block w-full truncate px-2 text-neutral-100 transition-all duration-300 hover:rounded-md hover:bg-sky-900">
       {{server.potRef}}
     </td>
     <td
@@ -40,11 +40,11 @@
   </tr>
   </tbody>
   <!--NOT COMPLETED-->
-  <mat-paginator
+  <!--<mat-paginator
     class="mt-auto"
     [pageSizeOptions]="[5, 10, 20]"
     showFirstLastButtons
     aria-label="Server information table pagination">
-  </mat-paginator>
+  </mat-paginator>-->
 </table>
 

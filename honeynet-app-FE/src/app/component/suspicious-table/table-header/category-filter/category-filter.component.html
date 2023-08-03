@@ -39,4 +39,14 @@
     E-Mail
     <input id="email" type="checkbox" class="hidden" data-category="EMAIL" (change)="emitCategoryFilterChangeEvent($event)">
   </label>
+
+  <label for="ufu"
+         class="grid grid-cols-[25%,85%] justify-items-start px-8 py-4
+    transition-colors duration-200 hover:bg-sky-500 hover:text-neutral-800">
+    <div class="w-5 h-5 flex items-center justify-center bg-neutral-600 rounded-md">
+      <svg class="w-4 h-4 fill-sky-500 {{isUnrestrictedFileUploadSelected ? 'opacity-100' : 'opacity-0'}} transition-all duration-200"><use href="assets/sprite.svg#icon-check"></use></svg>
+    </div>
+    Unrestricted File Upload
+    <input id="ufu" type="checkbox" class="hidden" data-category="UNRESTRICTED_FILE_UPLOAD" (change)="emitCategoryFilterChangeEvent($event)">
+  </label>
 </form>

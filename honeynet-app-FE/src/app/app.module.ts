@@ -43,6 +43,8 @@ import { SuspiciousTableComponent } from './component/suspicious-table/suspiciou
 import { ServersTableComponent } from './component/servers-table/servers-table.component';
 import { StatusSelectComponent } from './component/servers-table/status-select/status-select.component';
 import {MatFormFieldModule} from "@angular/material/form-field";
+import { UnrestrictedFileUploadSettingsComponent } from './component/pot-item/pot-item-settings/unrestricted-file-upload-settings/unrestricted-file-upload-settings.component';
+import {MatListModule} from "@angular/material/list";
 @NgModule({
   declarations: [
     AppComponent,
@@ -74,32 +76,34 @@ import {MatFormFieldModule} from "@angular/material/form-field";
     SuspiciousTableComponent,
     ServersTableComponent,
     StatusSelectComponent,
+    UnrestrictedFileUploadSettingsComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    ReactiveFormsModule,
-    HttpClientModule,
-    NgOptimizedImage,
-    CookieModule.withOptions(),
-    BrowserAnimationsModule,
-    ToastrModule.forRoot({
-      timeOut: 2500,
-      positionClass: 'toast-bottom-right',
-      preventDuplicates: true,
-      progressBar: true,
-      closeButton: true,
-      tapToDismiss: true,
-    }),
-    MatPaginatorModule,
-    MatButtonModule,
-    MatStepperModule,
-    FormsModule,
-    ReactiveFormsModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatSelectModule,
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        ReactiveFormsModule,
+        HttpClientModule,
+        NgOptimizedImage,
+        CookieModule.withOptions(),
+        BrowserAnimationsModule,
+        ToastrModule.forRoot({
+            timeOut: 2500,
+            positionClass: 'toast-bottom-right',
+            preventDuplicates: true,
+            progressBar: true,
+            closeButton: true,
+            tapToDismiss: true,
+        }),
+        MatPaginatorModule,
+        MatButtonModule,
+        MatStepperModule,
+        FormsModule,
+        ReactiveFormsModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatSelectModule,
+        MatListModule,
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

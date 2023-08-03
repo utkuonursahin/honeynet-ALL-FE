@@ -8,5 +8,8 @@
   <ng-container *ngIf="pot.potName === 'E-Mail Phishing Pot'" >
     <app-email-pot-settings [pot]="pot" (emailSettingsCloseEvent)="emitSettingsCloseEvent($event)" ></app-email-pot-settings>
   </ng-container>
+  <ng-container *ngIf="pot.potName === 'Unrestricted File Upload Pot'" >
+    <app-unrestricted-file-upload-settings [pot]="pot" (ufuSettingsCloseEvent)="emitSettingsCloseEvent($event)" ></app-unrestricted-file-upload-settings>
+  </ng-container>
 </div>
 <app-overlay (click)="emitSettingsCloseEvent(true)"/>

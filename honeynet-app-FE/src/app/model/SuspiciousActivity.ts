@@ -9,6 +9,7 @@ export interface SuspiciousActivity {
     path?: string;
     targetElementId?: string;
     subject?: string;
+    filename:string;
   };
   targetElementId: string;
   date: Date

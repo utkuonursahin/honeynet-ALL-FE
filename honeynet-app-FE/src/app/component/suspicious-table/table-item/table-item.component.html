@@ -1,4 +1,4 @@
-<tr data-id="{{suspicious.id}}" class="grid h-max-10 cursor-pointer grid-cols-5 gap-5 p-3 text-base hover:bg-sky-600 transition-all duration-300">
+<tr data-id="{{suspicious.id}}" class="grid h-max-10 cursor-pointer grid-cols-5 gap-5 p-3 hover:bg-sky-600 transition-all duration-300">
   <td class="max-w-min truncate text-neutral-100 hover:bg-sky-900 px-2 hover:rounded-md transition-all duration-300">{{suspicious.origin}}</td>
   <td class="max-w-min truncate text-neutral-100 hover:bg-sky-900 px-2 hover:rounded-md transition-all duration-300">{{suspicious.category}}</td>
   <td class="max-w-min truncate text-neutral-100 hover:bg-sky-900 px-2 hover:rounded-md transition-all duration-300">{{suspicious.potName}}</td>
@@ -8,6 +8,7 @@
     <span *ngIf="suspicious.payload.path">{{suspicious.payload.path}}</span>
     <span *ngIf="suspicious.payload.targetElementId">{{suspicious.payload.targetElementId}}</span>
     <span *ngIf="suspicious.payload.subject">{{suspicious.payload.subject}}</span>
+    <span *ngIf="suspicious.payload.filename">{{suspicious.payload.filename}}</span>
   </td>
   <td class="max-w-min truncate text-neutral-100 hover:bg-sky-900 px-2 hover:rounded-md transition-all duration-300">
     {{suspicious.date | date: 'dd/MM/yyyy-HH:mm:ss'}}

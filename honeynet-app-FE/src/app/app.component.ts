@@ -5,14 +5,13 @@ import {filter} from "rxjs";
 @Component({
   selector: 'app-root',
   template: `
-	<div class="relative min-h-screen grid  {{routeUrl === '/' ? 'grid-cols-1 grid-rows-1' : 'grid-cols-[17.5vw,1fr] grid-rows-[8vh,87.5vh,4.5vh]' }}
-	 overflow-hidden bg-neutral-800 max-w-screen font-Poppins">
+	<div class="relative min-h-screen grid {{routeUrl === '/' ? 'grid-cols-1 grid-rows-1' : 'gap-8 p-8 grid-cols-[15vw,1fr] grid-rows-[8vh,calc(100vh-8vh-6rem)]' }}
+	 overflow-hidden bg-neutral-900 max-w-screen font-Poppins">
     <ng-container *ngIf="routeUrl !== '/'">
-      <app-header [page]="routeUrl.slice(1,routeUrl.length)" style="grid-row-start: 1; grid-row-end: 2; grid-column-start: 2; grid-column-end: 3;"/>
-      <app-sidebar style="grid-row-start: 1; grid-row-end: 4;"/>
-      <app-footer style="grid-row-start: 3; grid-row-end: 4; grid-column-start: 2; grid-column-end: 3;"/>
+      <app-header [page]="this.routeUrl.slice(1,this.routeUrl.length)" style="grid-row-start: 1; grid-row-end: 2; grid-column-start: 2; grid-column-end: 3;"/>
+      <app-sidebar style="grid-row-start: 1; grid-row-end: 3;"/>
     </ng-container>
-    <div class="overflow-x-hidden">
+    <div class="overflow-x-hidden rounded-lg bg-neutral-800 shadow-md shadow-neutral-950">
       <router-outlet/>
     </div>
 	</div>`
