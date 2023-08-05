@@ -46,6 +46,7 @@ import {MatFormFieldModule} from "@angular/material/form-field";
 import { UnrestrictedFileUploadSettingsComponent } from './component/pot-item/pot-item-settings/unrestricted-file-upload-settings/unrestricted-file-upload-settings.component';
 import {MatListModule} from "@angular/material/list";
 import { SuspiciousCategoryGroupComponent } from './component/charts/suspicious-category-group/suspicious-category-group.component';
+import { SuspiciousOriginGroupComponent } from './component/charts/suspicious-origin-group/suspicious-origin-group.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -79,6 +80,7 @@ import { SuspiciousCategoryGroupComponent } from './component/charts/suspicious-
     StatusSelectComponent,
     UnrestrictedFileUploadSettingsComponent,
     SuspiciousCategoryGroupComponent,
+    SuspiciousOriginGroupComponent,
   ],
     imports: [
         BrowserModule,

@@ -1,12 +1,14 @@
-<table class="relative flex flex-col h-[calc(100vh-8vh-10vh-6rem-3rem)]">
+<table class="relative flex flex-col h-[calc(100vh-8vh-6rem-10vh)] text-sm">
   <app-table-header (filterEvent)="onFilterEvent($event)"/>
+  <mat-divider class="bg-fuchsia-600" ></mat-divider>
   <tbody (click)="handleDetailsModalToggle($event)"
-         class="overflow-x-hidden w-full h-full flex flex-col [&>*:nth-child(even)]:bg-neutral-700 [&>*:nth-child(odd)]:bg-neutral-600">
+         class="overflow-x-hidden w-full h-full flex flex-col [&>*:nth-child(even)]:bg-neutral-900 [&>*:nth-child(odd)]:bg-neutral-800">
   <app-table-item *ngFor="let suspicious of suspiciousRequestData" [suspicious]="suspicious"/>
   </tbody>
+  <mat-divider class="bg-fuchsia-600" ></mat-divider>
   <mat-paginator
     #paginator
-    class="bg-neutral-900/25 rounded-b"
+    class="bg-neutral-900 rounded-b"
     [showFirstLastButtons]="true"
     [length]="paginationSettings.totalSize"
     [pageSize]="paginationSettings.currentSize"

@@ -13,7 +13,6 @@ export const RouteGuard = () => {
         return true;
       }
       else {
-        localStorage.clear();
         return router.parseUrl('/')
       }
     })
