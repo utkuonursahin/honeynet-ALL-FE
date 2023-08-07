@@ -1,13 +1,13 @@
 import {Component, OnInit} from '@angular/core';
 import {Chart} from "chart.js";
 import {ChartService} from "../../../service/chart.service";
-import {SuspiciousActivityGroupByCategoryDTO} from "../../../interface/SuspiciousActivityGroupByCategoryDTO";
+import {SuspiciousActivityGroupByCategoryDTO} from "../../../interface/chartDTO/SuspiciousActivityGroupByCategoryDTO";
 
 @Component({
-  selector: 'app-suspicious-category-group',
-  templateUrl: './suspicious-category-group.component.html'
+  selector: 'app-suspicious-category',
+  templateUrl: './suspicious-category.component.html'
 })
-export class SuspiciousCategoryGroupComponent implements OnInit {
+export class SuspiciousCategoryComponent implements OnInit {
   protected suspiciousActivitiesGroupedByCategoryChart: any;
   protected noDataFound: boolean = false;
 
@@ -25,20 +25,20 @@ export class SuspiciousCategoryGroupComponent implements OnInit {
           label: 'Honeypot Categories',
           data: incomingData.map(activity => activity.count),
           backgroundColor: [
-            'rgba(251, 191, 36,0.5)',
-            'rgba(163, 230, 53,0.5)',
-            'rgba(74, 222, 128,0.5)',
-            'rgba(129, 140, 248,0.5)',
+            'rgba(59, 130, 246,0.5)',
+            'rgba(245, 245, 245,0.5)',
+            'rgba(34, 197, 94,0.5)',
+            'rgba(234, 179, 8,0.5)',
             'rgba(244, 63, 94,0.5)',
-            'rgba(192, 132, 252,0.5)'
+            'rgba(192, 132, 252,0.5)',
           ],
           borderColor: [
+            '#3b82f6',
+            '#f5f5f5',
+            '#22c55e',
             '#eab308',
-            '#a3e635',
-            '#4ade80',
-            '#818cf8',
             '#f43f5e',
-            '#c084fc'
+            '#c084fc',
           ],
           borderWidth: 2,
           borderRadius: 1,
@@ -49,7 +49,7 @@ export class SuspiciousCategoryGroupComponent implements OnInit {
         indexAxis: 'y',
         responsive: true,
         maintainAspectRatio: true,
-        devicePixelRatio:4,
+        devicePixelRatio:3,
         scales: {
           x: {
             ticks: {

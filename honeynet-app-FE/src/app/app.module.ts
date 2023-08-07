@@ -45,8 +45,11 @@ import { StatusSelectComponent } from './component/servers-table/status-select/s
 import {MatFormFieldModule} from "@angular/material/form-field";
 import { UnrestrictedFileUploadSettingsComponent } from './component/pot-item/pot-item-settings/unrestricted-file-upload-settings/unrestricted-file-upload-settings.component';
 import {MatListModule} from "@angular/material/list";
-import { SuspiciousCategoryGroupComponent } from './component/charts/suspicious-category-group/suspicious-category-group.component';
-import { SuspiciousOriginGroupComponent } from './component/charts/suspicious-origin-group/suspicious-origin-group.component';
+import { SuspiciousCategoryComponent } from './component/charts/suspicious-category/suspicious-category.component';
+import { SuspiciousOriginSourceComponent } from './component/charts/suspicious-origin-source/suspicious-origin-source.component';
+import { SuspiciousOriginCountryComponent } from './component/charts/suspicious-origin-country/suspicious-origin-country.component';
+import { LastTrappedSourcesComponent } from './component/last-trapped-sources/last-trapped-sources.component';
+import { ServerStatusComponent } from './component/charts/server-status/server-status.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -79,8 +82,11 @@ import { SuspiciousOriginGroupComponent } from './component/charts/suspicious-or
     ServersTableComponent,
     StatusSelectComponent,
     UnrestrictedFileUploadSettingsComponent,
-    SuspiciousCategoryGroupComponent,
-    SuspiciousOriginGroupComponent,
+    SuspiciousCategoryComponent,
+    SuspiciousOriginSourceComponent,
+    SuspiciousOriginCountryComponent,
+    LastTrappedSourcesComponent,
+    ServerStatusComponent,
   ],
     imports: [
         BrowserModule,

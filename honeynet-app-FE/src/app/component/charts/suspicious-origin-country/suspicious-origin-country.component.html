@@ -1,6 +1,6 @@
 <div class="h-full w-full relative hover:ring-2 hover:ring-sky-500 transition-all duration-200 flex flex-col gap-4 p-5 justify-center items-center rounded-xl bg-neutral-900/50 shadow-md shadow-neutral-900">
-  <div class="flex w-full gap-4 items-center justify-between" >
-    <h1 class="text-xl h-min text-neutral-100 col-start-1 col-end-4">Most Trapped IPs</h1>
+  <div class="flex w-full gap-4 items-center justify-between">
+    <h1 class="text-xl h-min text-neutral-100 col-start-1 col-end-4">Most Traffic From</h1>
     <mat-select panelClass="text-sm" (valueChange)="onValueChange($event)" class="h-8 text-sm bg-neutral-800 ring-2 ring-sky-500 w-1/4 pr-2 text-center flex items-center rounded-lg" [value]="defaultOpt.value">
       <mat-option #defaultOpt value="all">All Times</mat-option>
       <mat-option value="24h">Last 24 Hours</mat-option>
@@ -11,7 +11,6 @@
       <mat-option value="6m">Last 6 Months</mat-option>
     </mat-select>
   </div>
-  <canvas class="{{noDataFound ? 'opacity-0 invisible' : ''}}" id="suspiciousActivitiesGroupedByOriginChart" >{{suspiciousActivitiesGroupedByOriginChart}}</canvas>
+  <canvas class="{{noDataFound ? 'opacity-0 invisible' : ''}}" id="suspActsGroupedByOriginCountryChart" >{{suspActsGroupedByOriginCountryChart}}</canvas>
   <p *ngIf="noDataFound" class="absolute inset-1/2 -translate-x-1/2 -translate-y-1/2 text-xl w-full text-center text-neutral-100">No data available</p>
 </div>
-

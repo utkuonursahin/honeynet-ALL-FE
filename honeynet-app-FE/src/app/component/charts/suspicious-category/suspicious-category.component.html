@@ -1,0 +1,16 @@
+<div class="relative flex h-full w-full flex-col items-center justify-center gap-4 rounded-xl bg-neutral-900/50 p-5 shadow-md shadow-neutral-900 transition-all duration-200 hover:ring-2 hover:ring-sky-500">
+  <div class="flex w-full items-center justify-between gap-4" >
+    <h1 class="col-start-1 col-end-4 h-min text-xl text-neutral-100">Most Trapped Categories</h1>
+    <mat-select panelClass="text-sm" (valueChange)="onValueChange($event)" class="flex h-8 w-1/4 items-center rounded-lg bg-neutral-800 pr-2 text-center text-sm ring-2 ring-sky-500" [value]="defaultOpt.value">
+      <mat-option #defaultOpt value="all">All Times</mat-option>
+      <mat-option value="24h">Last 24 Hours</mat-option>
+      <mat-option value="1w">Last 7 Days</mat-option>
+      <mat-option value="2w">Last 14 Days</mat-option>
+      <mat-option value="1m">Last 1 Months</mat-option>
+      <mat-option value="3m">Last 3 Months</mat-option>
+      <mat-option value="6m">Last 6 Months</mat-option>
+    </mat-select>
+  </div>
+  <canvas class="{{noDataFound ? 'opacity-0 invisible' : ''}}" id="suspiciousActivitiesGroupedByCategoryChart" >{{suspiciousActivitiesGroupedByCategoryChart}}</canvas>
+  <p *ngIf="noDataFound" class="absolute inset-1/2 w-full -translate-x-1/2 -translate-y-1/2 text-center text-xl text-neutral-100">No data available</p>
+</div>

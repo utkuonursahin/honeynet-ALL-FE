@@ -1,4 +1,4 @@
-import {Component, ViewChild} from '@angular/core';
+import {Component, OnDestroy, ViewChild} from '@angular/core';
 import {SuspiciousActivity} from "../../model/SuspiciousActivity";
 import {Subscription} from "rxjs";
 import {GenericResponse} from "../../interface/GenericResponse";
@@ -13,7 +13,7 @@ import {MatPaginator, PageEvent} from "@angular/material/paginator";
   selector: 'app-suspicious-table',
   templateUrl: './suspicious-table.component.html'
 })
-export class SuspiciousTableComponent {
+export class SuspiciousTableComponent implements OnDestroy{
   protected suspiciousRequestData: SuspiciousActivity[] = [];
   protected selectedSuspicious!: SuspiciousActivity;
 
@@ -34,7 +34,7 @@ export class SuspiciousTableComponent {
   }
 
   private filter: SuspiciousActivityFilter = {
-    originFilter: '',
+    originFilter: {source:'',country:''},
     categoryFilters: [],
     dateFilters: []
   }

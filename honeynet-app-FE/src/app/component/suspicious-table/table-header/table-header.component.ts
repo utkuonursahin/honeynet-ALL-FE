@@ -13,7 +13,7 @@ export class TableHeaderComponent {
   protected isOriginFilterOpened: boolean = false;
 
   protected suspiciousActivityFilter: SuspiciousActivityFilter = {
-    originFilter: '',
+    originFilter: {source:'',country:''},
     categoryFilters: [],
     dateFilters: []
   }
@@ -48,7 +48,7 @@ export class TableHeaderComponent {
   }
 
   setOriginFilter(originFilter: string){
-    this.suspiciousActivityFilter.originFilter = originFilter;
+    this.suspiciousActivityFilter.originFilter = {source: originFilter, country: ''};
     this.emitFilterEvent();
     this.toggleOriginFilter();
   }

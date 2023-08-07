@@ -1,46 +1,44 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ChartService} from "../../../service/chart.service";
 import {Chart} from "chart.js";
-import {SuspiciousActivityGroupByOriginDTO} from "../../../interface/SuspiciousActivityGroupByOriginDTO";
+import {SuspiciousActivityGroupByOriginSourceDTO} from "../../../interface/chartDTO/SuspiciousActivityGroupByOriginSourceDTO";
 
 @Component({
-  selector: 'app-suspicious-origin-group',
-  templateUrl: './suspicious-origin-group.component.html'
+  selector: 'app-suspicious-origin-source',
+  templateUrl: './suspicious-origin-source.component.html'
 })
-export class SuspiciousOriginGroupComponent {
+export class SuspiciousOriginSourceComponent implements OnInit{
   protected suspiciousActivitiesGroupedByOriginChart : any;
   protected noDataFound:boolean = false;
   constructor(private chartService:ChartService) {}
 
-  createSuspiciousOriginGroupChart(incomingData: SuspiciousActivityGroupByOriginDTO[]){
+  createSuspiciousOriginGroupChart(incomingData: SuspiciousActivityGroupByOriginSourceDTO[]){
     this.suspiciousActivitiesGroupedByOriginChart?.destroy();
     !incomingData.length ? this.noDataFound = true : this.noDataFound = false;
     this.suspiciousActivitiesGroupedByOriginChart = new Chart('suspiciousActivitiesGroupedByOriginChart', {
       type: 'bar',
       data: {
-        labels: incomingData.map(activity => activity.origin),
+        labels: incomingData.map(activity => activity.source).slice(0,5),
         datasets: [{
-          label: 'Request IPs',
-          data: incomingData.map(activity => activity.count),
+          label: 'Request Sources',
+          data: incomingData.map(activity => activity.count).slice(0,5),
           backgroundColor: [
-            'rgba(251, 191, 36,0.5)',
-            'rgba(163, 230, 53,0.5)',
-            'rgba(74, 222, 128,0.5)',
-            'rgba(129, 140, 248,0.5)',
+            'rgba(59, 130, 246,0.5)',
+            'rgba(245, 245, 245,0.5)',
+            'rgba(34, 197, 94,0.5)',
+            'rgba(234, 179, 8,0.5)',
             'rgba(244, 63, 94,0.5)',
-            'rgba(192, 132, 252,0.5)'
           ],
           borderColor: [
+            '#3b82f6',
+            '#f5f5f5',
+            '#22c55e',
             '#eab308',
-            '#a3e635',
-            '#4ade80',
-            '#818cf8',
             '#f43f5e',
-            '#c084fc'
           ],
           borderWidth: 2,
           borderRadius: 1,
-          barThickness: 25,
+          maxBarThickness: 25,
         }]
       },
       options: {
@@ -85,13 +83,13 @@ export class SuspiciousOriginGroupComponent {
   }
 
   onValueChange(event:any){
-    this.chartService.getSuspiciousActivitiesGroupedByOrigin(event).subscribe(res=>{
+    this.chartService.getSuspiciousActivitiesGroupedByOriginSources(event).subscribe(res=>{
       this.createSuspiciousOriginGroupChart(res.data);
     })
   }
 
   ngOnInit() {
-    this.chartService.getSuspiciousActivitiesGroupedByOrigin('all').subscribe(res=>{
+    this.chartService.getSuspiciousActivitiesGroupedByOriginSources('all').subscribe(res=>{
       this.createSuspiciousOriginGroupChart(res.data);
     })
 

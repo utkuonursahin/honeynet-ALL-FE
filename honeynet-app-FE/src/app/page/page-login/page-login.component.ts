@@ -25,6 +25,8 @@ export class PageLoginComponent implements OnDestroy{
 		this.subscription = this.authService.login(this.formData).subscribe({
       next : ({data:user,statusCode}) => {
         if(statusCode === 200){
+          localStorage.clear();
+          this.authService.switchSubject.next(false);
           localStorage.setItem('user' ,JSON.stringify(user))
           this.authService.userSubject.next(user);
           this.toastrService.success('You\'ve successfully logged in!', 'Login',{

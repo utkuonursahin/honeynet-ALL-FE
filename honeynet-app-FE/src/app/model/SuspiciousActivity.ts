@@ -1,6 +1,8 @@
+import Origin from "../interface/Origin";
+
 export interface SuspiciousActivity {
   id: string;
-  origin: string;
+  origin: Origin;
   category: string;
   potName: string;
   payload: {

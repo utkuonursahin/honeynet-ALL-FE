@@ -1,7 +1,7 @@
 import {PotCategory} from "../enum/PotCategory";
 
 export interface SuspiciousActivityFilter {
-  originFilter: string;
+  originFilter: {};
   categoryFilters: PotCategory[];
   dateFilters: string[];
 }
