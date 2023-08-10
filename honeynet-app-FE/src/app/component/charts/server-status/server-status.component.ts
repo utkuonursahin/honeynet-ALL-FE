@@ -1,18 +1,35 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ChartService} from "../../../service/chart.service";
-import {SuspiciousActivityGroupByCategoryDTO} from "../../../interface/chartDTO/SuspiciousActivityGroupByCategoryDTO";
 import {Chart} from "chart.js";
-import ServerInfoGroupByStatusDTO from "../../../interface/chartDTO/ServerInfoGroupByStatusDTO";
+import ServerInfoGroupByStatusDTO from "../../../interface/chart/ServerInfoGroupByStatusDTO";
 
 @Component({
   selector: 'app-server-status',
   templateUrl: './server-status.component.html',
 })
-export class ServerStatusComponent {
+export class ServerStatusComponent implements OnInit{
   protected serversGroupedByStatusChart: any;
   protected noDataFound: boolean = false;
 
-  constructor(private chartService: ChartService) {
+  constructor(private chartService: ChartService) {}
+
+  provideLabels(incomingData:  ServerInfoGroupByStatusDTO[]) {
+    if(incomingData.every(server => server.status === "RUN")){
+      return ["RUN","SHUTDOWN"]
+    } else if(incomingData.every(server => server.status === "SHUTDOWN")){
+      return ["RUN","SHUTDOWN"]
+    } else {
+      return incomingData.map(server => server.status)
+    }
+  }
+  provideDataset(incomingData: ServerInfoGroupByStatusDTO[]) {
+    if(incomingData.every(server => server.status === "RUN")){
+      return [incomingData[0].count,0]
+    } else if(incomingData.every(server => server.status === "SHUTDOWN")){
+      return [0,incomingData[0].count]
+    } else {
+      return incomingData.map(server => server.count)
+    }
   }
 
   createServerStatusGroupChart(incomingData: ServerInfoGroupByStatusDTO[]) {
@@ -21,10 +38,10 @@ export class ServerStatusComponent {
     this.serversGroupedByStatusChart = new Chart('serversGroupedByStatusChart', {
       type: 'doughnut',
       data: {
-        labels: incomingData.map(server => server.status),
+        labels: this.provideLabels(incomingData),
         datasets: [{
           label: 'Servers Status',
-          data: incomingData.map(activity => activity.count),
+          data: this.provideDataset(incomingData),
           backgroundColor: [
             'rgba(34, 197, 94,0.5)',
             'rgba(244, 63, 94,0.5)',
@@ -50,12 +67,6 @@ export class ServerStatusComponent {
         }
       }
     });
-  }
-
-  onValueChange(event: any) {
-    this.chartService.getServerInfoGroupByStatus().subscribe(res => {
-      this.createServerStatusGroupChart(res.data);
-    })
   }
 
   ngOnInit() {

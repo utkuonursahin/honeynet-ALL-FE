@@ -1,8 +1,8 @@
 <div (click)="onFirmSelect()"
      class="relative font-Rubik flex flex-col rounded-xl transition-all duration-300 shadow hover:ring-sky-400 hover:ring-2 shadow-neutral-900 {{switchSubject.value && 'ring-2 ring-sky-300'}} bg-neutral-900 h-[37.5vh]">
-  <picture class="z-10 flex w-full items-center justify-center h-[85%]">
-    <img priority=true ngSrc="http://localhost:8080/firm/image/{{firm.id}}" alt="firm logo" width="210" height="50"
-         class="object-cover object-center">
+  <picture class="z-10 relative h-[85%]">
+    <img priority=true ngSrc="http://localhost:8080/firm/image/{{firm.id}}" alt="firm logo" fill=true
+         class="object-contain p-10">
   </picture>
   <svg *ngIf="switchSubject.value" class="absolute top-5 right-5 z-20 h-6 w-6 fill-sky-400">
     <use href="assets/sprite.svg#icon-eye"></use>

@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ChartService} from "../../../service/chart.service";
 import {Chart} from "chart.js";
-import {SuspiciousActivityGroupByOriginSourceDTO} from "../../../interface/chartDTO/SuspiciousActivityGroupByOriginSourceDTO";
+import {SuspiciousActivityGroupByOriginSourceDTO} from "../../../interface/chart/SuspiciousActivityGroupByOriginSourceDTO";
 
 @Component({
   selector: 'app-suspicious-origin-source',
@@ -45,7 +45,7 @@ export class SuspiciousOriginSourceComponent implements OnInit{
         indexAxis:'y',
         responsive: true,
         maintainAspectRatio: true,
-        devicePixelRatio:4,
+        devicePixelRatio:2,
         scales: {
           x: {
             ticks:{
@@ -92,6 +92,5 @@ export class SuspiciousOriginSourceComponent implements OnInit{
     this.chartService.getSuspiciousActivitiesGroupedByOriginSources('all').subscribe(res=>{
       this.createSuspiciousOriginGroupChart(res.data);
     })
-
   }
 }

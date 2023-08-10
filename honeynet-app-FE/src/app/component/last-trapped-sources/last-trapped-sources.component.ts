@@ -11,7 +11,7 @@ export class LastTrappedSourcesComponent {
   protected suspiciousRequestData:SuspiciousActivity[] = [];
   protected totalSize:number = 0;
   private filter:SuspiciousActivityFilter = {
-    originFilter: {source:'',country:''},
+    originFilter: null,
     categoryFilters: [],
     dateFilters: [new Date(Date.now() - 1000 * 60 * 60 *24).toISOString(), new Date(Date.now()).toISOString()],
   }
@@ -31,7 +31,8 @@ export class LastTrappedSourcesComponent {
   onPageChange(event:any) {
     const btn = event.target.closest('.paginate');
     if(!btn) return;
-    if(this.paginationSettings.currentPage + parseInt(btn.dataset.page) < 0) return;
+    else if(this.paginationSettings.currentPage + parseInt(btn.dataset.page) < 0) return;
+    else if(this.paginationSettings.currentPage + parseInt(btn.dataset.page) > this.paginationSettings.totalPage) return;
     this.paginationSettings.currentPage += parseInt(btn.dataset.page);
     this.suspiciousActivityService.getSuspiciousActivities(this.filter, this.paginationSettings).subscribe(response => {
       this.suspiciousRequestData = response.data.activityList;

@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Chart} from "chart.js";
 import {ChartService} from "../../../service/chart.service";
-import {SuspiciousActivityGroupByCategoryDTO} from "../../../interface/chartDTO/SuspiciousActivityGroupByCategoryDTO";
+import {SuspiciousActivityGroupByCategoryDTO} from "../../../interface/chart/SuspiciousActivityGroupByCategoryDTO";
 
 @Component({
   selector: 'app-suspicious-category',
@@ -49,7 +49,7 @@ export class SuspiciousCategoryComponent implements OnInit {
         indexAxis: 'y',
         responsive: true,
         maintainAspectRatio: true,
-        devicePixelRatio:3,
+        devicePixelRatio:2,
         scales: {
           x: {
             ticks: {

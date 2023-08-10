@@ -2,12 +2,12 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {GenericResponse} from "../interface/GenericResponse";
-import {SuspiciousActivityGroupByCategoryDTO} from "../interface/chartDTO/SuspiciousActivityGroupByCategoryDTO";
-import {SuspiciousActivityGroupByOriginSourceDTO} from "../interface/chartDTO/SuspiciousActivityGroupByOriginSourceDTO";
+import {SuspiciousActivityGroupByCategoryDTO} from "../interface/chart/SuspiciousActivityGroupByCategoryDTO";
+import {SuspiciousActivityGroupByOriginSourceDTO} from "../interface/chart/SuspiciousActivityGroupByOriginSourceDTO";
 import {
   SuspiciousActivityGroupByOriginCountryDTO
-} from "../interface/chartDTO/SuspiciousActivityGroupByOriginCountryDTO";
-import ServerInfoGroupByStatusDTO from "../interface/chartDTO/ServerInfoGroupByStatusDTO";
+} from "../interface/chart/SuspiciousActivityGroupByOriginCountryDTO";
+import ServerInfoGroupByStatusDTO from "../interface/chart/ServerInfoGroupByStatusDTO";
 
 @Injectable({
   providedIn: 'root'
@@ -15,8 +15,8 @@ import ServerInfoGroupByStatusDTO from "../interface/chartDTO/ServerInfoGroupByS
 export class ChartService {
   constructor(private http:HttpClient) { }
 
-  getSuspiciousActivitiesGroupedByCategoryChartData(date:string):Observable<GenericResponse<SuspiciousActivityGroupByCategoryDTO[]>>{
-    return this.http.get<GenericResponse<SuspiciousActivityGroupByCategoryDTO[]>>(`http://localhost:8080/chart/group-by-suspicious-categories?since=${date}`,{withCredentials:true});
+  getSuspiciousActivitiesGroupedByCategoryChartData(since:string):Observable<GenericResponse<SuspiciousActivityGroupByCategoryDTO[]>>{
+    return this.http.get<GenericResponse<SuspiciousActivityGroupByCategoryDTO[]>>(`http://localhost:8080/chart/group-by-suspicious-categories?since=${since}`,{withCredentials:true});
   }
   getSuspiciousActivitiesGroupedByOriginSources(since:string):Observable<GenericResponse<SuspiciousActivityGroupByOriginSourceDTO[]>>{
     return this.http.get<GenericResponse<SuspiciousActivityGroupByOriginSourceDTO[]>>(`http://localhost:8080/chart/group-by-suspicious-origin-sources?since=${since}`,{withCredentials:true});

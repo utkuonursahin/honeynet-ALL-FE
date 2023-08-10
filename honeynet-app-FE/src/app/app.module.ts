@@ -50,6 +50,7 @@ import { SuspiciousOriginSourceComponent } from './component/charts/suspicious-o
 import { SuspiciousOriginCountryComponent } from './component/charts/suspicious-origin-country/suspicious-origin-country.component';
 import { LastTrappedSourcesComponent } from './component/last-trapped-sources/last-trapped-sources.component';
 import { ServerStatusComponent } from './component/charts/server-status/server-status.component';
+import { WorldChartComponent } from './component/charts/world-chart/world-chart.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -87,6 +88,7 @@ import { ServerStatusComponent } from './component/charts/server-status/server-s
     SuspiciousOriginCountryComponent,
     LastTrappedSourcesComponent,
     ServerStatusComponent,
+    WorldChartComponent,
   ],
     imports: [
         BrowserModule,

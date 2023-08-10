@@ -1,22 +1,78 @@
-<main class="h-full w-full flex flex-col items-center justify-center px-[20vw] py-[5vw]">
-  <form [formGroup]="userForm" class="bg-neutral-900 w-full flex flex-col gap-8 px-6 py-8 rounded-md">
-    <section class="grid grid-cols-2 gap-5">
-      <div class="text-neutral-100 flex flex-col gap-2 text-sm w-full ">
-        <label class="text-sky-400">Username: </label>
-        <input formControlName="username" class="bg-neutral-800 rounded h-10 px-2 ring-2 ring-sky-300">
+<main class="flex h-full w-full flex-col gap-8 p-8">
+  <section class="flex w-full items-center gap-8 rounded-lg bg-neutral-900 shadow h-[35%] shadow-neutral-950 px-8 py-2">
+    <svg class="h-16 w-16 rounded-full bg-neutral-800 fill-sky-500 p-2">
+      <use href="assets/sprite.svg#icon-user"></use>
+    </svg>
+    <div class="flex flex-col gap-1">
+      <p class="text-lg text-neutral-100">{{userSubject.value.username}}</p>
+      <p class="text-neutral-300">{{userSubject.value.role}}</p>
+      <p class="text-sky-500 text-sm">{{userSubject.value.firmName}}</p>
+    </div>
+  </section>
+  <section class="flex h-full w-full flex-col gap-6 rounded-lg bg-neutral-900 shadow shadow-neutral-950 p-4">
+    <div class="flex items-end gap-4">
+      <h2 class="mr-auto text-lg text-neutral-100">Personal Information</h2>
+      <button *ngIf="status === ProfileFormStatus.READ"
+              class="flex items-center justify-between rounded-lg bg-sky-500 px-6 py-2 shadow transition-all duration-300 shadow-neutral-950 hover:ring-2 hover:ring-sky-700 hover:ring-offset-1 hover:ring-offset-neutral-900"
+              (click)="handleFormBtnClick(ProfileFormStatus.EDIT)">
+        <span class="text-sm text-neutral-800">Edit</span>
+        <svg class="h-6 w-6 fill-neutral-800 p-1">
+          <use href="assets/sprite.svg#icon-edit"></use>
+        </svg>
+      </button>
+      <button *ngIf="status === ProfileFormStatus.EDIT"
+              class="flex items-center justify-between rounded-lg bg-green-500 px-6 py-2 shadow transition-all duration-300 shadow-neutral-950 hover:ring-2 hover:ring-green-700 hover:ring-offset-1 hover:ring-offset-neutral-900"
+              (click)="handleSaveBtnClick()">
+        <span class="text-sm text-neutral-800">Save</span>
+        <svg class="h-6 w-6 fill-neutral-800 p-1">
+          <use href="assets/sprite.svg#icon-check"></use>
+        </svg>
+      </button>
+      <button *ngIf="status === ProfileFormStatus.EDIT"
+              class="flex items-center justify-between rounded-lg bg-red-500 px-6 py-2 shadow transition-all duration-300 shadow-neutral-950 hover:ring-2 hover:ring-red-700 hover:ring-offset-1 hover:ring-offset-neutral-900"
+              (click)="handleFormBtnClick(ProfileFormStatus.READ)">
+        <span class="text-sm text-neutral-800">Cancel</span>
+        <svg class="h-6 w-6 fill-neutral-800 p-1">
+          <use href="assets/sprite.svg#icon-clear"></use>
+        </svg>
+      </button>
+    </div>
+    <mat-divider></mat-divider>
+    <form [formGroup]="userForm" class="grid w-full grid-rows-2 gap-5 rounded-md bg-neutral-900">
+      <div class="flex gap-4">
+        <div class="flex w-full flex-col text-sm text-neutral-100">
+          <label class="px-2 text-sky-400">Username: </label>
+          <input [readOnly]="isReadOnly" formControlName="username"
+                 class="outline-0 {{isReadOnly ? 'bg-neutral-900' : 'bg-neutral-800'}} transition-all duration-300 rounded h-10 px-2">
+        </div>
+        <div class="flex w-full flex-col text-sm text-neutral-100">
+          <label class="px-2 text-sky-400">E-Mail: </label>
+          <input [readOnly]="isReadOnly" formControlName="email"
+                 class="outline-0 {{isReadOnly ? 'bg-neutral-900' : 'bg-neutral-800'}} transition-all duration-300 rounded h-10 px-2">
+        </div>
+        <div class="flex w-full flex-col text-sm text-neutral-100">
+          <label class="px-2 text-sky-400">Firm: </label>
+          <input readonly value="{{userSubject.value.firmName}}" formControlName="firmName"
+                 class="outline-0 {{isReadOnly ? 'bg-neutral-900' : 'bg-neutral-800'}} transition-all duration-300 rounded h-10 px-2">
+        </div>
       </div>
-      <div class="text-neutral-100 flex flex-col gap-2 text-sm w-full ">
-        <label class="text-sky-400">E-Mail: </label>
-        <input formControlName="email" class="bg-neutral-800 rounded h-10 px-2 ring-2 ring-sky-300">
+      <div class="flex gap-4">
+        <div class="flex w-full flex-col text-sm text-neutral-100">
+          <label class="px-2 text-sky-400">Current Password: </label>
+          <input [readOnly]="isReadOnly" formControlName="oldPassword" placeholder="***********"
+                 class="outline-0 {{isReadOnly ? 'bg-neutral-900' : 'bg-neutral-800'}} transition-all duration-300 rounded h-10 px-2">
+        </div>
+        <div class="flex w-full flex-col text-sm text-neutral-100">
+          <label class="px-2 text-sky-400">Password: </label>
+          <input [readOnly]="isReadOnly" formControlName="newPassword" placeholder="***********"
+                 class="outline-0 {{isReadOnly ? 'bg-neutral-900' : 'bg-neutral-800'}} transition-all duration-300 rounded h-10 px-2">
+        </div>
+        <div class="flex w-full flex-col text-sm text-neutral-100">
+          <label class="px-2 text-sky-400">Password Confirm: </label>
+          <input [readOnly]="isReadOnly" formControlName="passwordConfirm" placeholder="***********"
+                 class="outline-0 {{isReadOnly ? 'bg-neutral-900' : 'bg-neutral-800'}} transition-all duration-300 rounded h-10 px-2">
+        </div>
       </div>
-      <div class="text-neutral-100 flex flex-col gap-2 text-sm w-full ">
-        <label class="text-sky-400">Password: </label>
-        <input formControlName="password" placeholder="Enter new password" class="bg-neutral-800 rounded h-10 px-2 ring-2 ring-sky-300">
-      </div>
-      <div class="text-neutral-100 flex flex-col gap-2 text-sm w-full ">
-        <label class="text-sky-400">Password Confirm: </label>
-        <input formControlName="passwordConfirmation" placeholder="Enter new password" class="bg-neutral-800 rounded h-10 px-2 ring-2 ring-sky-300">
-      </div>
-    </section>
-  </form>
+    </form>
+  </section>
 </main>

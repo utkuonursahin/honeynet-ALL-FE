@@ -1,6 +1,7 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {Chart, registerables} from "chart.js";
-Chart.register(...registerables);
+import { WordCloudController, WordElement } from 'chartjs-chart-wordcloud';
+Chart.register(WordCloudController, WordElement,...registerables);
 @Component({
   selector: 'app-page-dashboard',
   templateUrl: './page-dashboard.component.html'

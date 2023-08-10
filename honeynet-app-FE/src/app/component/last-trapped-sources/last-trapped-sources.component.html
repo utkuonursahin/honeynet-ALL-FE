@@ -2,8 +2,7 @@
   <h2 class="text-neutral-100 text-lg"><span class="text-amber-500" >{{totalSize}}</span> Trapped Today</h2>
   <section class="overflow-x-hidden flex flex-col gap-2 px-2">
     <div class="bg-neutral-900 p-2 rounded-md text-sky-500 flex gap-4 items-center" *ngFor="let activity of suspiciousRequestData" >
-      <span class="inline-block w-2 h-2 rounded-full bg-amber-500"></span>
-      <p class="w-28 truncate">{{activity.origin.source}}</p>
+      <p class="w-36 truncate">{{activity.origin.source}}</p>
     </div>
   </section>
   <div class="mt-auto flex gap-1" (click)="onPageChange($event)">

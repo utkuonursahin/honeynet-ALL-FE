@@ -34,7 +34,7 @@ export class SuspiciousTableComponent implements OnDestroy{
   }
 
   private filter: SuspiciousActivityFilter = {
-    originFilter: {source:'',country:''},
+    originFilter: null,
     categoryFilters: [],
     dateFilters: []
   }

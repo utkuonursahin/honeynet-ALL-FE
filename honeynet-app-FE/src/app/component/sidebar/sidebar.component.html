@@ -1,6 +1,6 @@
 <aside class="flex h-full w-full flex-col items-center gap-8 bg-neutral-800 justify-center rounded-lg py-[3vh] px-[2vw] shadow-md shadow-neutral-950">
-  <picture class="relative w-full h-10" *ngIf="userSubject.value.firmRef as id" >
-    <img priority=true ngSrc="http://localhost:8080/firm/image/{{id}}" alt="firm image" class="object-cover" fill=true>
+  <picture class="relative w-full h-14" *ngIf="userSubject.value.firmRef as id" >
+    <img priority=true ngSrc="http://localhost:8080/firm/image/{{id}}" alt="firm image" class="object-contain" fill=true>
   </picture>
   <ul class="flex h-full w-full cursor-pointer flex-col text-neutral-200 text-sm">
     <li *ngIf="userSubject.value.role === UserRole.SUPER_ADMIN" [routerLink]="['/firms']" class="flex px-4 h-12 items-center gap-4

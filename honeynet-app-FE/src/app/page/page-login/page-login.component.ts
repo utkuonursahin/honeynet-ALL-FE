@@ -11,8 +11,8 @@ import {Subscription} from "rxjs";
 })
 export class PageLoginComponent implements OnDestroy{
 	protected loginForm: FormGroup = new FormGroup({
-		email: new FormControl(''),
-		password: new FormControl(''),
+		email: new FormControl(null),
+		password: new FormControl(null),
 	});
 	protected formData = new FormData();
   private subscription: Subscription = new Subscription();
@@ -37,6 +37,8 @@ export class PageLoginComponent implements OnDestroy{
         }
       },
       error: () => {
+        this.formData.delete('username');
+        this.formData.delete('password');
         this.loginForm.reset();
         this.toastrService.error('No email/password found with given inputs', 'Failure',{
           toastClass:'w-[25vw] min-h-16 px-4 py-2 font-Rubik rounded bg-red-500 text-neutral-100',
