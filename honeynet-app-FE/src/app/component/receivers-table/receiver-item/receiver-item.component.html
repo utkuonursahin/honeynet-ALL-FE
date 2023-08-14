@@ -1,0 +1,39 @@
+<!--(click)="getSpanValue($event)"-->
+<tr data-id="{{data.id}}"  class="grid h-max-10 cursor-pointer grid-cols-3 gap-5 p-3 hover:bg-sky-600 transition-all duration-300">
+  <!--  <td class="max-w-min truncate text-neutral-100 hover:bg-sky-900 px-2 hover:rounded-md transition-all duration-300">-->
+  <!--    <span *ngIf="data.emailSender">-->
+  <!--      {{data.emailSender}}-->
+  <!--    </span>-->
+  <!--    <span *ngIf="!data.emailSender">-->
+  <!--      {{info.emailSender}}-->
+  <!--    </span>-->
+  <!--  </td>-->
+  <td class="max-w-min truncate text-neutral-100 hover:bg-sky-900 px-2 hover:rounded-md transition-all duration-300">
+    <span *ngIf="data.emailReceiver">
+      {{data.emailReceiver}}
+    </span>
+    <span *ngIf="!data.emailReceiver">
+      {{data.emailReceiver}}
+    </span>
+  </td>
+  <!--  <td class="max-w-min truncate text-neutral-100 hover:bg-sky-900 px-2 hover:rounded-md transition-all duration-300">-->
+  <!--    <span *ngIf="data.emailMessage">-->
+  <!--      {{data.emailMessage}}-->
+  <!--    </span>-->
+  <!--    <span *ngIf="!data.emailMessage">-->
+  <!--      {{data.emailMessage}}-->
+  <!--    </span>-->
+  <!--  </td>-->
+  <td class="max-w-min truncate text-neutral-100 hover:bg-sky-900 px-5 hover:rounded-md transition-all duration-300">
+    <span *ngIf="data.emailSubject">
+      {{data.emailSubject}}
+    </span>
+    <span *ngIf="!data.emailSubject">
+      {{data.emailSubject}}
+    </span>
+  </td>
+  <td class="max-w-min truncate text-neutral-100 hover:bg-sky-900 px-2 hover:rounded-md transition-all duration-300">
+    <!--    #quantitySpan-->
+    <span>{{data.emailDate | date: 'dd/MM/yyyy-HH:mm:ss'}}</span>
+  </td>
+</tr>

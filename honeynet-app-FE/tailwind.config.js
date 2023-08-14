@@ -6,6 +6,11 @@ module.exports = {
 	],
 	theme: {
 		extend: {
+      colors:{
+        'custom-gray':'#525252',
+        'dark-gray':'#404040',
+      },
+
       keyframes: {
         slide: {
           '0%': { transform: 'translate3d(0, 0, 0)' },

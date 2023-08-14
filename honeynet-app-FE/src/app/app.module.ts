@@ -51,6 +51,14 @@ import { SuspiciousOriginCountryComponent } from './component/charts/suspicious-
 import { LastTrappedSourcesComponent } from './component/last-trapped-sources/last-trapped-sources.component';
 import { ServerStatusComponent } from './component/charts/server-status/server-status.component';
 import { WorldChartComponent } from './component/charts/world-chart/world-chart.component';
+import { ReceiversTableComponent } from './component/receivers-table/receivers-table.component';
+import { ReceiverDetailsComponent } from './component/receivers-table/receiver-details/receiver-details.component';
+import { ReceiverHeaderComponent } from './component/receivers-table/receiver-header/receiver-header.component';
+import { ReceiverItemComponent } from './component/receivers-table/receiver-item/receiver-item.component';
+import { ReceivedMailComponent } from './component/receivers-table/receiver-details/received-mail/received-mail.component';
+import { FilterDateComponent } from './component/receivers-table/receiver-header/filter-date/filter-date.component';
+import { IdFilterComponent } from './component/receivers-table/receiver-header/id-filter/id-filter.component';
+import { ReceiverFilterComponent } from './component/receivers-table/receiver-header/receiver-filter/receiver-filter.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -89,6 +97,14 @@ import { WorldChartComponent } from './component/charts/world-chart/world-chart.
     LastTrappedSourcesComponent,
     ServerStatusComponent,
     WorldChartComponent,
+    ReceiversTableComponent,
+    ReceiverDetailsComponent,
+    ReceiverHeaderComponent,
+    ReceiverItemComponent,
+    ReceivedMailComponent,
+    FilterDateComponent,
+    IdFilterComponent,
+    ReceiverFilterComponent,
   ],
     imports: [
         BrowserModule,

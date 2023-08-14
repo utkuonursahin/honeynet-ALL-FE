@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      position: absolute;
+      text-align: center;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 600px;
+      height: auto; /* Fixed height */
+      border: 2px solid #333; /* Increased border size */
+      overflow: hidden; /* Hide overflow content */
+      background-color: #fff;
+      font-family: 'Poppins',sans-serif;
+    }
+    .header {
+      background-color: #f1f1f1;
+      position: absolute;
+      width: 100%;
+      height: 10% ;
+      text-align: center;
+      margin: 0px;
+    }
+    .logo {
+      position: absolute;
+      left: 5%;
+      top: 10%;
+      max-width: 200px;
+    }
+    .content {
+      position: relative;
+      padding: 50px 30px;
+      font-weight: bolder;
+      background-color: #0084B5;
+      clip-path: polygon(0 15%, 100% 0, 100% 85%, 0 100%);
+      margin-top: 15px;
+      margin-bottom: 15px;
+    }
+    .content-inside {
+      color: white;
+      font-size: 17px;
+      font-weight: lighter;
+      font-style: italic;
+    }
+    .footer {
+      background-color: #f1f1f1;
+      color: #333;
+      padding: 10px;
+      text-align: center;
+    }
+    .company-info {
+      font-size: 10px;
+      color: rgba(0, 0, 0, 0.5);
+    }
+    .highlight {
+      color: black;
+      font-weight: bold;
+      font-size: inherit;
+    }
+    .date {
+      font-weight: bold;
+      position: absolute;
+      top: 15%;
+      right: 10%;
+    }
+    .content-title{
+      width: 50%;
+      height: 50px;
+      font-size: large;
+      font-weight: bold;
+      display: flex;
+      margin-left: auto;
+      margin-right: auto;
+      justify-content: center;
+      align-items: center;
+    }
+    .content-details{
+      font-style: normal;
+    }
+    .cross-line{
+      margin-top: 30px;
+      position: absolute;
+      width: 100%; /* Adjust width as needed */
+      height: 0;
+      margin-bottom: -20px;
+    }
+
+    .cross-line::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      height: 3.5px; /* Adjust line thickness */
+      background-color: #0084B5;
+      clip-path: polygon(0 0, 100% 15%, 100% 85%, 0 100%);
+      transform: rotate(-3deg);
+      transform-origin: left center;
+    }
+    .cross-line-down{
+      position: absolute;
+      width: 100%; /* Adjust width as needed */
+      height: 0;
+
+    }
+
+    .cross-line-down::before{
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      height: 3.5px; /* Adjust line thickness */
+      background-color: #0084B5;
+      clip-path: polygon(0 0, 100% 15%, 100% 85%, 0 100%);
+      transform: rotate(-3deg);
+      transform-origin: left center;
+    }
+
+
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <img src="https://www.beamteknoloji.com/wp-content/uploads/2020/01/beamlogo.png" alt="Logo" class="logo">
+    <div class="date">
+      <p>{{selectedSuspicious.date | date:'dd/MM/yyyy'}}</p>
+    </div>
+  </div>
+  <br><br><br><br>
+  <!--  <div class="content-title">-->
+  <!--    <h2>Suspicious Activity</h2>-->
+  <!--  </div>-->
+  <div class="cross-line"></div>
+  <div class="content">
+    <div class="content-inside">
+      <p>We detected <span class="highlight">suspicious activities </span> as <span class="content-details">{{selectedSuspicious.category}}</span>
+        towards <span class="content-details">{{selectedSuspicious.potName}}</span> </p>
+      <p class="content-details">with source IP = {{selectedSuspicious.origin.source}} from {{selectedSuspicious.origin.country}}</p>
+      <p></p>
+      <p>You may want to control it</p>
+    </div>
+  </div>
+  <div class="cross-line-down"></div>
+  <br><br>
+  <div class="footer">
+    <p class="company-info"><span>{{companyName}}</span> | [<span>{{address}}</span>]</p>
+    <p class="company-info">[<span>{{phoneNumber}}</span>] | [<span>{{companyEmail}}</span>]</p>
+  </div>
+</div>
+</body>
+</html>

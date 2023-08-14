@@ -1,0 +1,10 @@
+<form [formGroup]="receiverFilterForm" (submit)="emitReceiverFilterSubmitEvent($event)" class="h-12 w-full text-sm
+cursor-pointer flex absolute left-0 z-10 rounded-md shadow shadow-neutral-800 transition-all duration-500
+        {{isReceiverFilterOpened ? 'opacity-100 top-full' : 'opacity-0 top-4 invisible'}}">
+  <input  placeholder="Filter by receiver" formControlName="receiver"
+          class="h-100 w-80 rounded-lg bg-neutral-800 px-10 font-thin text-neutral-100 focus:outline-0 ring-2 ring-sky-600">
+  <svg (click)="emitReceiverFilterSubmitEvent($event)"
+       class="absolute top-1/2 right-2 left-1 h-6 w-6 hover:bg-neutral-700 rounded-full p-0.5 -translate-y-1/2 fill-sky-500">
+    <use href="assets/sprite.svg#icon-search"></use>
+  </svg>
+</form>
