@@ -1,0 +1,33 @@
+<div class="flex flex-col gap-6">
+  <svg (click)="onWebCloneSettingsCloseClick()" class="absolute top-5 right-5 h-8 w-8 cursor-pointer fill-sky-500"><use href="assets/sprite.svg#icon-clear"></use></svg>
+  <mat-stepper class="bg-transparent">
+    <mat-step label="Setup">
+      <section class="flex w-full flex-col gap-4">
+        <h3 class="flex flex-col gap-1 text-lg text-sky-400">
+          Setup
+          <span class="text-sm text-neutral-400" >You can setup {{pot.potName}} here. It will be unique for your firm and will
+        listen suspicious activities on them. You can stop its process and shutdown it whenever you want.</span>
+        </h3>
+        <button (click)="onSetupClick()" matStepperNext class="h-10 w-36 bg-sky-400 text-neutral-800 rounded">Setup</button>
+      </section>
+    </mat-step>
+    <mat-step label="Clone">
+      <section class="flex w-full flex-col gap-4">
+        <h3 class="flex flex-col gap-1 text-lg text-sky-400">
+          Clone
+          <p class="text-sm text-neutral-400" >You can enter the url
+            of the website you want to clone. It will be cloned and will be hosted on the remote server.
+          </p>
+        </h3>
+        <form [formGroup]="cloneForm" (submit)="onSubmit()" class="flex items-end gap-8 w-full text-sm text-neutral-100">
+          <div class="flex w-full flex-col text-sm text-neutral-100">
+            <label class="text-sky-400">URL: </label>
+            <input formControlName="url" placeholder="Enter the url of the website you want to clone"
+                   class="outline-0 bg-transparent border-sky-600 border-b-2 h-10">
+          </div>
+          <button class="h-10 w-36 bg-sky-400 text-neutral-800 rounded">Clone</button>
+        </form>
+      </section>
+    </mat-step>
+  </mat-stepper>
+</div>

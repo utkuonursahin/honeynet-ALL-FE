@@ -31,8 +31,6 @@ import { PageEmailReceiversComponent } from './page/page-email-receivers/page-em
 import { PageFirmsComponent } from './page/page-firms/page-firms.component';
 import { PageDashboardComponent } from './page/page-dashboard/page-dashboard.component';
 import { FirmItemComponent } from './component/firm-item/firm-item.component';
-import { WebThreatsSettingsComponent } from './component/pot-item/pot-item-settings/web-threats-settings/web-threats-settings.component';
-import { WebScrapingSettingsComponent } from './component/pot-item/pot-item-settings/web-scraping-settings/web-scraping-settings.component';
 import { PotItemSettingsComponent } from './component/pot-item/pot-item-settings/pot-item-settings.component';
 import {MatButtonModule} from "@angular/material/button";
 import {MatStepperModule} from "@angular/material/stepper";
@@ -43,14 +41,17 @@ import { SuspiciousTableComponent } from './component/suspicious-table/suspiciou
 import { ServersTableComponent } from './component/servers-table/servers-table.component';
 import { StatusSelectComponent } from './component/servers-table/status-select/status-select.component';
 import {MatFormFieldModule} from "@angular/material/form-field";
-import { UnrestrictedFileUploadSettingsComponent } from './component/pot-item/pot-item-settings/unrestricted-file-upload-settings/unrestricted-file-upload-settings.component';
 import {MatListModule} from "@angular/material/list";
 import { SuspiciousCategoryComponent } from './component/charts/suspicious-category/suspicious-category.component';
 import { SuspiciousOriginSourceComponent } from './component/charts/suspicious-origin-source/suspicious-origin-source.component';
 import { SuspiciousOriginCountryComponent } from './component/charts/suspicious-origin-country/suspicious-origin-country.component';
-import { LastTrappedSourcesComponent } from './component/last-trapped-sources/last-trapped-sources.component';
+import { LastTrappedSourcesComponent } from './component/charts/last-trapped-sources/last-trapped-sources.component';
 import { ServerStatusComponent } from './component/charts/server-status/server-status.component';
 import { WorldChartComponent } from './component/charts/world-chart/world-chart.component';
+import { ProfileHeaderComponent } from './component/profile-header/profile-header.component';
+import { ProfileFieldsComponent } from './component/profile-fields/profile-fields.component';
+import { DefaultSettingsComponent } from './component/pot-item/pot-item-settings/default-settings/default-settings.component';
+import { WebCloneSettingsComponent } from './component/pot-item/pot-item-settings/web-clone-settings/web-clone-settings.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -75,20 +76,21 @@ import { WorldChartComponent } from './component/charts/world-chart/world-chart.
     PageFirmsComponent,
     PageDashboardComponent,
     FirmItemComponent,
-    WebThreatsSettingsComponent,
-    WebScrapingSettingsComponent,
     PotItemSettingsComponent,
     PageServersComponent,
     SuspiciousTableComponent,
     ServersTableComponent,
     StatusSelectComponent,
-    UnrestrictedFileUploadSettingsComponent,
     SuspiciousCategoryComponent,
     SuspiciousOriginSourceComponent,
     SuspiciousOriginCountryComponent,
     LastTrappedSourcesComponent,
     ServerStatusComponent,
     WorldChartComponent,
+    ProfileHeaderComponent,
+    ProfileFieldsComponent,
+    DefaultSettingsComponent,
+    WebCloneSettingsComponent,
   ],
     imports: [
         BrowserModule,

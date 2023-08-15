@@ -3,9 +3,9 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   template: `
-    <div class="box-border cursor-default bg-gray-50 min-h-screen max-w-screen font-Poppins grid grid-rows-[10vh,min-content,10vh]">
+    <div class="box-border cursor-default bg-gray-900 min-h-screen max-w-screen font-Poppins grid grid-rows-[10vh,min-content,10vh]">
       <app-header></app-header>
-      <main class="grid grid-cols-[10vw,1fr,10vw]">
+      <main class="grid grid-cols-[10vw,1fr,10vw] gap-12">
         <app-hero style="{{hostLayoutCenter}}"></app-hero>
         <app-offers style="{{hostLayoutCenter}}"></app-offers>
         <app-features style="{{hostLayoutCenter}}"></app-features>

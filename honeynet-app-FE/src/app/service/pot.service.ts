@@ -34,4 +34,8 @@ export class PotService {
   public deleteEmailListener(potId:string,id:string):Observable<GenericResponse<EmailListener>>{
     return this.http.delete<GenericResponse<EmailListener>>(`${this.serverUrl}/pot/phishing-email/${id}?potId=${potId}`,{withCredentials: true});
   }
+
+  public cloneSite(potId:string,url:string):Observable<GenericResponse<ServerInfo>>{
+    return this.http.post<GenericResponse<ServerInfo>>(`${this.serverUrl}/pot/web-clone?potId=${potId}`,{cloneUrl:url},{withCredentials: true});
+  }
 }

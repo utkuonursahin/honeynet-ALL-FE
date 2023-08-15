@@ -1,11 +1,11 @@
-<section class="py-20 bg-gray-100 grid grid-cols-zz">
+<section class="py-12 bg-gray-950 grid grid-cols-[10vw,30vw,1fr,10vw] gap-12">
   <div class="col-start-2 flex flex-col gap-4">
-    <h2 class="text-4xl font-bold text-neutral-800 mb-10 bg-dark-red bg-opacity-20 flex justify-center">Current Devices</h2>
-    <span class="text-2xl text-neutral-900 italic">
+    <h2 class="text-4xl font-bold text-neutral-100 py-1 bg-gray-900 flex justify-center">Current Devices</h2>
+    <span class="text-xl text-neutral-100 italic">
         Devices that are currently available for renting.
       </span>
   </div>
-  <div class="col-start-4 grid grid-cols-4 grid-rows-2 gap-10">
+  <div class="col-start-3 grid grid-cols-3 grid-rows-2 gap-12 justify-between">
     <app-device-item *ngFor="let device of devices" [device]="device" ></app-device-item>
   </div>
 </section>

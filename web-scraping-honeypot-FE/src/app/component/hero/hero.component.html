@@ -1,15 +1,13 @@
-<!--#A6001B soluk kırmızı-->
-<!--#E80022 canlı kırmızı-->
-
-<section class="flex items-center bg-transparent h-[60vh]">
-  <div class="absolute inset-0 w-full h-[75vh]">
-    <img priority ngSrc="assets/img/background.jpg" alt="bg-image" class="object-fit" fill>
+<section class="relative flex items-center bg-transparent w-full h-[60vh] p-10 mt-24">
+  <div class="absolute inset-0 w-full h-full opacity-50">
+    <video #video src="assets/mp4/couple.mp4" class="w-full h-full object-cover rounded"
+           (loadedmetadata)="video.muted = true" [autoplay]="true" [loop]="true" (canplay)="video.play() " ></video>
   </div>
 
   <div class="z-10 flex w-1/2 flex-col gap-8">
-    <h1 class="text-5xl font-bold text-gray-white ">Rent the newest technological devices</h1>
+    <h1 class="text-5xl font-bold text-gray-white">Have a fun night!</h1>
     <hr>
-    <span class="text-2xl font-thin text-gray-white italic">We provide the best device/price ratio along the market!</span>
-    <button class="h-12 w-48 rounded  px-6 text-base text-neutral-50 transition-all duration-150 bg-dark-red hover:bg-light-red">View our offers</button>
+    <span class="text-2xl font-thin text-gray-white italic">We provide the best device/price ratio along the market for you to enjoy with your loved ones!</span>
+    <button class="h-12 w-48 rounded  px-6 text-base text-neutral-50 transition-all duration-150 bg-purple-700">View our offers</button>
   </div>
 </section>
