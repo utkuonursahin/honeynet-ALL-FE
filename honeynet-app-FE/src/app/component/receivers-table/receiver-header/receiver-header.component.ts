@@ -10,13 +10,10 @@ export class ReceiverHeaderComponent {
 
   isReceiverFilterOpened: boolean = false;
 
-
   protected emailInfofilter:EmailInfoFilter={
     receiverFilter:"",
     dateFilters:[]
   }
-
-
   isDateFilterOpened:boolean=false;
   emitFilterEvents(){
     this.filterEvent.emit(this.emailInfofilter);
@@ -38,4 +35,5 @@ export class ReceiverHeaderComponent {
     this.toggleReceiverFilter();
     this.emitFilterEvents();
   }
+
 }

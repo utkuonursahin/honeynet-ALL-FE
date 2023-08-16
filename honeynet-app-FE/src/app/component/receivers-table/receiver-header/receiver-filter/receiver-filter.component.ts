@@ -23,13 +23,7 @@ export class ReceiverFilterComponent {
     event!.preventDefault();
     const receiverVal:string = this.receiverFilterForm.get('receiver')?.value;
     this.filterValue.receiverFilter = receiverVal;
-
-
-
     this.receiverFilterSubmitEvent.emit(this.filterValue.receiverFilter);
   }
-
-
-
 
 }

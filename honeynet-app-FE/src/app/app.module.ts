@@ -57,7 +57,6 @@ import { ReceiverHeaderComponent } from './component/receivers-table/receiver-he
 import { ReceiverItemComponent } from './component/receivers-table/receiver-item/receiver-item.component';
 import { ReceivedMailComponent } from './component/receivers-table/receiver-details/received-mail/received-mail.component';
 import { FilterDateComponent } from './component/receivers-table/receiver-header/filter-date/filter-date.component';
-import { IdFilterComponent } from './component/receivers-table/receiver-header/id-filter/id-filter.component';
 import { ReceiverFilterComponent } from './component/receivers-table/receiver-header/receiver-filter/receiver-filter.component';
 @NgModule({
   declarations: [
@@ -103,7 +102,6 @@ import { ReceiverFilterComponent } from './component/receivers-table/receiver-he
     ReceiverItemComponent,
     ReceivedMailComponent,
     FilterDateComponent,
-    IdFilterComponent,
     ReceiverFilterComponent,
   ],
     imports: [

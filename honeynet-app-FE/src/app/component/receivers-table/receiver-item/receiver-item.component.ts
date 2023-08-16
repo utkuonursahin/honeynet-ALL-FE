@@ -11,27 +11,12 @@ import {SuspiciousActivity} from "../../../model/SuspiciousActivity";
   templateUrl: './receiver-item.component.html',
   providers:[EmailInfoService]
 })
-export class ReceiverItemComponent implements OnInit{
+export class ReceiverItemComponent{
   @Input() data!:EmailInfo;
-  // @Input() suspiciousData!:SuspiciousActivity[];
-  // @Output() spanValueSend:EventEmitter<string> = new EventEmitter<string>();
-
-  constructor() {
-    // console.log(this.data,"aaa")
+  constructor(private emailInfoService:EmailInfoService) {
   }
-
-  ngOnInit(): void {
+  handleClickDelete(id:string){
+    this.emailInfoService.deleteEmail(id).subscribe();
+    window.location.reload();
   }
-
-  // @ViewChild('quantitySpan',{static:false})
-  // quantitySpan!:ElementRef;
-  //
-  //
-  //
-  // getSpanValue(event:MouseEvent){
-  //   const spanValue = this.quantitySpan.nativeElement.textContent;
-  //   this.spanValueSend.emit(spanValue);
-  //   // console.log(spanValue.toString());
-  // }
-
 }

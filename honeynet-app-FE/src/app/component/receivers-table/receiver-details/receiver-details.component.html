@@ -2,7 +2,6 @@
   class="fixed inset-x-1/2 inset-y-1/2 z-30 flex h-max w-1/3 -translate-x-1/2 -translate-y-1/2 flex-col
   items-center gap-8 rounded  px-10 py-14">
   <div>
-    <!--    [infosForMail]="infosForMail"-->
-    <app-received-mail [selectedInfo]="selectedInfo" ></app-received-mail>
+    <app-received-mail *ngIf="selectedInfo" [selectedInfo]="selectedInfo" ></app-received-mail>
   </div>
 </div>

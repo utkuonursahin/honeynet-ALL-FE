@@ -14,9 +14,9 @@
       left: 50%;
       transform: translate(-50%, -50%);
       width: 600px;
-      height: auto; /* Fixed height */
-      border: 2px solid #333; /* Increased border size */
-      overflow: hidden; /* Hide overflow content */
+      height: auto;
+      border: 2px solid #333;
+      overflow: hidden;
       background-color: #fff;
       font-family: 'Poppins',sans-serif;
     }
@@ -87,7 +87,7 @@
     .cross-line{
       margin-top: 30px;
       position: absolute;
-      width: 100%; /* Adjust width as needed */
+      width: 100%;
       height: 0;
       margin-bottom: -20px;
     }
@@ -98,7 +98,7 @@
       top: 50%;
       left: 0;
       width: 100%;
-      height: 3.5px; /* Adjust line thickness */
+      height: 3.5px;
       background-color: #0084B5;
       clip-path: polygon(0 0, 100% 15%, 100% 85%, 0 100%);
       transform: rotate(-3deg);
@@ -106,7 +106,7 @@
     }
     .cross-line-down{
       position: absolute;
-      width: 100%; /* Adjust width as needed */
+      width: 100%;
       height: 0;
 
     }
@@ -117,34 +117,30 @@
       top: 50%;
       left: 0;
       width: 100%;
-      height: 3.5px; /* Adjust line thickness */
+      height: 3.5px;
       background-color: #0084B5;
       clip-path: polygon(0 0, 100% 15%, 100% 85%, 0 100%);
       transform: rotate(-3deg);
       transform-origin: left center;
     }
-
-
   </style>
 </head>
 <body>
 <div class="container">
   <div class="header">
     <img src="https://www.beamteknoloji.com/wp-content/uploads/2020/01/beamlogo.png" alt="Logo" class="logo">
-    <div class="date">
+    <div *ngIf="selectedSuspicious?.date" class="date">
       <p>{{selectedSuspicious.date | date:'dd/MM/yyyy'}}</p>
     </div>
   </div>
   <br><br><br><br>
-  <!--  <div class="content-title">-->
-  <!--    <h2>Suspicious Activity</h2>-->
-  <!--  </div>-->
+
   <div class="cross-line"></div>
   <div class="content">
     <div class="content-inside">
-      <p>We detected <span class="highlight">suspicious activities </span> as <span class="content-details">{{selectedSuspicious.category}}</span>
-        towards <span class="content-details">{{selectedSuspicious.potName}}</span> </p>
-      <p class="content-details">with source IP = {{selectedSuspicious.origin.source}} from {{selectedSuspicious.origin.country}}</p>
+      <p>We detected <span class="highlight">suspicious activities </span> as <span *ngIf="selectedSuspicious?.category" class="content-details">{{selectedSuspicious?.category}}</span>
+        towards <span *ngIf="selectedSuspicious?.potName" class="content-details">{{selectedSuspicious?.potName}}</span> </p>
+      <p *ngIf="selectedSuspicious?.origin?.source && selectedSuspicious?.origin?.country" class="content-details">with source IP = {{selectedSuspicious?.origin?.source}} from {{selectedSuspicious?.origin?.country}}</p>
       <p></p>
       <p>You may want to control it</p>
     </div>
@@ -152,8 +148,8 @@
   <div class="cross-line-down"></div>
   <br><br>
   <div class="footer">
-    <p class="company-info"><span>{{companyName}}</span> | [<span>{{address}}</span>]</p>
-    <p class="company-info">[<span>{{phoneNumber}}</span>] | [<span>{{companyEmail}}</span>]</p>
+    <p class="company-info"><span >{{EmailFooterConst.COMPANY_NAME}}</span> | [<span>{{EmailFooterConst.ADDRESS}}</span>]</p>
+    <p class="company-info">[<span>{{EmailFooterConst.PHONE_NUMBER}}</span>] | [<span>{{EmailFooterConst.COMPANY_EMAIL}}</span>]</p>
   </div>
 </div>
 </body>
