@@ -5,7 +5,7 @@
     "iconPath": "assets/img/letter.svg"
   },
   {
-    "name": "Confirm the process and make payment",
+    "name": "Confirm and payment",
     "description": "Once we apply your application, you will receive an email to confirm the process and make payment.",
     "iconPath": "assets/img/payments.svg"
   },

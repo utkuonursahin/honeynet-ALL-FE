@@ -14,4 +14,9 @@ $my-theme: mat.define-dark-theme((
   density:0
 ));
 
-@include mat.all-component-themes($my-theme);
+@include mat.paginator-theme($my-theme);
+@include mat.select-theme($my-theme);
+@include mat.divider-theme($my-theme);
+@include mat.core-theme($my-theme);
+@include mat.tooltip-theme($my-theme);
+@include mat.stepper-theme($my-theme);

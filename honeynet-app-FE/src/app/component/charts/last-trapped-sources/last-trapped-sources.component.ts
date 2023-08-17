@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import {SuspiciousActivityService} from "../../service/suspicious-activity.service";
-import {SuspiciousActivity} from "../../model/SuspiciousActivity";
-import {SuspiciousActivityFilter} from "../../interface/SuspiciousActivityFilter";
+import {SuspiciousActivityService} from "../../../service/suspicious-activity.service";
+import {SuspiciousActivity} from "../../../model/SuspiciousActivity";
+import {SuspiciousActivityFilter} from "../../../interface/SuspiciousActivityFilter";
 
 @Component({
   selector: 'app-last-trapped-sources',

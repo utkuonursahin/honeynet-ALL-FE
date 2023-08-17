@@ -1,7 +1,7 @@
-<div class="h-full w-full relative hover:ring-2 hover:ring-sky-500 transition-all duration-200 flex flex-col gap-4 p-5 justify-center items-center rounded-xl bg-neutral-900/50 shadow-md shadow-neutral-900">
-  <div class="flex w-full gap-4 items-center justify-between">
-    <h1 class="text-xl h-min text-neutral-100 col-start-1 col-end-4">Most Traffic From</h1>
-    <mat-select panelClass="text-sm" (valueChange)="onValueChange($event)" class="h-8 text-sm bg-neutral-800 ring-2 ring-sky-500 w-1/4 pr-2 text-center flex items-center rounded-lg" [value]="defaultOpt.value">
+<div class="relative flex h-full w-full flex-col items-center justify-center gap-4 rounded-xl bg-neutral-900/50 p-5 shadow-md shadow-neutral-900 transition-all duration-200 hover:ring-2 hover:ring-sky-500">
+  <div class="flex w-full items-center justify-between gap-4">
+    <h1 class="col-start-1 col-end-4 h-min text-xl text-neutral-100">Most Traffic From</h1>
+    <mat-select panelClass="text-sm" (valueChange)="onValueChange($event)" class="flex h-8 w-28 items-center rounded-lg bg-neutral-800 pr-2 text-center text-sm ring-2 ring-sky-500" [value]="defaultOpt.value">
       <mat-option #defaultOpt value="all">All Times</mat-option>
       <mat-option value="24h">24 Hours</mat-option>
       <mat-option value="1w">7 Days</mat-option>
@@ -12,5 +12,5 @@
     </mat-select>
   </div>
   <canvas class="{{noDataFound ? 'opacity-0 invisible' : ''}}" id="suspActsGroupedByOriginCountryChart" >{{suspActsGroupedByOriginCountryChart}}</canvas>
-  <p *ngIf="noDataFound" class="absolute inset-1/2 -translate-x-1/2 -translate-y-1/2 text-xl w-full text-center text-neutral-100">No data available</p>
+  <p *ngIf="noDataFound" class="absolute inset-1/2 w-full -translate-x-1/2 -translate-y-1/2 text-center text-xl text-neutral-100">No data available</p>
 </div>

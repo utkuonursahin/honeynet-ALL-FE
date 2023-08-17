@@ -1,8 +1,8 @@
 <div class=" flex flex-col gap-2">
-  <div class="relative h-36 w-36 shadow shadow-neutral-300 rounded-lg hover:shadow-lg hover:shadow-neutral-300 ">
-    <img ngSrc="{{device.imagePath}}"  alt="item image"  fill class="rounded-lg object-cover">
+  <div class="relative h-36 w-full transition-all duration-300 ring-2 ring-gray-600 rounded">
+    <img ngSrc="{{device.imagePath}}"  alt="item image"  fill class="rounded object-cover">
   </div>
-  <h4 class="text-center">
+  <h4 class="text-center text-neutral-100">
     {{device.name}}
   </h4>
 </div>

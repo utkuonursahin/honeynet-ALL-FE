@@ -1,0 +1,65 @@
+<section class="flex h-full w-full flex-col gap-6 rounded-lg bg-neutral-900 shadow shadow-neutral-950 p-8">
+  <div class="flex items-end gap-4">
+    <h2 class="mr-auto text-lg text-neutral-100">Personal Information</h2>
+    <button *ngIf="status === ProfileFormStatus.READ"
+            class="flex items-center justify-between rounded-lg bg-sky-500 px-6 py-2 shadow transition-all duration-300 shadow-neutral-950 hover:ring-2 hover:ring-sky-700 hover:ring-offset-1 hover:ring-offset-neutral-900"
+            (click)="handleFormBtnClick(ProfileFormStatus.EDIT)">
+      <span class="text-sm text-neutral-800">Edit</span>
+      <svg class="h-6 w-6 fill-neutral-800 p-1">
+        <use href="assets/sprite.svg#icon-edit"></use>
+      </svg>
+    </button>
+    <button *ngIf="status === ProfileFormStatus.EDIT"
+            class="flex items-center justify-between rounded-lg bg-green-500 px-6 py-2 shadow transition-all duration-300 shadow-neutral-950 hover:ring-2 hover:ring-green-700 hover:ring-offset-1 hover:ring-offset-neutral-900"
+            (click)="handleSaveBtnClick()">
+      <span class="text-sm text-neutral-800">Save</span>
+      <svg class="h-6 w-6 fill-neutral-800 p-1">
+        <use href="assets/sprite.svg#icon-check"></use>
+      </svg>
+    </button>
+    <button *ngIf="status === ProfileFormStatus.EDIT"
+            class="flex items-center justify-between rounded-lg bg-red-500 p-2 shadow transition-all duration-300 shadow-neutral-950 hover:ring-2 hover:ring-red-700 hover:ring-offset-1 hover:ring-offset-neutral-900"
+            (click)="handleFormBtnClick(ProfileFormStatus.READ)">
+      <svg class="h-6 w-6 fill-neutral-800 p-1">
+        <use href="assets/sprite.svg#icon-clear"></use>
+      </svg>
+    </button>
+  </div>
+  <mat-divider></mat-divider>
+  <form [formGroup]="userForm" class="my-auto grid w-full grid-rows-2  gap-5 rounded-md bg-neutral-900">
+    <div class="flex gap-4">
+      <div class="flex w-full flex-col text-sm text-neutral-100">
+        <label class="px-2 text-sky-400">Username: </label>
+        <input [readOnly]="isReadOnly" formControlName="username"
+               class="outline-0 {{isReadOnly ? 'bg-neutral-900 border-transparent' : 'bg-transparent border-sky-600'}} border-b-2 h-10 px-2">
+      </div>
+      <div class="flex w-full flex-col text-sm text-neutral-100">
+        <label class="px-2 text-sky-400">E-Mail: </label>
+        <input [readOnly]="isReadOnly" formControlName="email"
+               class="outline-0 {{isReadOnly ? 'bg-neutral-900 border-transparent' : 'bg-transparent border-sky-600'}} border-b-2 h-10 px-2">
+      </div>
+      <div class="flex w-full flex-col text-sm text-neutral-100">
+        <label class="px-2 text-sky-400">Firm: </label>
+        <input readonly value="{{userSubject.value.firmName}}" formControlName="firmName"
+               class="outline-0 {{isReadOnly ? 'bg-neutral-900 border-transparent' : 'bg-transparent border-sky-600'}} border-b-2 h-10 px-2">
+      </div>
+    </div>
+    <div class="flex gap-4">
+      <div class="flex w-full flex-col text-sm text-neutral-100">
+        <label class="px-2 text-sky-400">Current Password: </label>
+        <input [readOnly]="isReadOnly" formControlName="oldPassword" placeholder="***********"
+               class="outline-0 {{isReadOnly ? 'bg-neutral-900 border-transparent' : 'bg-transparent border-sky-600'}} border-b-2 h-10 px-2">
+      </div>
+      <div class="flex w-full flex-col text-sm text-neutral-100">
+        <label class="px-2 text-sky-400">New Password: </label>
+        <input [readOnly]="isReadOnly" formControlName="newPassword" placeholder="***********"
+               class="outline-0 {{isReadOnly ? 'bg-neutral-900 border-transparent' : 'bg-transparent border-sky-600'}} border-b-2 h-10 px-2">
+      </div>
+      <div class="flex w-full flex-col text-sm text-neutral-100">
+        <label class="px-2 text-sky-400">New Password Confirm: </label>
+        <input [readOnly]="isReadOnly" formControlName="passwordConfirm" placeholder="***********"
+               class="outline-0 {{isReadOnly ? 'bg-neutral-900 border-transparent' : 'bg-transparent border-sky-600'}} border-b-2 h-10 px-2">
+      </div>
+    </div>
+  </form>
+</section>

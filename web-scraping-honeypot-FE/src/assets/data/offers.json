@@ -1,30 +1,29 @@
 [
   {
-    "name": "MacBook Pro",
-    "price": 319,
-    "duration": "year",
-    "description": "Powerful and portable laptop for professionals.",
-    "specs": [
-      "13-inch Retina display",
-      "Apple M1 chip",
-      "8GB RAM",
-      "256GB SSD storage",
-      "Up to 20 hours of battery life",
-      "Touch Bar and Touch ID"
-    ]
-  },
-  {
-    "name": "PlayStation 5 (PS5)",
-    "price": 99,
-    "duration": "month",
-    "description": "Next-generation gaming console for immersive gaming experiences.",
-    "specs": [
+    "name" : "PlayStation 5",
+    "price" : 99,
+    "duration" : "month",
+    "description" : "Next-generation gaming console for immersive gaming experiences.",
+    "specs" : [
       "AMD Zen 2 CPU",
       "AMD RDNA 2 GPU",
       "16GB GDDR6 RAM",
       "825GB SSD storage",
       "4K Ultra HD Blu-ray",
       "Ray tracing support"
+    ]
+  },
+  {
+    "name" : "Xbox Series X",
+    "price" : 319,
+    "duration" : "year",
+    "description" : "Powerful and portable laptop for professionals.",
+    "specs" : [
+      "7 nm AMD Zen 2 CPU",
+      "AMD's RDNA 2 graphics architecture",
+      "16 GB of GDDR6 SDRAM",
+      "256GB SSD storage",
+      "Intended to render games at 4K resolution at 60 frames per second"
     ]
   }
 ]
