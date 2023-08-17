@@ -1,6 +1,6 @@
 import {Component, EventEmitter, OnDestroy, OnInit, Output, ViewChild} from '@angular/core';
 import {EmailInfoService} from "../../service/email-info.service";
-import {EmailInfo} from "../../model/Email-info";
+import {EmailInfo} from "../../model/EmailInfo";
 import {Subscription} from "rxjs";
 import {GenericResponse} from "../../interface/GenericResponse";
 import {PaginatedEmailInfo} from "../../interface/PaginatedEmailInfo";

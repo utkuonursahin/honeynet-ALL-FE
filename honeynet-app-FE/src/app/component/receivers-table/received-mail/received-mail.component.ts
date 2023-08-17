@@ -1,9 +1,9 @@
 import { Component, Input,  OnDestroy, OnInit} from '@angular/core';
-import {EmailInfo} from "../../../../model/Email-info";
-import {SuspiciousActivityService} from "../../../../service/suspicious-activity.service";
-import {SuspiciousActivity} from "../../../../model/SuspiciousActivity";
+import {EmailInfo} from "../../../model/EmailInfo";
+import {SuspiciousActivityService} from "../../../service/suspicious-activity.service";
+import {SuspiciousActivity} from "../../../model/SuspiciousActivity";
 import { Subscription} from "rxjs";
-import {EmailFooterConst} from "../../receiver-constants/footer-constant";
+import {EmailFooterConst} from "../email-constants/footer-constant";
 
 @Component({
   selector: 'app-received-mail',

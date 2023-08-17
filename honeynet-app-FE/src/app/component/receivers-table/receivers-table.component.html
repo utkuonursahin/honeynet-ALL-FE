@@ -2,7 +2,8 @@
   <app-receiver-header (filterEvent)="onFilter($event)"></app-receiver-header>
   <mat-divider class="bg-fuchsia-600" ></mat-divider>
   <tbody  class="overflow-x-hidden w-full h-full flex flex-col [&>*:nth-child(even)]:bg-neutral-900 [&>*:nth-child(odd)]:bg-neutral-800">
-  <app-receiver-item *ngFor="let data of emailData"  (click)="handleDetailsModalToggle($event)" [data]="data" />
+<!--  -->
+  <app-receivers-table-item *ngFor="let data of emailData"  (click)="handleDetailsModalToggle($event)" [data]="data"/>
   </tbody>
   <mat-divider class="bg-fuchsia-600" ></mat-divider>
   <mat-paginator
@@ -16,7 +17,7 @@
     aria-label="Select page">
   </mat-paginator>
   <ng-container *ngIf="isDetailsModalOpened">
-    <app-receiver-details [selectedInfo]="selectedInfo"/>
+    <app-received-mail [selectedInfo]="selectedInfo"></app-received-mail>
     <app-overlay (click)="handleDetailsModalToggle($event)"/>
   </ng-container>
 </table>

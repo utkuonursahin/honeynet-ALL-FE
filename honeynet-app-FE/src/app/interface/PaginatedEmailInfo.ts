@@ -1,4 +1,4 @@
-import {EmailInfo} from "../model/Email-info";
+import {EmailInfo} from "../model/EmailInfo";
 
 export interface PaginatedEmailInfo{
   emailInfoList:EmailInfo[];
