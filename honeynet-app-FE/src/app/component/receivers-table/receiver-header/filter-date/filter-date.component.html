@@ -1,0 +1,17 @@
+<div class="text-sm cursor-pointer absolute left-0 bg-neutral-800 w-full px-4 py-6
+        z-10 rounded-md shadow shadow-neutral-900 transition-all duration-500
+        {{isDateFilterOpened ? 'opacity-100 top-full' : 'opacity-0 top-4 invisible'}}">
+  <form [formGroup]="dateFilterForm" class="flex w-full flex-col gap-4">
+    <div class="flex flex-col items-start gap-1 w-full">
+      <label>From</label>
+      <input (change)="emitDateFilterChangeEvent()" formControlName="dateFrom" type="date" class="h-10 w-full rounded-md px-2 text-neutral-800">
+    </div>
+    <div class="flex flex-col items-start gap-1 w-full">
+      <label>To</label>
+      <input (change)="emitDateFilterChangeEvent()" formControlName="dateTo" type="date" class="h-10 w-full rounded-md px-2 text-neutral-800">
+    </div>
+    <button type="button" (click)="clearDateFilter()" class="h-10 w-full rounded-md bg-neutral-700 text-sky-400
+        hover:bg-neutral-600 transition-colors duration-200">Clear Filter
+    </button>
+  </form>
+</div>

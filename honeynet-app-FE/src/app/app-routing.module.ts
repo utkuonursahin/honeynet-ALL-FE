@@ -10,6 +10,7 @@ import {PageDashboardComponent} from "./page/page-dashboard/page-dashboard.compo
 import {PageFirmsComponent} from "./page/page-firms/page-firms.component";
 import {PageNotFoundComponent} from "./page/page-not-found/page-not-found.component";
 import {PageServersComponent} from "./page/page-servers/page-servers.component";
+import {ReceiversTableComponent} from "./component/receivers-table/receivers-table.component";
 
 const routes: Routes = [
 	{path: '', component: PageLoginComponent},
@@ -20,6 +21,7 @@ const routes: Routes = [
   {path: 'profile', component: PageProfileComponent,canActivate: [RouteGuard]},
   {path: 'email-receivers',component:PageEmailReceiversComponent,canActivate: [RouteGuard]},
   {path: 'servers',component:PageServersComponent,canActivate: [RouteGuard]},
+  {path:'email-receivers', component:ReceiversTableComponent, canActivate:[RouteGuard]},
   {path: '**', component: PageNotFoundComponent}
 ];
 

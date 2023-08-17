@@ -1,0 +1,159 @@
+<div class="fixed inset-x-1/2 inset-y-1/2 z-30 flex h-max w-1/3 -translate-x-1/2 -translate-y-1/2 flex-col
+  items-center gap-8 rounded  px-10 py-14">
+  <!DOCTYPE html>
+  <html>
+  <head>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        position: absolute;
+        text-align: center;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 600px;
+        height: auto;
+        border: 2px solid #333;
+        overflow: hidden;
+        background-color: #fff;
+        font-family: 'Poppins',sans-serif;
+      }
+      .header {
+        background-color: #f1f1f1;
+        position: absolute;
+        width: 100%;
+        height: 10% ;
+        text-align: center;
+        margin: 0px;
+      }
+      .logo {
+        position: absolute;
+        left: 5%;
+        top: 10%;
+        max-width: 200px;
+      }
+      .content {
+        position: relative;
+        padding: 50px 30px;
+        font-weight: bolder;
+        background-color: #0084B5;
+        clip-path: polygon(0 15%, 100% 0, 100% 85%, 0 100%);
+        margin-top: 15px;
+        margin-bottom: 15px;
+      }
+      .content-inside {
+        color: white;
+        font-size: 17px;
+        font-weight: lighter;
+        font-style: italic;
+      }
+      .footer {
+        background-color: #f1f1f1;
+        color: #333;
+        padding: 10px;
+        text-align: center;
+      }
+      .company-info {
+        font-size: 10px;
+        color: rgba(0, 0, 0, 0.5);
+      }
+      .highlight {
+        color: black;
+        font-weight: bold;
+        font-size: inherit;
+      }
+      .date {
+        font-weight: bold;
+        position: absolute;
+        top: 15%;
+        right: 10%;
+      }
+      .content-title{
+        width: 50%;
+        height: 50px;
+        font-size: large;
+        font-weight: bold;
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
+        justify-content: center;
+        align-items: center;
+      }
+      .content-details{
+        font-style: normal;
+      }
+      .cross-line{
+        margin-top: 30px;
+        position: absolute;
+        width: 100%;
+        height: 0;
+        margin-bottom: -20px;
+      }
+
+      .cross-line::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        height: 3.5px;
+        background-color: #0084B5;
+        clip-path: polygon(0 0, 100% 15%, 100% 85%, 0 100%);
+        transform: rotate(-3deg);
+        transform-origin: left center;
+      }
+      .cross-line-down{
+        position: absolute;
+        width: 100%;
+        height: 0;
+
+      }
+
+      .cross-line-down::before{
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        height: 3.5px;
+        background-color: #0084B5;
+        clip-path: polygon(0 0, 100% 15%, 100% 85%, 0 100%);
+        transform: rotate(-3deg);
+        transform-origin: left center;
+      }
+    </style>
+  </head>
+  <body>
+  <div class="container">
+    <div class="header">
+      <img src="https://www.beamteknoloji.com/wp-content/uploads/2020/01/beamlogo.png" alt="Logo" class="logo">
+      <div *ngIf="selectedSuspicious?.date" class="date">
+        <p>{{selectedSuspicious.date | date:'dd/MM/yyyy'}}</p>
+      </div>
+    </div>
+    <br><br><br><br>
+
+    <div class="cross-line"></div>
+    <div class="content">
+      <div class="content-inside">
+        <p>We detected <span class="highlight">suspicious activities </span> as <span *ngIf="selectedSuspicious?.category" class="content-details">{{selectedSuspicious?.category}}</span>
+          towards <span *ngIf="selectedSuspicious?.potName" class="content-details">{{selectedSuspicious?.potName}}</span> </p>
+        <p *ngIf="selectedSuspicious?.origin?.source && selectedSuspicious?.origin?.country" class="content-details">with source IP = {{selectedSuspicious?.origin?.source}} from {{selectedSuspicious?.origin?.country}}</p>
+        <p></p>
+        <p>You may want to control it</p>
+      </div>
+    </div>
+    <div class="cross-line-down"></div>
+    <br><br>
+    <div class="footer">
+      <p class="company-info"><span >{{EmailFooterConst.COMPANY_NAME}}</span> | [<span>{{EmailFooterConst.ADDRESS}}</span>]</p>
+      <p class="company-info">[<span>{{EmailFooterConst.PHONE_NUMBER}}</span>] | [<span>{{EmailFooterConst.COMPANY_EMAIL}}</span>]</p>
+    </div>
+  </div>
+  </body>
+  </html>
+</div>

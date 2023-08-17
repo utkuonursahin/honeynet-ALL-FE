@@ -48,10 +48,17 @@ import { SuspiciousOriginCountryComponent } from './component/charts/suspicious-
 import { LastTrappedSourcesComponent } from './component/charts/last-trapped-sources/last-trapped-sources.component';
 import { ServerStatusComponent } from './component/charts/server-status/server-status.component';
 import { WorldChartComponent } from './component/charts/world-chart/world-chart.component';
+import { ReceiversTableComponent } from './component/receivers-table/receivers-table.component';
+import { ReceiverHeaderComponent } from './component/receivers-table/receiver-header/receiver-header.component';
+import { ReceiversTableItemComponent } from './component/receivers-table/receivers-table-item/receivers-table-item.component';
+import { ReceivedMailComponent } from './component/receivers-table/received-mail/received-mail.component';
+import { FilterDateComponent } from './component/receivers-table/receiver-header/filter-date/filter-date.component';
+import { ReceiverFilterComponent } from './component/receivers-table/receiver-header/receiver-filter/receiver-filter.component';
 import { ProfileHeaderComponent } from './component/profile-header/profile-header.component';
 import { ProfileFieldsComponent } from './component/profile-fields/profile-fields.component';
 import { DefaultSettingsComponent } from './component/pot-item/pot-item-settings/default-settings/default-settings.component';
 import { WebCloneSettingsComponent } from './component/pot-item/pot-item-settings/web-clone-settings/web-clone-settings.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -87,6 +94,12 @@ import { WebCloneSettingsComponent } from './component/pot-item/pot-item-setting
     LastTrappedSourcesComponent,
     ServerStatusComponent,
     WorldChartComponent,
+    ReceiversTableComponent,
+    ReceiverHeaderComponent,
+    ReceiversTableItemComponent,
+    ReceivedMailComponent,
+    FilterDateComponent,
+    ReceiverFilterComponent,
     ProfileHeaderComponent,
     ProfileFieldsComponent,
     DefaultSettingsComponent,

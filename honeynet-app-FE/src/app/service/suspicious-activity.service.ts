@@ -4,6 +4,7 @@ import {GenericResponse} from "../interface/GenericResponse";
 import {SuspiciousActivityFilter} from "../interface/SuspiciousActivityFilter";
 import {PaginatedSuspiciousActivities} from "../interface/PaginatedSuspiciousActivities";
 import {PaginationSettings} from "../interface/PaginationSettings";
+import {SuspiciousActivity} from "../model/SuspiciousActivity";
 
 @Injectable({
   providedIn: 'root'
@@ -19,5 +20,8 @@ export class SuspiciousActivityService {
 
   getSuspiciousActivities(filter: SuspiciousActivityFilter,pagination:PaginationSettings){
     return this.http.post<GenericResponse<PaginatedSuspiciousActivities>>(`${this.serverUrl}/suspicious/client/filter?page=${pagination.currentPage}&size=${pagination.currentSize}`,filter,this.httpOptions);
+  }
+  getSuspiciousActivity(id:string){
+    return this.http.get<GenericResponse<SuspiciousActivity>>(`${this.serverUrl}/suspicious/client/${id}`,{withCredentials:true})
   }
 }
