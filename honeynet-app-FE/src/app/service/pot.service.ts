@@ -6,6 +6,7 @@ import {Pot} from "../model/Pot";
 import ServerInfo from "../model/ServerInfo";
 import {EmailListener} from "../interface/EmailListener";
 import {EmailListenerStatus} from "../enum/EmailListenerStatus";
+import CloneResponse from "../interface/CloneResponse";
 
 @Injectable({
     providedIn: 'root'
@@ -35,7 +36,7 @@ export class PotService {
     return this.http.delete<GenericResponse<EmailListener>>(`${this.serverUrl}/pot/phishing-email/${id}?potId=${potId}`,{withCredentials: true});
   }
 
-  public cloneSite(potId:string,url:string):Observable<GenericResponse<ServerInfo>>{
-    return this.http.post<GenericResponse<ServerInfo>>(`${this.serverUrl}/pot/web-clone?potId=${potId}`,{cloneUrl:url},{withCredentials: true});
+  public cloneSite(potId:string,url:string):Observable<GenericResponse<CloneResponse>>{
+    return this.http.post<GenericResponse<CloneResponse>>(`${this.serverUrl}/pot/web-clone?potId=${potId}`,{cloneUrl:url},{withCredentials: true});
   }
 }

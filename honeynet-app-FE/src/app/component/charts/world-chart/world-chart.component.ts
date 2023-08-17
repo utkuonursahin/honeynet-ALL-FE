@@ -39,7 +39,7 @@ export class WorldChartComponent implements AfterViewInit {
   }
 
   ngAfterViewInit() {
-    this.chartService.getSuspiciousActivitiesGroupedByOriginCountries('all')
+    this.chartService.getSuspiciousActivitiesGroupedByOriginCountries('6m')
     .subscribe(res => {
       this.suspiciousRequestData = res.data;
       this.root = am5.Root.new('world-chart');
