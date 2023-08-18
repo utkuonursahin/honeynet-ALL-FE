@@ -58,6 +58,7 @@ import { ProfileFieldsComponent } from './component/profile-fields/profile-field
 import { DefaultSettingsComponent } from './component/pot-item/pot-item-settings/default-settings/default-settings.component';
 import { WebCloneSettingsComponent } from './component/pot-item/pot-item-settings/web-clone-settings/web-clone-settings.component';
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
+import { SshSettingsComponent } from './component/pot-item/pot-item-settings/ssh-settings/ssh-settings.component';
 
 @NgModule({
   declarations: [
@@ -104,6 +105,7 @@ import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
     ProfileFieldsComponent,
     DefaultSettingsComponent,
     WebCloneSettingsComponent,
+    SshSettingsComponent,
   ],
     imports: [
         BrowserModule,

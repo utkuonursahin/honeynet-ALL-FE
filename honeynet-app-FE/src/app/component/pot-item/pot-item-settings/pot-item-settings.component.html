@@ -3,7 +3,7 @@
     <app-default-settings *ngIf="pot.potName === 'Web Scraping Pot'" [pot]="pot" (settingsCloseEvent)="emitSettingsCloseEvent($event)" ></app-default-settings>
     <app-email-pot-settings *ngIf="pot.potName === 'E-Mail Phishing Pot'" [pot]="pot" (emailSettingsCloseEvent)="emitSettingsCloseEvent($event)" ></app-email-pot-settings>
     <app-default-settings *ngIf="pot.potName === 'Unrestricted File Upload Pot'" [pot]="pot" (settingsCloseEvent)="emitSettingsCloseEvent($event)" ></app-default-settings>
-    <app-default-settings *ngIf="pot.potName === 'SSH Pot'" [pot]="pot" (settingsCloseEvent)="emitSettingsCloseEvent($event)" ></app-default-settings>
+    <app-ssh-settings *ngIf="pot.potName === 'SSH Pot'" [pot]="pot" (settingsCloseEvent)="emitSettingsCloseEvent($event)" ></app-ssh-settings>
     <app-web-clone-settings *ngIf="pot.potName === 'Web Clone Pot'" [pot]="pot" (webCloneSettingsCloseEvent)="emitSettingsCloseEvent($event)" ></app-web-clone-settings>
 </div>
 <app-overlay (click)="emitSettingsCloseEvent(true)"/>

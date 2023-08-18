@@ -15,7 +15,7 @@ export class ServerService {
     return this.http.get<GenericResponse<ServerInfo[]>>(`${this.serverUrl}/server-info`,{withCredentials: true});
   }
 
-  public setupServer(potId:string):Observable<GenericResponse<ServerInfo>>{
+  setupServer(potId:string):Observable<GenericResponse<ServerInfo>>{
     return this.http.post<GenericResponse<ServerInfo>>(`${this.serverUrl}/server-info/setup?potId=${potId}`,{},{withCredentials: true});
   }
 

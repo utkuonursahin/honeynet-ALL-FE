@@ -13,7 +13,6 @@ import {filter} from "rxjs";
     </ng-container>
     <div class="overflow-x-hidden rounded-lg bg-neutral-800 shadow-md shadow-neutral-950">
       <router-outlet/>
-      <p class="h-8 text-neutral-600 w-full text-center">Developed at BEAM Teknoloji A.Ş. All Rights Reserved &copy; 2023</p>
     </div>
 	</div>`
 })
