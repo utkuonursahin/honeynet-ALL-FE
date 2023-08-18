@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnDestroy, OnInit, Output, ViewChild} from '@angular/core';
+import {Component, OnDestroy, ViewChild} from '@angular/core';
 import {EmailInfoService} from "../../service/email-info.service";
 import {EmailInfo} from "../../model/EmailInfo";
 import {Subscription} from "rxjs";
@@ -6,12 +6,7 @@ import {GenericResponse} from "../../interface/GenericResponse";
 import {PaginatedEmailInfo} from "../../interface/PaginatedEmailInfo";
 import {PaginationSettings} from "../../interface/PaginationSettings";
 import {EmailInfoFilter} from "../../interface/EmailInfoFilter";
-import {data} from "autoprefixer";
 import {MatPaginator, PageEvent} from "@angular/material/paginator";
-import {SuspiciousActivity} from "../../model/SuspiciousActivity";
-import {SuspiciousActivityService} from "../../service/suspicious-activity.service";
-import {SuspiciousActivityFilter} from "../../interface/SuspiciousActivityFilter";
-import {PaginatedSuspiciousActivities} from "../../interface/PaginatedSuspiciousActivities";
 
 @Component({
   selector: 'app-receivers-table',

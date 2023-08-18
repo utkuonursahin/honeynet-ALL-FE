@@ -1,5 +1,6 @@
 <div class="flex flex-col gap-6">
   <svg (click)="onWebCloneSettingsCloseClick()" class="absolute top-5 right-5 h-8 w-8 cursor-pointer fill-sky-500"><use href="assets/sprite.svg#icon-clear"></use></svg>
+  <h2 class="text-center text-2xl text-neutral-50">Web Clone Pot Settings</h2>
   <mat-stepper class="bg-transparent">
     <mat-step label="Setup">
       <section class="flex w-full flex-col gap-4">
@@ -26,6 +27,7 @@
                    class="outline-0 bg-transparent border-sky-600 border-b-2 h-10">
           </div>
           <button class="h-10 w-36 bg-sky-400 text-neutral-800 rounded">Clone</button>
+          <mat-spinner diameter="40" *ngIf="!isResponseArrived"></mat-spinner>
         </form>
       </section>
     </mat-step>

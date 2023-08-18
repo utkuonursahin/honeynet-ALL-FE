@@ -20,3 +20,4 @@ $my-theme: mat.define-dark-theme((
 @include mat.core-theme($my-theme);
 @include mat.tooltip-theme($my-theme);
 @include mat.stepper-theme($my-theme);
+@include mat.progress-spinner-theme($my-theme);

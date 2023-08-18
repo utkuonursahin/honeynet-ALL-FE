@@ -13,22 +13,17 @@ export class ServerStatusComponent implements OnInit{
 
   constructor(private chartService: ChartService) {}
 
-  provideLabels(incomingData:  ServerInfoGroupByStatusDTO[]) {
-    if(incomingData.every(server => server.status === "RUN")){
-      return ["RUN","SHUTDOWN"]
-    } else if(incomingData.every(server => server.status === "SHUTDOWN")){
-      return ["RUN","SHUTDOWN"]
-    } else {
-      return incomingData.map(server => server.status)
-    }
-  }
   provideDataset(incomingData: ServerInfoGroupByStatusDTO[]) {
     if(incomingData.every(server => server.status === "RUN")){
       return [incomingData[0].count,0]
     } else if(incomingData.every(server => server.status === "SHUTDOWN")){
       return [0,incomingData[0].count]
     } else {
-      return incomingData.map(server => server.count)
+      if(incomingData[0].status === "RUN"){
+        return [incomingData[0].count,incomingData[1].count]
+      } else {
+        return [incomingData[1].count,incomingData[0].count]
+      }
     }
   }
 
@@ -38,7 +33,7 @@ export class ServerStatusComponent implements OnInit{
     this.serversGroupedByStatusChart = new Chart('serversGroupedByStatusChart', {
       type: 'doughnut',
       data: {
-        labels: this.provideLabels(incomingData),
+        labels: ["RUN","SHUTDOWN"],
         datasets: [{
           label: 'Servers Status',
           data: this.provideDataset(incomingData),

@@ -16,6 +16,7 @@ export class WebCloneSettingsComponent {
   protected cloneForm: FormGroup = new FormGroup({
     url: new FormControl(''),
   });
+  protected isResponseArrived: boolean = true;
 
   constructor(private serverService:ServerService, private potService: PotService, private toastrService:ToastrService) {}
 
@@ -28,6 +29,7 @@ export class WebCloneSettingsComponent {
   }
 
   onSubmit(){
+    this.isResponseArrived = false;
     this.potService.cloneSite(this.pot.id,this.cloneForm.value.url).subscribe(
       ({data}) => {
         if(data.success){
@@ -39,9 +41,9 @@ export class WebCloneSettingsComponent {
             toastClass:'w-[25vw] min-h-16 px-4 py-2 font-Rubik rounded bg-red-500 text-neutral-100',
           });
         }
+        this.isResponseArrived = true;
         this.webCloneSettingsCloseEvent.emit(true);
       }
     );
-
   }
 }
