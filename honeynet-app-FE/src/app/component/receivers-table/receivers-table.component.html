@@ -1,11 +1,8 @@
 <table class="relative flex flex-col h-[calc(100vh-8vh-6rem-10vh)] text-sm">
   <app-receiver-header (filterEvent)="onFilter($event)"></app-receiver-header>
-  <mat-divider class="bg-fuchsia-600" ></mat-divider>
   <tbody  class="overflow-x-hidden w-full h-full flex flex-col [&>*:nth-child(even)]:bg-neutral-900 [&>*:nth-child(odd)]:bg-neutral-800">
-<!--  -->
   <app-receivers-table-item *ngFor="let data of emailData"  (click)="handleDetailsModalToggle($event)" [data]="data"/>
   </tbody>
-  <mat-divider class="bg-fuchsia-600" ></mat-divider>
   <mat-paginator
     #paginator
     class="bg-neutral-900 rounded-b"

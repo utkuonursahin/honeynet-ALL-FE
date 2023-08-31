@@ -1,10 +1,6 @@
-import {Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {EmailInfo} from "../../../model/EmailInfo";
 import {EmailInfoService} from "../../../service/email-info.service";
-import {PaginatedEmailInfo} from "../../../interface/PaginatedEmailInfo";
-import {GenericResponse} from "../../../interface/GenericResponse";
-import {PaginationSettings} from "../../../interface/PaginationSettings";
-import {SuspiciousActivity} from "../../../model/SuspiciousActivity";
 
 @Component({
   selector: 'app-receivers-table-item',

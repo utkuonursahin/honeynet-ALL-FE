@@ -131,8 +131,8 @@
   <div class="container">
     <div class="header">
       <img src="https://www.beamteknoloji.com/wp-content/uploads/2020/01/beamlogo.png" alt="Logo" class="logo">
-      <div *ngIf="selectedSuspicious.date" class="date">
-        <p>{{selectedSuspicious.date | date:'dd/MM/yyyy'}}</p>
+      <div class="date">
+        <p>{{activityInstance?.date | date:'dd/MM/yyyy'}}</p>
       </div>
     </div>
     <br><br><br><br>
@@ -140,9 +140,9 @@
     <div class="cross-line"></div>
     <div class="content">
       <div class="content-inside">
-        <p>We detected <span class="highlight">suspicious activities </span> as <span *ngIf="selectedSuspicious.category" class="content-details">{{selectedSuspicious.category}}</span>
-          towards <span *ngIf="selectedSuspicious?.potName" class="content-details">{{selectedSuspicious.potName}}</span> </p>
-        <p *ngIf="selectedSuspicious.origin.source && selectedSuspicious.origin.country" class="content-details">with source IP = {{selectedSuspicious.origin.source}} from {{selectedSuspicious.origin.country}}</p>
+        <p>We detected <span class="highlight">suspicious activities </span> as <span   class="content-details">{{activityInstance.category}}</span>
+          towards <span class="content-details">{{activityInstance?.potName}}</span> </p>
+        <p  class="content-details">with source IP = {{activityInstance?.origin?.source}} from {{activityInstance?.origin?.country}}</p>
         <p></p>
         <p>You may want to control it</p>
       </div>
