@@ -1,10 +1,10 @@
 import {Component, OnDestroy, ViewChild} from '@angular/core';
 import {SuspiciousActivity} from "../../model/SuspiciousActivity";
 import {Subscription} from "rxjs";
-import {GenericResponse} from "../../interface/GenericResponse";
-import {PaginatedSuspiciousActivities} from "../../interface/PaginatedSuspiciousActivities";
+import {GenericResponse} from "../../interface/response/GenericResponse";
+import {PaginatedSuspiciousActivities} from "../../interface/suspiciousActivity/PaginatedSuspiciousActivities";
 import {PaginationSettings} from "../../interface/PaginationSettings";
-import {SuspiciousActivityFilter} from "../../interface/SuspiciousActivityFilter";
+import {SuspiciousActivityFilter} from "../../interface/suspiciousActivity/SuspiciousActivityFilter";
 import {User} from "../../model/User";
 import {SuspiciousActivityService} from "../../service/suspicious-activity.service";
 import {MatPaginator, PageEvent} from "@angular/material/paginator";

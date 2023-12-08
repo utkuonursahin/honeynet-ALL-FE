@@ -1,0 +1,4 @@
+<div class="relative h-full w-full rounded bg-neutral-900 ring-2 ring-neutral-700 group">
+  <img src="http://localhost:8080/report/cover/{{report.id}}" alt="Report cover path image" class="h-full w-full object-cover rounded">
+  <app-report-actions (reportOpenEvent)="onReportOpen()"  (reportDeleteEvent)="onReportDelete()" ></app-report-actions>
+</div>

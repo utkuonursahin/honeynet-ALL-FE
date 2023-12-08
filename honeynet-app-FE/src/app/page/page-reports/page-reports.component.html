@@ -1,0 +1,15 @@
+<main class="flex h-full flex-col gap-8 px-[2.5vw] py-[5vh] font-Rubik">
+  <app-report-search></app-report-search>
+  <section class="grid w-full grid-cols-4 auto-rows-[24rem] gap-10 overflow-x-hidden pl-1 pr-4 py-1 ">
+    <app-report-item *ngFor="let report of (reports$|async)?.data" [report]="report" (reportDeletionEvent)="onReportsNeedUpdate()"></app-report-item>
+    <div (click)="isCreateReportModalOpened = !isCreateReportModalOpened" class="flex cursor-pointer items-center justify-center rounded-md bg-neutral-900/50 shadow shadow-neutral-800 transition-all duration-300 font-Rubik [&>svg]:hover:fill-sky-500">
+      <svg class="h-16 w-16 fill-neutral-700">
+        <use href="assets/sprite.svg#icon-plus-circle"></use>
+      </svg>
+    </div>
+  </section>
+  <app-modal-generate-report class="absolute" *ngIf="isCreateReportModalOpened"
+                             (closeModalEvent)="isCreateReportModalOpened = false"
+                             (reportGenerationEvent)="onReportsNeedUpdate(); this.isCreateReportModalOpened = false; ">
+  </app-modal-generate-report>
+</main>

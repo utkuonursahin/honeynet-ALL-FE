@@ -1,4 +1,4 @@
-import {PotCategory} from "../enum/PotCategory";
+import {PotCategory} from "../../enum/PotCategory";
 
 export interface SuspiciousActivityFilter {
   originFilter: {} | null;

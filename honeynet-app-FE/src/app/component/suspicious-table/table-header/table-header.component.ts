@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Output} from '@angular/core';
 import {PotCategory} from "../../../enum/PotCategory";
-import {SuspiciousActivityFilter} from "../../../interface/SuspiciousActivityFilter";
+import {SuspiciousActivityFilter} from "../../../interface/suspiciousActivity/SuspiciousActivityFilter";
 import {ToastrService} from "ngx-toastr";
 
 @Component({

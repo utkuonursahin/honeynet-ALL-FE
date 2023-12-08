@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Output} from '@angular/core';
-import {EmailInfoFilter} from "../../../interface/EmailInfoFilter";
+import {EmailInfoFilter} from "../../../interface/emailInfo/EmailInfoFilter";
 
 @Component({
   selector: 'app-receiver-header',

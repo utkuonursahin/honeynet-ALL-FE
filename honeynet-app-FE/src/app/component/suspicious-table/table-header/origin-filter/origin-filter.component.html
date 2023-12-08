@@ -2,9 +2,9 @@
 cursor-pointer flex absolute left-0 z-10 rounded-md shadow shadow-neutral-800 transition-all duration-500
         {{isOriginFilterOpened ? 'opacity-100 top-full' : 'opacity-0 top-4 invisible'}}">
   <input placeholder="Filter by origin" formControlName="origin"
-         class="h-full w-full rounded-lg bg-neutral-800 px-4 font-thin text-neutral-100 focus:outline-0 ring-2 ring-sky-600">
+         class="h-full w-full rounded-lg bg-neutral-800 px-4 font-thin text-neutral-100 ring-2 ring-sky-600 focus:outline-0">
   <svg (click)="emitOriginFilterSubmitEvent($event)"
-       class="absolute top-1/2 right-2 h-6 w-6 hover:bg-neutral-700 rounded-full p-0.5 -translate-y-1/2 fill-sky-500">
+       class="absolute top-1/2 right-2 h-6 w-6 -translate-y-1/2 rounded-full fill-sky-500 hover:bg-neutral-700 p-0.5">
     <use href="assets/sprite.svg#icon-search"></use>
   </svg>
 </form>

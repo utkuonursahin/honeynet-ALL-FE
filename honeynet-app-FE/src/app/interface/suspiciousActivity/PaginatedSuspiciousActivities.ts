@@ -1,4 +1,4 @@
-import {SuspiciousActivity} from "../model/SuspiciousActivity";
+import {SuspiciousActivity} from "../../model/SuspiciousActivity";
 
 export interface PaginatedSuspiciousActivities {
   activityList: SuspiciousActivity[];

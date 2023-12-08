@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import {BehaviorSubject, Observable} from "rxjs";
-import {GenericResponse} from "../interface/GenericResponse";
+import {Observable} from "rxjs";
+import {GenericResponse} from "../interface/response/GenericResponse";
 import ServerInfo from "../model/ServerInfo";
 import {HttpClient} from "@angular/common/http";
 

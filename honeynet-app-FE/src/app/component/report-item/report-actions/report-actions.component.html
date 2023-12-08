@@ -1,0 +1,11 @@
+<div class="absolute bottom-0 left-1/2 w-3/4 -translate-x-1/2 -translate-y-8 flex gap-2 opacity-0 transition-all duration-500 invisible
+group-hover:-translate-y-4 group-hover:opacity-100 group-hover:visible child-hover:ring-2 child-hover:ring-offset-2 child-hover:ring-offset-neutral-800">
+  <button (click)="onOpenClick()" class="flex h-8 w-full items-center bg-sky-500 rounded justify-evenly ring-sky-500">
+    <svg class="h-6 w-6 cursor-pointer fill-neutral-900"><use href="assets/sprite.svg#icon-file-text"></use></svg>
+    Open Report
+  </button>
+
+  <button (click)="onDeleteClick()" class="flex gap-8 h-8 w-10 items-center bg-red-500 rounded justify-center ring-red-500">
+    <svg class="h-6 w-6 cursor-pointer fill-red-200"><use href="assets/sprite.svg#icon-trash"></use></svg>
+  </button>
+</div>

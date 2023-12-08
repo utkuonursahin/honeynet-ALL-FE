@@ -2,7 +2,7 @@ import {Component,} from '@angular/core';
 import {PotService} from "../../service/pot.service";
 import {Pot} from "../../model/Pot";
 import {Observable} from "rxjs";
-import {GenericResponse} from "../../interface/GenericResponse";
+import {GenericResponse} from "../../interface/response/GenericResponse";
 import {User} from "../../model/User";
 
 @Component({

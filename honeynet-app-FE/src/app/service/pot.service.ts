@@ -1,12 +1,11 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
-import {GenericResponse} from "../interface/GenericResponse";
+import {GenericResponse} from "../interface/response/GenericResponse";
 import {Pot} from "../model/Pot";
-import ServerInfo from "../model/ServerInfo";
 import {EmailListener} from "../interface/EmailListener";
 import {EmailListenerStatus} from "../enum/EmailListenerStatus";
-import CloneResponse from "../interface/CloneResponse";
+import CloneResponse from "../interface/response/CloneResponse";
 
 @Injectable({
     providedIn: 'root'

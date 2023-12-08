@@ -1,13 +1,13 @@
 <main class="grid gap-8 px-[2.5vw] py-[5vh] font-Rubik">
-  <h2 class="text-xl text-sky-500 flex flex-col gap-2" >Source Data<mat-divider></mat-divider></h2>
+  <h2 class="flex flex-col gap-2 text-xl text-sky-500" >Source Data<mat-divider></mat-divider></h2>
   <div class="w-full grid grid-cols-[38%,38%,1fr] grid-rows-[35vh,60vh] gap-4">
     <app-suspicious-origin-source></app-suspicious-origin-source>
     <app-suspicious-origin-country></app-suspicious-origin-country>
     <app-last-trapped-sources></app-last-trapped-sources>
     <app-world-chart style="grid-row-start: 2; grid-row-end: -1; grid-column-start: 1; grid-column-end: -1"></app-world-chart>
   </div>
-  <h2 class="text-xl text-sky-500 flex flex-col gap-2">Honeypot Data<mat-divider></mat-divider></h2>
-  <div class="w-full grid grid-cols-2 grid-rows-1 h-[45vh] gap-4 ">
+  <h2 class="flex flex-col gap-2 text-xl text-sky-500">Honeypot Data<mat-divider></mat-divider></h2>
+  <div class="grid w-full grid-cols-2 grid-rows-1 gap-4 h-[45vh]">
     <app-suspicious-category></app-suspicious-category>
     <app-server-status></app-server-status>
   </div>

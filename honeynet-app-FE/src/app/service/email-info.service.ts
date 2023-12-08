@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
-import {GenericResponse} from "../interface/GenericResponse";
+import {GenericResponse} from "../interface/response/GenericResponse";
 import {EmailInfo} from "../model/EmailInfo";
-import {EmailInfoFilter} from "../interface/EmailInfoFilter";
+import {EmailInfoFilter} from "../interface/emailInfo/EmailInfoFilter";
 import {PaginationSettings} from "../interface/PaginationSettings";
-import {PaginatedEmailInfo} from "../interface/PaginatedEmailInfo";
+import {PaginatedEmailInfo} from "../interface/emailInfo/PaginatedEmailInfo";
 
 @Injectable({
   providedIn: 'root'

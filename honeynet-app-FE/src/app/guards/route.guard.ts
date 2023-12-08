@@ -1,7 +1,7 @@
 import {AuthService} from "../service/auth.service";
 import {Router} from "@angular/router";
 import {inject} from "@angular/core";
-import {map} from "rxjs";
+import {catchError, map} from "rxjs";
 
 export const RouteGuard = () => {
   const authService = inject(AuthService);
@@ -15,6 +15,7 @@ export const RouteGuard = () => {
       else {
         return router.parseUrl('/')
       }
-    })
+    }),
+    catchError(async () => router.parseUrl('/'))
   )
 }

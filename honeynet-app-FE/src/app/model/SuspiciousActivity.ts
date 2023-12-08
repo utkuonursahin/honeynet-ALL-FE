@@ -1,4 +1,4 @@
-import Origin from "../interface/Origin";
+import Origin from "../interface/suspiciousActivity/Origin";
 
 export interface SuspiciousActivity {
   id: string;

@@ -1,9 +1,9 @@
-<header  class="w-full h-full bg-neutral-800 rounded-lg shadow-md shadow-neutral-950">
-  <nav class="h-full flex items-center px-12">
-    <p class="text-base font-Rubik text-sky-500 capitalize">{{page}}</p>
-    <picture [routerLink]="['/profile']" class="h-10 w-10 flex items-center justify-center ml-auto bg-neutral ring-2 ring-sky-500 transition-all duration-200
-    rounded-full hover:bg-neutral-700 cursor-pointer transition-all duration-300">
-      <svg class="w-6 h-6 fill-sky-500"><use href="assets/sprite.svg#icon-user"></use></svg>
+<header  class="h-full w-full rounded-lg bg-neutral-800 shadow-md shadow-neutral-950">
+  <nav class="flex h-full items-center px-12">
+    <p class="text-base capitalize text-sky-500 font-Rubik">{{page}}</p>
+    <picture [routerLink]="['/profile']" class="h-10 w-10 flex items-center justify-center ml-auto bg-neutral ring-2 ring-sky-500
+    rounded-full fill-sky-500 hover:fill-neutral-800 hover:bg-sky-500 hover:scale-95 cursor-pointer transition-all duration-100">
+      <svg class="h-6 w-6 fill-inherit"><use href="assets/sprite.svg#icon-user"></use></svg>
     </picture>
   </nav>
 </header>

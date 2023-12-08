@@ -2,10 +2,10 @@ import {Component, OnDestroy, ViewChild} from '@angular/core';
 import {EmailInfoService} from "../../service/email-info.service";
 import {EmailInfo} from "../../model/EmailInfo";
 import {Subscription} from "rxjs";
-import {GenericResponse} from "../../interface/GenericResponse";
-import {PaginatedEmailInfo} from "../../interface/PaginatedEmailInfo";
+import {GenericResponse} from "../../interface/response/GenericResponse";
+import {PaginatedEmailInfo} from "../../interface/emailInfo/PaginatedEmailInfo";
 import {PaginationSettings} from "../../interface/PaginationSettings";
-import {EmailInfoFilter} from "../../interface/EmailInfoFilter";
+import {EmailInfoFilter} from "../../interface/emailInfo/EmailInfoFilter";
 import {MatPaginator, PageEvent} from "@angular/material/paginator";
 
 @Component({

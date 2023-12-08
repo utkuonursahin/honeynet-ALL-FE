@@ -1,10 +1,10 @@
 import {Component, OnDestroy} from '@angular/core';
-import {ProfileFormStatus} from "../../enum/ProfileFormStatus";
+import {ProfileFormStatus} from "../../../enum/ProfileFormStatus";
 import {FormControl, FormGroup} from "@angular/forms";
-import {AuthService} from "../../service/auth.service";
+import {AuthService} from "../../../service/auth.service";
 import {BehaviorSubject, Subscription} from "rxjs";
-import UserResponseDTO from "../../interface/user/UserResponseDTO";
-import {UserService} from "../../service/user.service";
+import UserResponseDTO from "../../../interface/user/UserResponseDTO";
+import {UserService} from "../../../service/user.service";
 import {ToastrService} from "ngx-toastr";
 
 @Component({

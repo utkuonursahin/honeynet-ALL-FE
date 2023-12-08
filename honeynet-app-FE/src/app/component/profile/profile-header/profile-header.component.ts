@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import {BehaviorSubject} from "rxjs";
-import UserResponseDTO from "../../interface/user/UserResponseDTO";
-import {AuthService} from "../../service/auth.service";
+import UserResponseDTO from "../../../interface/user/UserResponseDTO";
+import {AuthService} from "../../../service/auth.service";
 
 @Component({
   selector: 'app-profile-header',

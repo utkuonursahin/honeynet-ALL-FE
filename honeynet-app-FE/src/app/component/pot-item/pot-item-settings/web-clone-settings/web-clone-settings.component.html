@@ -9,7 +9,7 @@
           <span class="text-sm text-neutral-400" >You can setup {{pot.potName}} here. It will be unique for your firm and will
         listen suspicious activities on them. You can stop its process and shutdown it whenever you want.</span>
         </h3>
-        <button (click)="onSetupClick()" matStepperNext class="h-10 w-36 bg-sky-400 text-neutral-800 rounded">Setup</button>
+        <button (click)="onSetupClick()" matStepperNext class="h-10 w-36 rounded bg-sky-400 text-neutral-800">Setup</button>
       </section>
     </mat-step>
     <mat-step label="Clone">
@@ -20,13 +20,13 @@
             of the website you want to clone. It will be cloned and will be hosted on the remote server.
           </p>
         </h3>
-        <form [formGroup]="cloneForm" (submit)="onSubmit()" class="flex items-end gap-8 w-full text-sm text-neutral-100">
+        <form [formGroup]="cloneForm" (submit)="onSubmit()" class="flex w-full items-end gap-8 text-sm text-neutral-100">
           <div class="flex w-full flex-col text-sm text-neutral-100">
             <label class="text-sky-400">URL: </label>
             <input formControlName="url" placeholder="Enter the url of the website you want to clone"
-                   class="outline-0 bg-transparent border-sky-600 border-b-2 h-10">
+                   class="h-10 border-b-2 border-sky-600 bg-transparent outline-0">
           </div>
-          <button class="h-10 w-36 bg-sky-400 text-neutral-800 rounded">Clone</button>
+          <button class="h-10 w-36 rounded bg-sky-400 text-neutral-800">Clone</button>
           <mat-spinner diameter="40" *ngIf="!isResponseArrived"></mat-spinner>
         </form>
       </section>

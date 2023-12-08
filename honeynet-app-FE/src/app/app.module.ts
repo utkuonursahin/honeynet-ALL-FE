@@ -24,7 +24,6 @@ import { OriginFilterComponent } from './component/suspicious-table/table-header
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { PageProfileComponent } from './page/page-profile/page-profile.component';
-import { PageNotFoundComponent } from './page/page-not-found/page-not-found.component';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { PageEmailReceiversComponent } from './page/page-email-receivers/page-email-receivers.component';
 import { PageFirmsComponent } from './page/page-firms/page-firms.component';
@@ -53,12 +52,18 @@ import { ReceiversTableItemComponent } from './component/receivers-table/receive
 import { ReceivedMailComponent } from './component/receivers-table/received-mail/received-mail.component';
 import { FilterDateComponent } from './component/receivers-table/receiver-header/filter-date/filter-date.component';
 import { ReceiverFilterComponent } from './component/receivers-table/receiver-header/receiver-filter/receiver-filter.component';
-import { ProfileHeaderComponent } from './component/profile-header/profile-header.component';
-import { ProfileFieldsComponent } from './component/profile-fields/profile-fields.component';
+import { ProfileHeaderComponent } from './component/profile/profile-header/profile-header.component';
+import { ProfileFieldsComponent } from './component/profile/profile-fields/profile-fields.component';
 import { DefaultSettingsComponent } from './component/pot-item/pot-item-settings/default-settings/default-settings.component';
 import { WebCloneSettingsComponent } from './component/pot-item/pot-item-settings/web-clone-settings/web-clone-settings.component';
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 import { SshSettingsComponent } from './component/pot-item/pot-item-settings/ssh-settings/ssh-settings.component';
+import { PageReportsComponent } from './page/page-reports/page-reports.component';
+import { ReportItemComponent } from './component/report-item/report-item.component';
+import { ModalGenerateReportComponent } from './component/report-item/modal-generate-report/modal-generate-report.component';
+import { ReportSearch } from './component/report-search/report-search';
+import {MatChipsModule} from "@angular/material/chips";
+import { ReportActionsComponent } from './component/report-item/report-actions/report-actions.component';
 
 @NgModule({
   declarations: [
@@ -79,7 +84,6 @@ import { SshSettingsComponent } from './component/pot-item/pot-item-settings/ssh
     DateFilterComponent,
     OriginFilterComponent,
     PageProfileComponent,
-    PageNotFoundComponent,
     PageEmailReceiversComponent,
     PageFirmsComponent,
     PageDashboardComponent,
@@ -106,34 +110,40 @@ import { SshSettingsComponent } from './component/pot-item/pot-item-settings/ssh
     DefaultSettingsComponent,
     WebCloneSettingsComponent,
     SshSettingsComponent,
+    PageReportsComponent,
+    ReportItemComponent,
+    ModalGenerateReportComponent,
+    ReportSearch,
+    ReportActionsComponent,
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        ReactiveFormsModule,
-        HttpClientModule,
-        NgOptimizedImage,
-        CookieModule.withOptions(),
-        BrowserAnimationsModule,
-        ToastrModule.forRoot({
-            timeOut: 2500,
-            positionClass: 'toast-bottom-right',
-            preventDuplicates: true,
-            progressBar: true,
-            closeButton: true,
-            tapToDismiss: true,
-        }),
-        MatPaginatorModule,
-        MatButtonModule,
-        MatStepperModule,
-        FormsModule,
-        ReactiveFormsModule,
-        MatFormFieldModule,
-        MatInputModule,
-        MatSelectModule,
-        MatListModule,
-        MatProgressSpinnerModule,
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    NgOptimizedImage,
+    CookieModule.withOptions(),
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      timeOut: 2500,
+      positionClass: 'toast-bottom-right',
+      preventDuplicates: true,
+      progressBar: true,
+      closeButton: true,
+      tapToDismiss: true,
+    }),
+    MatPaginatorModule,
+    MatButtonModule,
+    MatStepperModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
+    MatListModule,
+    MatProgressSpinnerModule,
+    MatChipsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -8,9 +8,9 @@ import {RouteGuard} from "./guards/route.guard";
 import {PageEmailReceiversComponent} from "./page/page-email-receivers/page-email-receivers.component";
 import {PageDashboardComponent} from "./page/page-dashboard/page-dashboard.component";
 import {PageFirmsComponent} from "./page/page-firms/page-firms.component";
-import {PageNotFoundComponent} from "./page/page-not-found/page-not-found.component";
 import {PageServersComponent} from "./page/page-servers/page-servers.component";
 import {ReceiversTableComponent} from "./component/receivers-table/receivers-table.component";
+import {PageReportsComponent} from "./page/page-reports/page-reports.component";
 
 const routes: Routes = [
 	{path: '', component: PageLoginComponent},
@@ -21,8 +21,8 @@ const routes: Routes = [
   {path: 'profile', component: PageProfileComponent,canActivate: [RouteGuard]},
   {path: 'email-receivers',component:PageEmailReceiversComponent,canActivate: [RouteGuard]},
   {path: 'servers',component:PageServersComponent,canActivate: [RouteGuard]},
-  {path:'email-receivers', component:ReceiversTableComponent, canActivate:[RouteGuard]},
-  {path: '**', component: PageNotFoundComponent}
+  {path: 'email-receivers', component:ReceiversTableComponent, canActivate:[RouteGuard]},
+  {path: 'reports', component: PageReportsComponent, canActivate:[RouteGuard]},
 ];
 
 @NgModule({

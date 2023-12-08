@@ -1,4 +1,4 @@
-<section class="flex h-full w-full flex-col gap-6 rounded-lg bg-neutral-900 shadow shadow-neutral-950 p-8">
+<section class="flex h-full w-full flex-col gap-6 rounded-lg bg-neutral-900 p-8 shadow shadow-neutral-950">
   <div class="flex items-end gap-4">
     <h2 class="mr-auto text-lg text-neutral-100">Personal Information</h2>
     <button *ngIf="status === ProfileFormStatus.READ"
@@ -26,7 +26,7 @@
     </button>
   </div>
   <mat-divider></mat-divider>
-  <form [formGroup]="userForm" class="my-auto grid w-full grid-rows-2  gap-5 rounded-md bg-neutral-900">
+  <form [formGroup]="userForm" class="my-auto grid w-full grid-rows-2 gap-5 rounded-md bg-neutral-900">
     <div class="flex gap-4">
       <div class="flex w-full flex-col text-sm text-neutral-100">
         <label class="px-2 text-sky-400">Username: </label>

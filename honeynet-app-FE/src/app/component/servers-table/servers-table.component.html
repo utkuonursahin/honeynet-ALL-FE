@@ -1,5 +1,5 @@
-<table class="flex w-full flex-col h-full text-sm">
-  <thead class="w-full font-Poppins ">
+<table class="flex h-full w-full flex-col text-sm">
+  <thead class="w-full font-Poppins">
   <tr class="grid grid-cols-6 items-center justify-items-start gap-5 rounded-t bg-neutral-900 px-3 py-4 text-sky-400">
     <th class="px-2">Pot Name</th>
     <th class="px-2">Host Name</th>
@@ -13,7 +13,7 @@
   <tbody
     class="rounded-b overflow-x-hidden w-full h-full flex flex-col [&>*:nth-child(even)]:bg-neutral-900 [&>*:nth-child(odd)]:bg-neutral-800">
   <tr
-    class="grid w-full cursor-pointer grid-cols-6 items-center justify-items-start gap-5 transition-all duration-300 h-14 px-3 [&]:hover:bg-sky-600"
+    class="grid h-14 w-full cursor-pointer grid-cols-6 items-center justify-items-start gap-5 px-3 transition-all duration-300 [&]:hover:bg-sky-600"
     *ngFor="let server of (servers$|async)?.data">
     <td
       class="block w-full truncate px-2 text-neutral-100 transition-all duration-300 hover:rounded-md hover:bg-sky-900">

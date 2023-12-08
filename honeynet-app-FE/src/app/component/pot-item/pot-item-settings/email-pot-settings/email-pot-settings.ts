@@ -3,7 +3,7 @@ import {FormControl, FormGroup} from "@angular/forms";
 import {Observable, Subscription} from "rxjs";
 import {Pot} from "../../../../model/Pot";
 import {EmailListener} from "../../../../interface/EmailListener";
-import {GenericResponse} from "../../../../interface/GenericResponse";
+import {GenericResponse} from "../../../../interface/response/GenericResponse";
 import {EmailListenerStatus} from "../../../../enum/EmailListenerStatus";
 import {ToastrService} from "ngx-toastr";
 import {PotService} from "../../../../service/pot.service";

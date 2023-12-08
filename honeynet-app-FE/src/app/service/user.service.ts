@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
-import {GenericResponse} from "../interface/GenericResponse";
+import {GenericResponse} from "../interface/response/GenericResponse";
 import {User} from "../model/User";
 import UserUpdateDTO from "../interface/user/UserUpdateDTO";
 import {UserUpdateResponseDTO} from "../interface/user/UserUpdateResponseDTO";

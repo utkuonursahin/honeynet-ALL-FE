@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {BehaviorSubject, map, Observable} from "rxjs";
 import {User} from "../model/User";
-import {GenericResponse} from "../interface/GenericResponse";
+import {GenericResponse} from "../interface/response/GenericResponse";
 import {Router} from "@angular/router";
 import UserResponseDTO from "../interface/user/UserResponseDTO";
 

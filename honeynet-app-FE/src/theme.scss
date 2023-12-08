@@ -2,22 +2,23 @@
 
 @include mat.core();
 
-$my-primary: mat.define-palette(mat.$blue-palette);
-$my-accent: mat.define-palette(mat.$blue-gray-palette);
-$my-warn: mat.define-palette(mat.$red-palette);
-$my-theme: mat.define-dark-theme((
+$app-primary: mat.define-palette(mat.$light-blue-palette,300);
+$app-accent: mat.define-palette(mat.$grey-palette);
+$app-warn: mat.define-palette(mat.$red-palette);
+$app-theme: mat.define-dark-theme((
   color: (
-    primary: $my-primary,
-    accent: $my-accent,
-    warn: $my-warn,
+    primary: $app-primary,
+    accent: $app-accent,
+    warn: $app-warn,
   ),
   density:0
 ));
 
-@include mat.paginator-theme($my-theme);
-@include mat.select-theme($my-theme);
-@include mat.divider-theme($my-theme);
-@include mat.core-theme($my-theme);
-@include mat.tooltip-theme($my-theme);
-@include mat.stepper-theme($my-theme);
-@include mat.progress-spinner-theme($my-theme);
+@include mat.paginator-theme($app-theme);
+@include mat.select-theme($app-theme);
+@include mat.divider-theme($app-theme);
+@include mat.core-theme($app-theme);
+@include mat.tooltip-theme($app-theme);
+@include mat.stepper-theme($app-theme);
+@include mat.progress-spinner-theme($app-theme);
+@include mat.chips-theme($app-theme);

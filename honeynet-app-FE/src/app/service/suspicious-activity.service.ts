@@ -1,8 +1,8 @@
 import {Injectable} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
-import {GenericResponse} from "../interface/GenericResponse";
-import {SuspiciousActivityFilter} from "../interface/SuspiciousActivityFilter";
-import {PaginatedSuspiciousActivities} from "../interface/PaginatedSuspiciousActivities";
+import {GenericResponse} from "../interface/response/GenericResponse";
+import {SuspiciousActivityFilter} from "../interface/suspiciousActivity/SuspiciousActivityFilter";
+import {PaginatedSuspiciousActivities} from "../interface/suspiciousActivity/PaginatedSuspiciousActivities";
 import {PaginationSettings} from "../interface/PaginationSettings";
 import {SuspiciousActivity} from "../model/SuspiciousActivity";
 

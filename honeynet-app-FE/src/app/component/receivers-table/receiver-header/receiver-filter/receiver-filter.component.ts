@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {FormControl, FormGroup} from "@angular/forms";
-import {EmailInfoFilter} from "../../../../interface/EmailInfoFilter";
+import {EmailInfoFilter} from "../../../../interface/emailInfo/EmailInfoFilter";
 import {filter} from "rxjs";
 
 @Component({

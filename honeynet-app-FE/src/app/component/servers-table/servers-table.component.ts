@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import {Observable} from "rxjs";
-import {GenericResponse} from "../../interface/GenericResponse";
+import {GenericResponse} from "../../interface/response/GenericResponse";
 import ServerInfo from "../../model/ServerInfo";
 import {ServerService} from "../../service/server.service";
 
